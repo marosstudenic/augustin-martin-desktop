@@ -1,0 +1,43 @@
+---
+	// Component Imports
+	import MainHead from '../components/MainHead.astro';
+	import Uvod from '../components/Uvod/index.jsx';
+	import Nav from '../components/Nav/index.jsx';
+	import Novinky from '../components/Novinky/index.jsx';
+	import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
+	import CasPlynie from '../components/CasPlynie.astro';
+
+	// Data Fetching: List all Markdown posts in the repo.
+	const projects = await Astro.glob('./project/**/*.md');
+	const featuredProject = projects[0];
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<html lang="en">
+
+<head>
+	<MainHead title="Jeanine White: Personal Site" description="Jeanine White: Developer, Speaker, and Writer..." />
+	<style lang="scss">
+		$w-s: 750px;
+
+		a {
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="flex">
+		<Nav />
+		<main class="w-[80vw]">
+			<Uvod />
+			<Novinky />
+			<CasPlynie/>
+
+		</main>
+	</div>
+</body>
+
+</html>
