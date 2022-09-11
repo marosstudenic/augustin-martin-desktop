@@ -6,6 +6,8 @@
 	import Novinky from '../components/Novinky/index.jsx';
 	import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
 	import CasPlynie from '../components/CasPlynie.astro';
+import Zivotopis from '../components/Zivotopis.astro';
+import Vystavy from '../components/Vystavy.astro';
 
 	// Data Fetching: List all Markdown posts in the repo.
 	const projects = await Astro.glob('./project/**/*.md');
@@ -19,6 +21,8 @@
 
 <head>
 	<MainHead title="Jeanine White: Personal Site" description="Jeanine White: Developer, Speaker, and Writer..." />
+	
+
 	<style lang="scss">
 		$w-s: 750px;
 
@@ -35,9 +39,17 @@
 			<Uvod />
 			<Novinky />
 			<CasPlynie/>
+			<Zivotopis/>
+			<Vystavy/>
 
 		</main>
 	</div>
 </body>
 
 </html>
+<style>
+body {
+	font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+
+}
+</style>
