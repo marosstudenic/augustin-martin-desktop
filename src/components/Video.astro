@@ -1,0 +1,139 @@
+---
+    const video =
+    {
+        type: "yotuube",
+        link: "https://www.youtube.com/embed/St63eT8PlPk",
+    }
+
+---
+
+<section id="video" class="py-20 pr-60">
+    <h2 class="text-gray-500 font-medium mb-4 text-xl">Video</h2>
+    <div class="items mb-4 overflow-hidden h-[500px]">
+        <div class="video-container item w-full" >
+            <!-- youtube + ta3 -->
+            <iframe id="player" class="w-full h-[500px]" marginwidth="0" marginheight="0" src={video.link}
+                scrolling="no"></iframe>
+            <!-- redirect -->
+            <div class="image-container hidden" id="redirect">
+                <a href={video.link} target="_blank" class="w-full flex justify-center">
+                    <img src="todo" class="h-[500px] object-contain" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-between">
+        <p class="text-sm text-gray-500" id="prev-video">
+            predchádzajúca
+        </p>
+        <p  class="text-sm text-gray-500" id="next-video">
+            nasledujúca
+        </p>
+    </div>
+</section>
+
+<!-- <style>
+    .items {
+        position: relative;
+    }
+
+    .item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(120%);
+        transition: transform 0.5s;
+    }
+
+    .item.active {
+        transform: translateX(0);
+    }
+</style> -->
+
+
+<script >
+
+    const videos = [
+        {
+            type: "yotuube",
+            link: "https://www.youtube.com/embed/St63eT8PlPk",
+        },
+        {
+            type: "yotuube",
+            link: "https://www.youtube.com/embed/z9uVCpjJgv8",
+        },
+        {
+            type: "yotuube",
+            link: "https://www.youtube.com/embed/85qyGQwXlCk",
+        },
+        {
+            type: "yotuube",
+            link: "https://www.youtube.com/embed/nMIJhZMCJNM",
+        },
+
+        {
+            type: "yotuube",
+            link: "https://www.youtube.com/embed/f9KTa1UA67M",
+        },
+        {
+            type: "ta3",
+            link: "https://www.ta3.com/embed/20210410-hw-fb527ab6-eeb3-45bc-b153-93fbecff9ce0",
+        },
+        {
+            type: "ta3",
+            link: "https://www.ta3.com/embed/20160514-D1BDAD10-40BB-4DFE-9FBF-237037D31F38",
+        },
+        {
+            type: "redirect",
+            link: "https://www.rtvs.sk/televizia/archiv/14625/264389",
+            image: "videa/rtvs_thumbnail.jpg",
+        },
+        {
+            type: "redirect",
+            link: "https://fb.watch/dKNzq6DjW7/",
+            image: "videa/facebook_obrazy.jpg",
+        },
+    ];
+
+    var video_active_index = 0;
+
+    function replaceContent(video_active_index) {
+        let currentVideo = videos[video_active_index]
+        if (currentVideo.type === "redirect") {
+            document.getElementById('player').className ="hidden"
+            let imageContainer = document.getElementById("redirect")
+            imageContainer.className = "image-container"
+            imageContainer.children[0].href = currentVideo.link
+                        console.log(imageContainer)
+
+            imageContainer.children[0].children[0].src = '/assets/' + currentVideo.image
+        } else {
+            let iframe = document.getElementById('player')
+            iframe.className ="w-full h-[500px]"
+            iframe.src = currentVideo.link
+
+            let imageContainer = document.getElementById("redirect")
+            imageContainer.className  = "hidden"
+            
+        }
+    }
+
+    function increaseVideoActiveIndex() {
+        video_active_index =
+            (video_active_index + 1) % videos.length;
+        console.log(video_active_index)
+
+        replaceContent(video_active_index)
+    }
+
+    function decreaseVideoActiveIndex() {
+        video_active_index = video_active_index - 1;
+        if (video_active_index < 0) {
+            video_active_index = videos.length - 1;
+        }
+        replaceContent(video_active_index)
+    }
+
+    document.getElementById("prev-video").onclick = () => decreaseVideoActiveIndex();
+    document.getElementById("next-video").onclick = () => increaseVideoActiveIndex();
+</script>

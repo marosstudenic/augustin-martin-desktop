@@ -8,6 +8,9 @@
 	import CasPlynie from '../components/CasPlynie.astro';
 import Zivotopis from '../components/Zivotopis.astro';
 import Vystavy from '../components/Vystavy.astro';
+import Tvorba from '../components/Tvorba.astro';
+import Spolupraca from '../components/Spolupraca.astro';
+import Video from '../components/Video.astro';
 
 	// Data Fetching: List all Markdown posts in the repo.
 	const projects = await Astro.glob('./project/**/*.md');
@@ -41,6 +44,9 @@ import Vystavy from '../components/Vystavy.astro';
 			<CasPlynie/>
 			<Zivotopis/>
 			<Vystavy/>
+			<Tvorba/>
+			<Spolupraca/>
+			<Video/>
 
 		</main>
 	</div>
