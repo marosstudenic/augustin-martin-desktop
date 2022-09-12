@@ -7,10 +7,36 @@
 
 ---
 
+<style is:global>
+    .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        /* color: black; */
+    }
+
+    .hover-underline-animation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: rgb(107 114 128);
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+    .hover-underline-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+</style>
+
 <section id="video" class="py-20 pr-60">
     <h2 class="text-gray-500 font-medium mb-4 text-xl">Video</h2>
     <div class="items mb-4 overflow-hidden h-[500px]">
-        <div class="video-container item w-full" >
+        <div class="video-container item w-full">
             <!-- youtube + ta3 -->
             <iframe id="player" class="w-full h-[500px]" marginwidth="0" marginheight="0" src={video.link}
                 scrolling="no"></iframe>
@@ -23,10 +49,10 @@
         </div>
     </div>
     <div class="flex justify-between">
-        <p class="text-sm text-gray-500" id="prev-video">
+        <p class="text-sm text-gray-500 hover-underline-animation cursor-pointer" id="prev-video">
             predchádzajúca
         </p>
-        <p  class="text-sm text-gray-500" id="next-video">
+        <p class="text-sm text-gray-500 hover-underline-animation cursor-pointer" id="next-video">
             nasledujúca
         </p>
     </div>
@@ -51,7 +77,7 @@
 </style> -->
 
 
-<script >
+<script>
 
     const videos = [
         {
@@ -100,21 +126,21 @@
     function replaceContent(video_active_index) {
         let currentVideo = videos[video_active_index]
         if (currentVideo.type === "redirect") {
-            document.getElementById('player').className ="hidden"
+            document.getElementById('player').className = "hidden"
             let imageContainer = document.getElementById("redirect")
             imageContainer.className = "image-container"
             imageContainer.children[0].href = currentVideo.link
-                        console.log(imageContainer)
+            console.log(imageContainer)
 
             imageContainer.children[0].children[0].src = '/assets/' + currentVideo.image
         } else {
             let iframe = document.getElementById('player')
-            iframe.className ="w-full h-[500px]"
+            iframe.className = "w-full h-[500px]"
             iframe.src = currentVideo.link
 
             let imageContainer = document.getElementById("redirect")
-            imageContainer.className  = "hidden"
-            
+            imageContainer.className = "hidden"
+
         }
     }
 

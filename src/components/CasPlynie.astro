@@ -269,7 +269,7 @@
 		{seasons.map((season) => (
 		<div class="my-12 listing">
 			<h2 class="text-gray-500 text-lg font-semibold text-align-end mb-4">{season.headline}<span
-					class="text-gray-500 pl-4 text-sm font-normal detail-btn">detail</span>
+					class="text-gray-500 pl-4 text-sm font-normal detail-btn cursor-pointer">detail</span>
 			</h2>
 			<div class="flex gap-2 w-[75vw] overflow-x-auto scroll4">
 				{season.items.map((item) => (
@@ -290,8 +290,10 @@
 						<img src={"/assets/cas_plynie/" + season.items[0].filename} alt={season.items[0].title} class="h-[550px] mb-2 object-contain" />
 						<h4 class="text-gray-500 font-bold">{season.items[0].title}</h4>
 						<div class="flex justify-between">
-							<p class="text-gray-500">{season.items[0].description}</p>					
-							<p class="text-gray-500 next cursor-pointer" id={"next-" + index}>ďalšia</p>
+							<p class="text-gray-500">{season.items[0].description}</p>			
+							<div class="next">
+								<p class="text-gray-500 next cursor-pointer hover-underline-animation" id={"next-" + index}>ďalšia</p>
+							</div>		
 						</div>					
 				</div>
 			</div>
@@ -606,9 +608,10 @@ for (let i = 0; i < nexts.length; i++){
 	nexts[i].onclick = function (e) {
 		let seasonIndex = e.target.id.split('-')[1];
 		counters[seasonIndex]++;
-		if (counters[seasonIndex] >= seasons[seasonIndex].items.length) {
+		if (counters[seasonIndex] > seasons[seasonIndex].items.length) {
 			counters[seasonIndex] = 0;
 		}
+
 
 		let el = document.getElementById('season-'+seasonIndex);
 		el.children[0].src = "/assets/cas_plynie/" + seasons[seasonIndex].items[counters[seasonIndex]].filename

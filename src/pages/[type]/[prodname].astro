@@ -1,0 +1,329 @@
+---
+  const { type, prodname } = Astro.params;
+  const prodtype = type;
+  import Nav from "../../components/Nav";
+  import MainHead from "../../components/MainHead.astro";
+
+  const products = {
+    publikacie: {
+      title: "Publikácie",
+      slug: "publikacie",
+      items: [
+        {
+          title: "Obrazy, texty, sentencie",
+          slug: "obrazy-texty-sentencie",
+          image: "spoluprace/brozovanaPublikacia_obrazyTextySentencie.jpg",
+          author: "Kamil Peteraj, Martin Augustín",
+          descriptions: [
+            "brožovaná publikácia",
+            "40 strán, 38 x 30 cm",
+            "40€ + poštovné",
+          ],
+        },
+        {
+          title: "Zrkadlo duše",
+          slug: "zrkadlo-duse",
+          author: "Martin Augustín, autor textu Ľudovít Petranský",
+          image: "spoluprace/zrkadlo_duse.jpg",
+          descriptions: [
+            "monografia",
+            "214 strán, 31 x 25,5 cm",
+            "39€ + poštovné",
+          ],
+        },
+        {
+          title: "Máj",
+          slug: "maj",
+          author: "Hynek Karel Mácha",
+          image: "produkty/obalka_knihy_maj.jpg",
+          descriptions: [
+            "22,54€ + poštovné",
+            "Dostupné cez <a href='https://www.martinus.sk/?uItem=1548731&gclid=CjwKCAjw2f-VBhAsEiwAO4lNeCilwRS-' class='text-gray-600 cursor-pointer hover:text-gray-900 underline'>martinus.sk</a>",
+          ],
+        },
+      ],
+    },
+    textilie: {
+      title: "Textilie",
+      slug: "textilie",
+      items: [
+        {
+          title: "Hodvábna šatka s motívom obrazu Martina Augustína",
+          slug: "hodvabna-satka",
+          image: "produkty/hodvabnaSatka_detail.jpg",
+          altImage: "produkty/hodvabnaSatkaObraz.jpg",
+          descriptions: ["90 x 90 cm", "90€ + poštovné"],
+        },
+      ],
+    },
+    grafickeListy: {
+      title: "Grafické listy",
+      slug: "listy",
+      items: [
+        {
+          title: "Slnko nad hlavou",
+          slug: "slnko-nad-hlavou",
+          image: "produkty/grafList_slnkoNadHlavou.jpg",
+          descriptions: [
+            "technika limitovaný ofset",
+            "náklad 200 ks, 70 x 50 cm",
+            "200€ + poštovné",
+            "signovaný autormi Martinom Augustínom, Kamilom Peterajom\n",
+          ],
+        },
+        {
+          title: "Raz uvidíš",
+          slug: "raz-uvidis",
+          image: "produkty/grafList_razUvidis.jpg",
+          descriptions: [
+            "technika limitovaný ofset",
+            "náklad 200 ks, 70 x 50 cm",
+            "200€ + poštovné",
+            "signovaný autormi Martinom Augustínom, Kamilom Peterajom\n",
+          ],
+        },
+      ],
+    },
+    limitovaneEdicie: {
+      title: "Limitované edície",
+      slug: "limitovane",
+      items: [
+        {
+          title: "Sen menom láska",
+          slug: "sen-menom-laska",
+          image: "produkty/limitovane_senMenomLaska.jpg",
+          descriptions: [
+            "limitovaná kniha poézie",
+            "hodvábna šatka s dielom M. Augustína",
+            "certifikát vlastníctva",
+            "300€ + poštovné",
+            "nedostupné",
+          ],
+        },
+      ],
+    },
+  }
+
+  export function getStaticPaths() {
+
+
+    var products = {
+      publikacie: {
+        title: "Publikácie",
+        slug: "publikacie",
+        items: [
+          {
+            title: "Obrazy, texty, sentencie",
+            slug: "obrazy-texty-sentencie",
+            image: "spoluprace/brozovanaPublikacia_obrazyTextySentencie.jpg",
+            author: "Kamil Peteraj, Martin Augustín",
+            descriptions: [
+              "brožovaná publikácia",
+              "40 strán, 38 x 30 cm",
+              "40€ + poštovné",
+            ],
+          },
+          {
+            title: "Zrkadlo duše",
+            slug: "zrkadlo-duse",
+            author: "Martin Augustín, autor textu Ľudovít Petranský",
+            image: "spoluprace/zrkadlo_duse.jpg",
+            descriptions: [
+              "monografia",
+              "214 strán, 31 x 25,5 cm",
+              "39€ + poštovné",
+            ],
+          },
+          {
+            title: "Máj",
+            slug: "maj",
+            author: "Hynek Karel Mácha",
+            image: "produkty/obalka_knihy_maj.jpg",
+            descriptions: [
+              "22,54€ + poštovné",
+              "Dostupné cez <a href='https://www.martinus.sk/?uItem=1548731&gclid=CjwKCAjw2f-VBhAsEiwAO4lNeCilwRS-' class='text-gray-600 cursor-pointer hover:text-gray-900 underline'>martinus.sk</a>",
+            ],
+          },
+        ],
+      },
+      textilie: {
+        title: "Textilie",
+        slug: "textilie",
+        items: [
+          {
+            title: "Hodvábna šatka s motívom obrazu Martina Augustína",
+            slug: "hodvabna-satka",
+            image: "produkty/hodvabnaSatka_detail.jpg",
+            altImage: "produkty/hodvabnaSatkaObraz.jpg",
+            descriptions: ["90 x 90 cm", "90€ + poštovné"],
+          },
+        ],
+      },
+      grafickeListy: {
+        title: "Grafické listy",
+        slug: "listy",
+        items: [
+          {
+            title: "Slnko nad hlavou",
+            slug: "slnko-nad-hlavou",
+            image: "produkty/grafList_slnkoNadHlavou.jpg",
+            descriptions: [
+              "technika limitovaný ofset",
+              "náklad 200 ks, 70 x 50 cm",
+              "200€ + poštovné",
+              "signovaný autormi Martinom Augustínom, Kamilom Peterajom\n",
+            ],
+          },
+          {
+            title: "Raz uvidíš",
+            slug: "raz-uvidis",
+            image: "produkty/grafList_razUvidis.jpg",
+            descriptions: [
+              "technika limitovaný ofset",
+              "náklad 200 ks, 70 x 50 cm",
+              "200€ + poštovné",
+              "signovaný autormi Martinom Augustínom, Kamilom Peterajom\n",
+            ],
+          },
+        ],
+      },
+      limitovaneEdicie: {
+        title: "Limitované edície",
+        slug: "limitovane",
+        items: [
+          {
+            title: "Sen menom láska",
+            slug: "sen-menom-laska",
+            image: "produkty/limitovane_senMenomLaska.jpg",
+            descriptions: [
+              "limitovaná kniha poézie",
+              "hodvábna šatka s dielom M. Augustína",
+              "certifikát vlastníctva",
+              "300€ + poštovné",
+              "nedostupné",
+            ],
+          },
+        ],
+      },
+    }
+    let gg = []
+    Object.keys(products).forEach(function (key, index) {
+      products[key].items.map((item) => (
+        gg.push({ params: { type: products[key].slug, prodname: item.slug } })
+      ))
+    }
+    )
+
+    return gg;
+  }
+
+  let currentType = null
+  Object.keys(products).forEach(function (key) {
+    if (products[key].slug == prodtype) {
+      currentType = key
+    }
+  })
+
+
+  var currentProduct = products[currentType].items.find(el => el.slug == prodname)
+
+  var orderOfProduct = products[currentType].items.indexOf(currentProduct)
+  const nextLink = ""
+---
+
+<html lang="en">
+
+<head>
+  <MainHead title="Martin Augustín"
+    description="Slovenský umelec Martin Augustín predstavuje v spolupráci s Galériou u Anjela svoju novú kolekciu obrazov." />
+
+
+  <style lang="scss">
+    $w-s: 750px;
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flex">
+    <Nav />
+    <main class="w-[80vw] h-full pt-20">
+      <div class="container mx-auto px-4 flex flex-col pb-4 flex">
+        <div class="flex justify-between mt-2 mb-2">
+          <a href="/" class="flex align-middle">
+            <svg class="h-10 py-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#6B7280">
+              <path
+                d="M13.83 19a1 1 0 0 1-.78-.37l-4.83-6a1 1 0 0 1 0-1.27l5-6a1 1 0 0 1 1.54 1.28L10.29 12l4.32 5.36a1 1 0 0 1-.78 1.64z" />
+            </svg>
+            <div class="flex justify-center flex-col">
+              <div class="flex">
+                <h2 class="text-gray-500 font-bold text-xl">
+                  { currentType.title}
+                </h2>
+                <p class="ml-2 text-gray-500 text-sm my-auto">
+                  <span class="font-bold">{products[currentType].title } </span>| produkt {orderOfProduct} /
+                  { products[currentType].items.length }
+                </p>
+              </div>
+            </div>
+          </a>
+          {products[currentType].items.length > 1 && 
+            <a href={nextLink}
+            class="text-sm text-gray-500 my-auto">nasledujúci
+          </a>
+          }
+         
+        </div>
+
+        <div class="flex gap-20 justify-between">
+          <div class="w-full flex-1">
+            <img class="w-full max-h-84 object-cover" class="nextImg ? '' : 'active'" src={"/assets/" + currentProduct.image}
+              alt={currentProduct.title} />
+
+            {currentProduct.altImage && <p class="text-gray-500 pt-2 flex justify-end" id="next-img">
+              ďalší obrázok
+            </p>}
+          </div>
+
+          <div class="w-full flex-1 mt-4">
+
+            <h1 class="text-xl font-medium">{ currentProduct.title.toUpperCase() }</h1>
+            {currentProduct.author && <p class="text-gray-500 my-4" >
+              Autori: { currentProduct.author }
+            </p>}
+
+            <div class="description">
+            {currentProduct.descriptions.map((description) => (
+               <p class="text-gray-500 my-4" >
+                <span set:html={description}></span>
+              </p>
+            ))}
+             
+            </div>
+
+            <p class="text-gray-500 my-4">
+              Objednávku pošlite mailom na
+              <a href="mailto:vena@nextra.sk" class="font-bold">vena@nextra.sk</a>
+            </p>
+
+            <a href="mailto:vena@nextra.sk" class="border py-1 px-3 border-gray-500 text-gray-500">kontaktovať</a>
+            <!--          <p class="text-gray-500 text-sm">{{ photo.date }}</p>-->
+            <!--          <p class="text-gray-500 text-sm">{{ photo.location }}</p>-->
+            <!--          <p class="text-gray-500 text-sm">{{ photo.description }}</p>-->
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
+<style>
+  body {
+    font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+
+  }
+</style>

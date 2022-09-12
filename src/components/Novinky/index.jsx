@@ -43,25 +43,25 @@ function Novinky() {
 
 					<div class="flex-1 h-[500px] flex flex-col">
 						<div class="flex-1 flex h-[150px] gap-1">
-							<div class="flex-1 h-full">
+							<a class="flex-1 h-full cursor-pointer" href="/publikacie/obrazy-texty-sentencie">
 								<h3 class="text-gray-500 mb-2">Publikácie</h3>
 								<img src="/assets/news/brozovanaPublikacia_obrazyTextySentencie.jpg" alt="" class="object-contain h-full"/>
-							</div>
-							<div class="flex-1 h-full">
+							</a>
+							<a class="flex-1 h-full cursor-pointer" href="/textilie/hodvabna-satka">
 								<h3 class="text-gray-500 mb-2">Textílie</h3>
-								<img src="/assets/news/hodvabnaSatka.jpg" alt="" class="object-contain h-full"/>
-							</div>
+								<img src="/assets/news/hodvabnaSatka.jpg" alt="" class="object-contain h-full cursor-pointer"/>
+							</a>
 						</div>
 
 						<div class="flex-1 flex h-[150px] gap-1 mt-16">
-							<div class="flex-1 h-full">
+							<a class="flex-1 h-full cursor-pointer" href="listy/slnko-nad-hlavou">
 								<h3 class="text-gray-500 mb-2">Grafické listy</h3>
-								<img src="/assets/news/grafList_slnkoNadHlavou.jpg" alt="" class="object-contain h-full"/>
-							</div>
-							<div class="flex-1 h-full">
+								<img src="/assets/news/grafList_slnkoNadHlavou.jpg" alt="" class="object-contain h-full cursor-pointer"/>
+							</a>
+							<a class="flex-1 h-full cursor-pointer" href="limitovane/sen-menom-laska">
 								<h3 class="text-gray-500 mb-2">Limitované edície</h3>
 								<img src="/assets/news/limitovane_senMenomLaska.jpg" alt="" class="object-contain h-full"/>
-							</div>
+							</a>
 						</div>
 
 				

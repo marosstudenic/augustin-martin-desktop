@@ -1,16 +1,18 @@
 ---
-	// Component Imports
-	import MainHead from '../components/MainHead.astro';
-	import Uvod from '../components/Uvod/index.jsx';
-	import Nav from '../components/Nav/index.jsx';
-	import Novinky from '../components/Novinky/index.jsx';
-	import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
-	import CasPlynie from '../components/CasPlynie.astro';
+// Component Imports
+import MainHead from '../components/MainHead.astro';
+import Uvod from '../components/Uvod/index.jsx';
+import Nav from '../components/Nav/index.jsx';
+import Novinky from '../components/Novinky/index.jsx';
+import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
+import CasPlynie from '../components/CasPlynie.astro';
 import Zivotopis from '../components/Zivotopis.astro';
 import Vystavy from '../components/Vystavy.astro';
 import Tvorba from '../components/Tvorba.astro';
 import Spolupraca from '../components/Spolupraca.astro';
 import Video from '../components/Video.astro';
+import Gallery from '../components/Gallery.astro';
+import Kontakt from '../components/Kontakt.astro';
 
 	// Data Fetching: List all Markdown posts in the repo.
 	const projects = await Astro.glob('./project/**/*.md');
@@ -23,7 +25,7 @@ import Video from '../components/Video.astro';
 <html lang="en">
 
 <head>
-	<MainHead title="Jeanine White: Personal Site" description="Jeanine White: Developer, Speaker, and Writer..." />
+	<MainHead title="Martin Augustín" description="Slovenský umelec Martin Augustín predstavuje v spolupráci s Galériou u Anjela svoju novú kolekciu obrazov." />
 	
 
 	<style lang="scss">
@@ -47,6 +49,8 @@ import Video from '../components/Video.astro';
 			<Tvorba/>
 			<Spolupraca/>
 			<Video/>
+			<Gallery/>
+			<Kontakt/>
 
 		</main>
 	</div>
