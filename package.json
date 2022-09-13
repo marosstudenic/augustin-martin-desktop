@@ -12,7 +12,8 @@
   "dependencies": {
     "@astrojs/preact": "^1.0.2",
     "astro": "^1.1.5",
-    "preact": "^10.7.3"
+    "preact": "^10.7.3",
+    "vanilla-lazyload": "^17.8.3"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^1.0.0",

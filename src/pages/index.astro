@@ -1,17 +1,17 @@
 ---
-// Component Imports
-import MainHead from '../components/MainHead.astro';
-import Uvod from '../components/Uvod.astro';
-import Nav from '../components/Nav.astro';
-import Novinky from '../components/Novinky.astro';
-import CasPlynie from '../components/CasPlynie.astro';
-import Zivotopis from '../components/Zivotopis.astro';
-import Vystavy from '../components/Vystavy.astro';
-import Tvorba from '../components/Tvorba.astro';
-import Spolupraca from '../components/Spolupraca.astro';
-import Video from '../components/Video.astro';
-import Gallery from '../components/Gallery.astro';
-import Kontakt from '../components/Kontakt.astro';
+	// Component Imports
+	import MainHead from '../components/MainHead.astro';
+	import Uvod from '../components/Uvod.astro';
+	import Nav from '../components/Nav.astro';
+	import Novinky from '../components/Novinky.astro';
+	import CasPlynie from '../components/CasPlynie.astro';
+	import Zivotopis from '../components/Zivotopis.astro';
+	import Vystavy from '../components/Vystavy.astro';
+	import Tvorba from '../components/Tvorba.astro';
+	import Spolupraca from '../components/Spolupraca.astro';
+	import Video from '../components/Video.astro';
+	import Gallery from '../components/Gallery.astro';
+	import Kontakt from '../components/Kontakt.astro';
 
 	// Data Fetching: List all Markdown posts in the repo.
 	const projects = await Astro.glob('./project/**/*.md');
@@ -24,8 +24,9 @@ import Kontakt from '../components/Kontakt.astro';
 <html lang="en">
 
 <head>
-	<MainHead title="Martin Augustín" description="Slovenský umelec Martin Augustín predstavuje v spolupráci s Galériou u Anjela svoju novú kolekciu obrazov." />
-	
+	<MainHead title="Martin Augustín"
+		description="Slovenský umelec Martin Augustín predstavuje v spolupráci s Galériou u Anjela svoju novú kolekciu obrazov." />
+
 
 	<style lang="scss">
 		$w-s: 750px;
@@ -42,23 +43,38 @@ import Kontakt from '../components/Kontakt.astro';
 		<main class="w-[80vw]">
 			<Uvod />
 			<Novinky />
-			<CasPlynie/>
-			<Zivotopis/>
-			<Vystavy/>
-			<Tvorba/>
-			<Spolupraca/>
-			<Video/>
-			<Gallery/>
-			<Kontakt/>
+			<CasPlynie />
+			<Zivotopis />
+			<Vystavy />
+			<Tvorba />
+			<Spolupraca />
+			<Video />
+			<Gallery />
+			<Kontakt />
 
 		</main>
 	</div>
+	<script is:global>
+		window.lazyLoadOptions = {
+			// Your custom settings go here
+		};
+
+		// Listen to the initialization event
+		// and get the instance of LazyLoad
+		window.addEventListener("LazyLoad::Initialized", function (event) {
+			window.lazyLoadInstance = event.detail.instance;
+		}, false);
+	</script>
 </body>
 
 </html>
 <style>
-body {
-	font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+	html {
+		scroll-behavior: smooth;
 
-}
+	}
+
+	body {
+		font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+	}
 </style>

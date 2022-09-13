@@ -264,7 +264,7 @@
 </style>
 
 <section id="cas-plynie" class="py-8 min-h-[100vh]">
-	<h2 class="text-gray-500 font-bold text-2xl">Čas plynie</h2>
+	<h2 class="text-gray-500 font-medium text-2xl">Čas plynie</h2>
 	<div class="season" id="listing">
 		{seasons.map((season) => (
 		<div class="my-12 listing">
@@ -273,7 +273,7 @@
 			</h2>
 			<div class="flex gap-2 w-[75vw] overflow-x-auto scroll4">
 				{season.items.map((item) => (
-				<img src={"/assets/cas_plynie/" + item.filename} alt={item.title} class="h-[200px] mb-2" />
+				<img src={"/assets/cas_plynie/" + item.filename} alt={item.title} class="h-[300px] mb-2" />
 				))}
 			</div>
 			<p class="text-gray-500 mt-2">{season.description}</p>

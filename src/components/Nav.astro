@@ -1,21 +1,98 @@
 <nav class="w-[20vw]">
     <div class="h-[100vh] fixed top-0 px-8 py-4">
         <div class="logo h-[150px]">
-            <img src="./public/assets/logo.png" alt="" class="img-contain w-[150px]" />
+            <img src="/assets/logo.png" alt="" class="img-contain w-[150px]" />
         </div>
         <div class="h-full absolute top-[50%]">
-            <ul class=" -translate-y-1/2">
-                <li class=" my-2 cursor-pointer"><a class="text-gray-500" href="/#uvod">Úvod</a></li>
-                <li class=" my-2 cursor-pointer"><a class="text-gray-500" href="/#novinky">Novinky</a></li>
-                <li class=" my-2 cursor-pointer"><a class="text-gray-500" href="/#cas-plynie">Čas plynie</a></li>
-                <li class=" my-2 cursor-pointer"><a class="text-gray-500" href="/#zivotopis">Životopis</a></li>
-                <li class=" my-2 cursor-pointer"><a class="text-gray-500" href="/#vystavy">Výstavy</a></li>
-                <li class=" my-2 cursor-pointer"><a class="text-gray-500" href="/#tvorba">Tvorba</a></li>
-                <li class=" my-2 cursor-pointer"><a class="text-gray-500" href="/#ikar">IKAR</a></li>
-                <li class=" my-2 cursor-pointer"><a class="text-gray-500" href="/#video">Video</a></li>
-                <li class=" my-2 cursor-pointer"><a class="text-gray-500" href="/#galeria">Fotogaléria</a></li>
-                <li class=" my-2 cursor-pointer"><a class="text-gray-500" href="/#kontakt">Kontakt</a></li>
+            <ul class=" -translate-y-1/2 nav">
+                <li class=" my-2 cursor-pointer font-bold" id="nav-uvod"><a class="text-gray-500" href="/#uvod">Úvod</a></li>
+                <li class=" my-2 cursor-pointer" id="nav-novinky"><a class="text-gray-500"
+                        href="/#novinky">Novinky</a></li>
+                <li class=" my-2 cursor-pointer" id="nav-cas-plynie"><a class="text-gray-500"
+                        href="/#cas-plynie">Čas plynie</a></li>
+                <li class=" my-2 cursor-pointer" id="nav-zivotopis"><a class="text-gray-500"
+                        href="/#zivotopis">Životopis</a></li>
+                <li class=" my-2 cursor-pointer" id="nav-vystavy"><a class="text-gray-500"
+                        href="/#vystavy">Výstavy</a></li>
+                <li class=" my-2 cursor-pointer" id="nav-tvorba"><a class="text-gray-500" href="/#tvorba">Tvorba</a>
+                </li>
+                <li class=" my-2 cursor-pointer" id="nav-ikar"><a class="text-gray-500" href="/#ikar">IKAR</a></li>
+                <li class=" my-2 cursor-pointer" id="nav-video"><a class="text-gray-500" href="/#video">Video</a>
+                </li>
+                <li class=" my-2 cursor-pointer" id="nav-galeria"><a class="text-gray-500"
+                        href="/#galeria">Fotogaléria</a></li>
+                <li class=" my-2 cursor-pointer" id="nav-kontakt"><a class="text-gray-500"
+                        href="/#kontakt">Kontakt</a></li>
             </ul>
         </div>
     </div>
 </nav>
+
+<script is:global>
+    window.onscroll = function () {
+        let navs = document.getElementsByClassName("nav")[0].children;
+        if (window.pageYOffset > document.getElementById("kontakt").offsetTop - window.innerHeight / 2) {
+            for (let i = 0; i < navs.length; i++) {
+                navs[i].className = navs[i].className.replace("font-bold", "")
+            }
+            document.getElementById("nav-kontakt").className = "my-2 cursor-pointer font-bold"
+
+            // Do something
+        } else if (window.pageYOffset > document.getElementById("galeria").offsetTop - window.innerHeight / 2) {
+            for (let i = 0; i < navs.length; i++) {
+                navs[i].className = navs[i].className.replace("font-bold", "")
+            }
+            document.getElementById("nav-galeria").className = "my-2 cursor-pointer font-bold"
+            // Do something
+        } else if (window.pageYOffset > document.getElementById("video").offsetTop - window.innerHeight / 2) {
+            for (let i = 0; i < navs.length; i++) {
+                navs[i].className = navs[i].className.replace("font-bold", "")
+            }
+            document.getElementById("nav-video").className = "my-2 cursor-pointer font-bold"
+            // Do something
+        } else if (window.pageYOffset > document.getElementById("ikar").offsetTop - window.innerHeight / 2) {
+            for (let i = 0; i < navs.length; i++) {
+                navs[i].className = navs[i].className.replace("font-bold", "")
+            }
+            document.getElementById("nav-ikar").className = "my-2 cursor-pointer font-bold"
+            // Do something
+        } else if (window.pageYOffset > document.getElementById("tvorba").offsetTop - window.innerHeight / 2) {
+            for (let i = 0; i < navs.length; i++) {
+                navs[i].className = navs[i].className.replace("font-bold", "")
+            }
+            document.getElementById("nav-tvorba").className = "my-2 cursor-pointer font-bold"
+            // Do something
+        } else if (window.pageYOffset > document.getElementById("vystavy").offsetTop - window.innerHeight / 2) {
+            for (let i = 0; i < navs.length; i++) {
+                navs[i].className = navs[i].className.replace("font-bold", "")
+            }
+            document.getElementById("nav-vystavy").className = "my-2 cursor-pointer font-bold"
+            // Do something
+        } else if (window.pageYOffset > document.getElementById("zivotopis").offsetTop - window.innerHeight / 2) {
+            for (let i = 0; i < navs.length; i++) {
+                navs[i].className = navs[i].className.replace("font-bold", "")
+            }
+            document.getElementById("nav-zivotopis").className = "my-2 cursor-pointer font-bold"
+            // Do something
+        } else if (window.pageYOffset > document.getElementById("cas-plynie").offsetTop - window.innerHeight / 2) {
+            for (let i = 0; i < navs.length; i++) {
+                navs[i].className = navs[i].className.replace("font-bold", "")
+            }
+            document.getElementById("nav-cas-plynie").className = "my-2 cursor-pointer font-bold"
+            // Do something
+        } else if (window.pageYOffset > document.getElementById("novinky").offsetTop - window.innerHeight / 2) {
+            for (let i = 0; i < navs.length; i++) {
+                navs[i].className = navs[i].className.replace("font-bold", "")
+            }
+            document.getElementById("nav-novinky").className = "my-2 cursor-pointer font-bold"
+            // Do something
+        } else if (window.pageYOffset > document.getElementById("uvod").offsetTop - window.innerHeight / 2) {
+            for (let i = 0; i < navs.length; i++) {
+                navs[i].className = navs[i].className = navs[i].className.replace("font-bold", "")
+            }
+            document.getElementById("nav-uvod").className = "my-2 cursor-pointer font-bold"
+
+            // Do something
+        }
+    };
+</script>

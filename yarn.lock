@@ -3325,6 +3325,11 @@
     "kleur" "^4.0.3"
     "sade" "^1.7.3"
 
+"vanilla-lazyload@^17.8.3":
+  "integrity" "sha512-0eYjhkSkfP/JCDIzVpmgnh9I3XKAA8/i/6FpRrH8qjcC+nHv5mYZ6DQZUIGU16TqJei23hHl0J/Zuv/zmCC2Zw=="
+  "resolved" "https://registry.npmjs.org/vanilla-lazyload/-/vanilla-lazyload-17.8.3.tgz"
+  "version" "17.8.3"
+
 "vfile-location@^4.0.0":
   "integrity" "sha512-JDxPlTbZrZCQXogGheBHjbRWjESSPEak770XwWPfw5mTc1v1nWGLB/apzZxsx8a0SJVfF8HK8ql8RD308vXRUw=="
   "resolved" "https://registry.npmjs.org/vfile-location/-/vfile-location-4.0.1.tgz"
