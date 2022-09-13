@@ -1,0 +1,213 @@
+<style is:global>
+    #myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #myImg:hover {
+        opacity: 0.7;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 50ppx;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9);
+        /* Black w/ opacity */
+    }
+
+    /* Modal Content (Image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    /* Caption of Modal Image (Image Text) - Same Width as the Image */
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    /* Add Animation - Zoom in the Modal */
+    .modal-content,
+    #caption {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0)
+        }
+
+        to {
+            transform: scale(1)
+        }
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+        .modal-content {
+            width: 100%;
+        }
+    }
+</style>
+
+<section id="uvod" class="h-[100vh] py-12">
+    <div class="flex">
+        <div class="flex-1">
+            <div class="text-gray-500 text-sm">
+                <h2 class="font-bold">Maľovať je vášeň</h2>
+                <p class="my-4">
+                    „Tvoriť a maľovať je vášeň. Vášeň najsilnejšia a nepremožiteľná, ktorá, aj keď všetky
+                    túžby v tebe pohasli, nesmie pominúť. Všetkého sa môžeš zriecť, vo všetkom rezignovať,
+                    ale v umení nikdy.“ Slová Jana Zrzavého rezonujú aj po mnohých rokoch. Nielen v obrazoch
+                    českého maliara, ale aj v obrazoch, či myslení jeho duchovných nasledovníkov. Patrí k
+                    nim aj Martin, pre ktorého je maľovanie vášňou. Každodennou, vytrvalou, spaľujúcou. Ale
+                    aj intímnou spoveďou s tichým vyznaním. A keď prídu pochybnosti, nikdy nevidieť
+                    rezignáciu. Naopak, jeho ženské tváre odzrkadľujú galériu našich vznešených predstáv i
+                    najtajnejších túžob. Sú blízke i vzdialené, rozmaľované i tajuplne sa vynárajúce z
+                    monochrómnej hmly. Majú veľa chutí i vôní. Sú tam Madame de Pompadour aj Levočská biela
+                    pani.
+                </p>
+                <p class="my-4">
+                    Martin často pripomína, že je šťastný, že môže robiť to, čo ho aj baví. Ale zároveň
+                    zdôrazňuje, že by to nešlo bez ľudí, ktorých stretol a ktorí ho posúvali v jeho živote i
+                    tvorbe. Či už to bola mama Božka, vydavateľka Gabika, galeristka Carmen, básnik Kamil,
+                    brat Andrej - a, samozrejme, jeho tri ženy doma - Daniela, Dorotka a Barborka, ktorým
+                    nežné hovorí „chodiace emócie“. To sú tie dôležité súčasti, ktoré talentu dávajú zmysel
+                    a jeho obrazom zase schopnosť oživiť slová, ktoré povedala líška v Malom princovi:
+                    „Dobre vidíme iba srdcom. To hlavné je očiam neviditeľné.“
+                </p>
+                <p class="my-4">
+                    Ako je to teda s Martinom? Nie je to nič zložité. Vidí so srdcom, myslí s vášňou a žije,
+                    či
+                    stretáva sa s ľuďmi, ktorých prítomnosť mu prináša ten správny vietor do plachiet. Čo
+                    viac
+                    si možno priať? Azda už len to, aby to pokračovalo...
+                </p>
+
+                <span style="float: right">Kamarát Ľudo</span>
+            </div>
+        </div>
+        <div class="flex-1 p-8 flex justify-center">
+            <div class="container max-w-[400px] my-auto">
+                <img src="./public/assets/videos/1.png" alt="" id="img1" />
+                <div class="flex my-2 gap-2">
+                    <div class="flex-1">
+                        <img src="./public/assets/videos/2.png" alt="" id="img2" />
+                    </div>
+                    <div class="flex-1">
+                        <img src="./public/assets/videos/3.png" alt="" id="img3" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+       <div id="myModal" class="modal w-full px-12" >
+
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <iframe src="https://www.youtube.com/embed/AbXn9KBMz9c" frameborder="0" id="iframe" class="w-full h-[80vh] mt-20"></iframe>
+
+        <!-- Modal Caption (Image Text) -->
+        <!-- <div id="caption"></div> -->
+    </div>
+</section>
+
+<script>
+
+const pairs = {
+    img1: {
+        image: "videos/3.png",
+        iframe: "https://www.youtube.com/embed/AbXn9KBMz9c"
+    },
+    img2: {
+        image: "videos/2.png",
+        iframe: "https://www.youtube.com/embed/lI_hCfHcRrg"
+    },
+    img3: {
+        image: "videos/3.png",
+        iframe: "https://www.youtube.com/embed/jjzlpjNv6FI"
+    }, 
+    img4: {
+        image: "videos/4.png",
+        iframe: "https://www.youtube.com/embed/ep8bOUfaS24"
+    }
+}
+
+function showModal(iframeUrl) {
+        console.log("show modal", iframeUrl)
+        var modalFrame = document.getElementById("iframe");
+        // var captionText = document.getElementById("caption");
+        modal.style.display = "block";
+        modalFrame.src = iframeUrl;
+        // captionText.innerHTML = img.alt;
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    }
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    document.getElementById("img1").onclick = (el) => {showModal(pairs[el.target.id].iframe)}
+    document.getElementById("img2").onclick = (el) => {showModal(pairs[el.target.id].iframe)}
+    document.getElementById("img3").onclick = (el) => {showModal(pairs[el.target.id].iframe)}
+
+
+</script>

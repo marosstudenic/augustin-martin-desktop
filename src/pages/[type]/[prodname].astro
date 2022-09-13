@@ -1,7 +1,7 @@
 ---
   const { type, prodname } = Astro.params;
   const prodtype = type;
-  import Nav from "../../components/Nav";
+  import Nav from "../../components/Nav.astro";
   import MainHead from "../../components/MainHead.astro";
 
   const products = {
@@ -224,11 +224,13 @@
     }
   })
 
+  currentType = products[currentType]
 
-  var currentProduct = products[currentType].items.find(el => el.slug == prodname)
 
-  var orderOfProduct = products[currentType].items.indexOf(currentProduct)
-  const nextLink = ""
+  var currentProduct = currentType.items.find(el => el.slug == prodname)
+
+  var orderOfProduct = currentType.items.indexOf(currentProduct)
+  const nextLink = "/" + currentType.slug + "/" + currentType.items[(orderOfProduct+1)% currentType.items.length].slug
 ---
 
 <html lang="en">
@@ -237,14 +239,6 @@
   <MainHead title="Martin Augustín"
     description="Slovenský umelec Martin Augustín predstavuje v spolupráci s Galériou u Anjela svoju novú kolekciu obrazov." />
 
-
-  <style lang="scss">
-    $w-s: 750px;
-
-    a {
-      text-decoration: none;
-    }
-  </style>
 </head>
 
 <body>
@@ -252,8 +246,8 @@
     <Nav />
     <main class="w-[80vw] h-full pt-20">
       <div class="container mx-auto px-4 flex flex-col pb-4 flex">
-        <div class="flex justify-between mt-2 mb-2">
-          <a href="/" class="flex align-middle">
+        <div class="flex justify-between mt-2 mb-2 w-1/2 pr-32">
+          <a href="/#novinky" class="flex align-middle">
             <svg class="h-10 py-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#6B7280">
               <path
                 d="M13.83 19a1 1 0 0 1-.78-.37l-4.83-6a1 1 0 0 1 0-1.27l5-6a1 1 0 0 1 1.54 1.28L10.29 12l4.32 5.36a1 1 0 0 1-.78 1.64z" />
@@ -264,26 +258,34 @@
                   { currentType.title}
                 </h2>
                 <p class="ml-2 text-gray-500 text-sm my-auto">
-                  <span class="font-bold">{products[currentType].title } </span>| produkt {orderOfProduct} /
-                  { products[currentType].items.length }
+                  {
+                  currentType.items.length > 1 && <span> | produkt {orderOfProduct + 1} /
+                    { currentType.items.length }
+                  </span>
+                  }
                 </p>
               </div>
             </div>
           </a>
-          {products[currentType].items.length > 1 && 
-            <a href={nextLink}
-            class="text-sm text-gray-500 my-auto">nasledujúci
+          {currentType.items.length > 1 &&
+          <a href={nextLink} class="text-sm text-gray-500 my-auto">nasledujúci
           </a>
           }
-         
+
         </div>
 
         <div class="flex gap-20 justify-between">
-          <div class="w-full flex-1">
-            <img class="w-full max-h-84 object-cover" class="nextImg ? '' : 'active'" src={"/assets/" + currentProduct.image}
-              alt={currentProduct.title} />
+          <div class="w-full flex-1 ">
+            <div class="img-container h-[550px] relative overflow-hidden">
+              <img class="max-h-[550px] object-cover active absolute top-0"  src={"/assets/" +
+              currentProduct.image} alt={currentProduct.title} id="prod-img"/>
 
-            {currentProduct.altImage && <p class="text-gray-500 pt-2 flex justify-end" id="next-img">
+              <img class="max-h-[550px] object-cover absolute top-0" src={"/assets/" +
+            currentProduct.altImage} alt={currentProduct.title} id="alt-img"/>
+            </div>
+            
+
+            {currentProduct.altImage && <p class="text-gray-500 pt-2 justify-end pr-32 cursor-pointer" id="next-img">
               ďalší obrázok
             </p>}
           </div>
@@ -291,17 +293,17 @@
           <div class="w-full flex-1 mt-4">
 
             <h1 class="text-xl font-medium">{ currentProduct.title.toUpperCase() }</h1>
-            {currentProduct.author && <p class="text-gray-500 my-4" >
+            {currentProduct.author && <p class="text-gray-500 my-4">
               Autori: { currentProduct.author }
             </p>}
 
             <div class="description">
-            {currentProduct.descriptions.map((description) => (
-               <p class="text-gray-500 my-4" >
+              {currentProduct.descriptions.map((description) => (
+              <p class="text-gray-500 my-4">
                 <span set:html={description}></span>
               </p>
-            ))}
-             
+              ))}
+
             </div>
 
             <p class="text-gray-500 my-4">
@@ -324,6 +326,34 @@
 <style>
   body {
     font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+  }
 
+  img {
+    transform: translateY(-120%);
+    transition: all 1s ease-in-out;
+    animation-delay: 0.5s;
+  }
+
+  img.active {
+    transform: translateY(0);
   }
 </style>
+
+<script>
+document.getElementById("next-img").onclick = function() {
+  
+  let first = document.getElementById('prod-img')
+  let second  = document.getElementById("alt-img")
+
+  if (first.className.indexOf('active')> -1){
+    first.className = "absolute top-0 max-h-[550px]"
+    second.className = "max-h-[550px] object-contain active absolute top-0"
+  } else {
+    first.className = "max-h-[550px] object-contain active absolute top-0"
+    second.className = "absolute top-0 max-h-[550px]"
+  }
+  
+
+}
+
+</script>
