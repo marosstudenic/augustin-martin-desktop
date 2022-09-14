@@ -230,60 +230,58 @@
   var currentProduct = currentType.items.find(el => el.slug == prodname)
 
   var orderOfProduct = currentType.items.indexOf(currentProduct)
-  const nextLink = "/" + currentType.slug + "/" + currentType.items[(orderOfProduct+1)% currentType.items.length].slug
+  const nextLink = "/" + currentType.slug + "/" + currentType.items[(orderOfProduct + 1) % currentType.items.length].slug
 ---
 
 <html lang="en">
 
 <head>
-  <MainHead title={currentProduct.title}
-    description={"Dielo Martina Augustína" + currentProduct.descriptions[0]} />
+  <MainHead title={currentProduct.title} description={"Dielo Martina Augustína" + currentProduct.descriptions[0]} />
 
 </head>
 
 <body>
   <div class="flex">
-    <Nav />
-    <main class="w-[80vw] h-full pt-20">
-      <div class="container mx-auto px-4 flex flex-col pb-4 flex">
-        <div class="flex justify-between mt-2 mb-2 w-1/2 pr-32">
-          <a href="/#novinky" class="flex align-middle">
-            <svg class="h-10 py-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#6B7280">
-              <path
-                d="M13.83 19a1 1 0 0 1-.78-.37l-4.83-6a1 1 0 0 1 0-1.27l5-6a1 1 0 0 1 1.54 1.28L10.29 12l4.32 5.36a1 1 0 0 1-.78 1.64z" />
-            </svg>
-            <div class="flex justify-center flex-col">
-              <div class="flex">
-                <h2 class="text-gray-500 font-bold text-xl">
-                  { currentType.title}
-                </h2>
-                <p class="ml-2 text-gray-500 text-sm my-auto">
-                  {
-                  currentType.items.length > 1 && <span> | produkt {orderOfProduct + 1} /
-                    { currentType.items.length }
-                  </span>
-                  }
-                </p>
-              </div>
-            </div>
-          </a>
-          {currentType.items.length > 1 &&
-          <a href={nextLink} class="text-sm text-gray-500 my-auto">nasledujúci
-          </a>
-          }
-
-        </div>
+    <Nav selectedMenu="novinky" />
+    <main class="w-[80vw] h-full pt-20" id="novinky">
+      <div class="container mx-auto px-4 flex flex-col pb-4">
 
         <div class="flex gap-20 justify-between">
-          <div class="w-full flex-1 ">
-            <div class="img-container h-[700px] relative overflow-hidden">
-              <img class="max-h-[700px] object-cover active absolute top-0"  src={"/assets/" +
-              currentProduct.image} alt={currentProduct.title} id="prod-img"/>
-
-              <img class="max-h-[700px] object-cover absolute top-0" src={"/assets/" +
-            currentProduct.altImage} alt={currentProduct.title} id="alt-img"/>
+          <div class="w-full flex-1 pr-40 ">
+            <div class="flex justify-between">
+              <a href="/#novinky" class="flex align-middle">
+                <svg class="h-10 py-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#6B7280">
+                  <path
+                    d="M13.83 19a1 1 0 0 1-.78-.37l-4.83-6a1 1 0 0 1 0-1.27l5-6a1 1 0 0 1 1.54 1.28L10.29 12l4.32 5.36a1 1 0 0 1-.78 1.64z" />
+                </svg>
+                <div class="flex justify-center flex-col">
+                  <div class="flex">
+                    <h2 class="text-gray-500 font-bold text-xl">
+                      { currentType.title}
+                    </h2>
+                    <p class="ml-2 text-gray-500 text-sm my-auto">
+                      {
+                      currentType.items.length > 1 && <span> | produkt {orderOfProduct + 1} /
+                        { currentType.items.length }
+                      </span>
+                      }
+                    </p>
+                  </div>
+                </div>
+              </a>
+              {currentType.items.length > 1 &&
+              <a href={nextLink} class="text-sm text-gray-500 my-auto">nasledujúci
+              </a>
+              }
             </div>
-            
+            <div class="img-container w-full h-[700px] relative overflow-hidden">
+              <img class="w-full h-[750px] object-cover active absolute top-0" src={"/assets/" + currentProduct.image}
+                alt={currentProduct.title} id="prod-img" />
+
+              <img class="w-full  h-[750px] object-cover absolute top-0" src={"/assets/" + currentProduct.altImage}
+                alt={currentProduct.title} id="alt-img" />
+            </div>
+
 
             {currentProduct.altImage && <p class="text-gray-500 pt-2 justify-end pr-32 cursor-pointer" id="next-img">
               ďalší obrázok
@@ -340,20 +338,23 @@
 </style>
 
 <script>
-document.getElementById("next-img").onclick = function() {
-  
-  let first = document.getElementById('prod-img')
-  let second  = document.getElementById("alt-img")
+  if (document.getElementById("next-img")) {
+    document.getElementById("next-img").onclick = function () {
 
-  if (first.className.indexOf('active')> -1){
-    first.className = "absolute top-0 max-h-[550px]"
-    second.className = "max-h-[550px] object-contain active absolute top-0"
-  } else {
-    first.className = "max-h-[550px] object-contain active absolute top-0"
-    second.className = "absolute top-0 max-h-[550px]"
+      let first = document.getElementById('prod-img')
+      let second = document.getElementById("alt-img")
+
+      if (first.className.indexOf('active') > -1) {
+        first.className = first.className.replace("active", "")
+        second.className += " active"
+      } else {
+        first.className += " active"
+        second.className = second.className.replace("active", "")
+      }
+
+
+    }
   }
-  
 
-}
 
 </script>
