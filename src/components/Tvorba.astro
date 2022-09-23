@@ -22,7 +22,7 @@ const malba =
         <h2 class="text-gray-500 text-xl font-medium mb-4">Kresba</h2>
         <div class="items w-full">
             <div class="item" id="kresba">
-                <img src={"/assets/" + kresba.image} alt={kresba.title} class="h-[600px] w-full object-cover" />
+                <img src={"/assets/" + kresba.image} alt={kresba.title} class="h-[600px] w-full object-cover modal-src" />
                 <h3 class="text-gray-500 font-medium mt-2">{ kresba.title }</h3>
 
                 <div class="flex justify-between items-center">
@@ -41,7 +41,7 @@ const malba =
         <h2 class="text-gray-500 text-xl font-medium mb-2">Maľba</h2>
         <div class="items w-full">
             <div class="item" id="malba">
-                <img src={"/assets/" + malba.image} alt={malba.title} class="h-[600px] w-full object-cover"/>
+                <img src={"/assets/" + malba.image} alt={malba.title} class="h-[600px] w-full object-cover modal-src"/>
                 <h3 class="text-gray-500 font-medium mt-2">{ malba.title }</h3>
 
                 <div class="flex justify-between items-center">
@@ -149,5 +149,12 @@ const malba =
 
     document.getElementById("next-kresba").onclick =() => increaseKresbaActiveIndex();
     document.getElementById("next-malba").onclick = () => increaseMalbaActiveIndex();
+
+
+    var imgs = document.querySelectorAll(".modal-src");
+
+	for (let i = 0; i < imgs.length; i++) {
+		imgs[i].onclick = (img) => showModal(img.target)
+	}
 
 </script>
