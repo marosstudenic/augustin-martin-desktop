@@ -1,38 +1,114 @@
+<style>
+    .nav-dots .nav-dot {
+        width: 5px;
+        height: 5px;
+        margin: 0 4px;
+        top: 5px;
+        position: relative;
+        transform: translateY(-50%);
+        border-radius: 100%;
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.253);
+        transition: all 0.5s ease-in-out;
+
+    }
+
+    .nav-dot.active {
+        width: 9px;
+        height: 9px;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .nav-dots .nav-dot:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+</style>
+
 <section id="novinky" class="py-8">
     <div class="flex py-10 h-full">
         <div class="flex-1 px-2">
-            <h3 class="text-gray-500 mb-2 font-medium text-2xl">Novinky</h3>
-            <div class="w-[500px] relative h-[600px] group">
-                <img src="/assets/news/kamil-peteraj-a-martin-augustin-nestandard1.jpg"
-                    alt="Novinky augustin martin" class="absolute top-0 left-0 h-full w-full object-cover" />
-                <div class="hover:bg-black hover:bg-opacity-60">
-                    <div
-                        class="overlay absolute top-0 left-0 w-full h-full flex flex-col justify-center pt-16 px-4 bg-stone-900 bg-opacity-60">
-                        <h2 class="text-center text-white font-bold text-2xl leading-6">
-                            Sen menom láska
-                        </h2>
-                        <p class="text-center text-white text-sm mb-4">
-                            Kamil Peteraj, Martin Augustín
-                        </p>
+            <div class="header-wrapper flex">
+                <h3 class="text-gray-500 mb-2 font-medium text-2xl">Novinky</h3>
+                <div class="nav-dots flex flex-col justify-center pl-2">
+                    <div class="flex" id="dots-wrapper">
+                        <label for="img-1" class="nav-dot active" id="img-dot-1">
+                        </label><label for="img-1" class="nav-dot" id="img-dot-1"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="relative w-[500px] h-[600px] overflow-hidden" id="novinky-wrapper-section">
+                <div class="absolute top-0 translate-x-full novinka transition duration-700">
+                    <div class="w-[500px] relative h-[600px] group">
+                        <img src="/assets/news/kamil-peteraj-a-martin-augustin-nestandard1.jpg"
+                            alt="Novinky augustin martin" class="absolute top-0 left-0 h-full w-full object-cover" />
+                        <div class="hover:bg-black hover:bg-opacity-60">
+                            <div
+                                class="overlay absolute top-0 left-0 w-full h-full flex flex-col justify-center pt-16 px-4 bg-stone-900 bg-opacity-60">
+                                <h2 class="text-center text-white font-bold text-2xl leading-6">
+                                    Sen menom láska
+                                </h2>
+                                <p class="text-center text-white text-sm mb-4">
+                                    Kamil Peteraj, Martin Augustín
+                                </p>
 
-                        <p class="text-center text-white my-8 leading-5">
-                            Som veľmi rád, že moje ilustrácie sprevádzajú krásne a tak pravdivé
-                            básne Kamila Peteraja v edícii luxusnej knižnice.
-                        </p>
+                                <p class="text-center text-white my-8 leading-5">
+                                    Som veľmi rád, že moje ilustrácie sprevádzajú krásne a tak pravdivé
+                                    básne Kamila Peteraja v edícii luxusnej knižnice.
+                                </p>
 
-                        <p class="text-center text-white text-sm">
-                            Ja verím, že jeden z najkrajších citov je láska. Robí z ná bytosti
-                            cítiace a súcitiace. A verím, že toto spojenie prispeje k tomu aby náš
-                            svet bol krajší.
-                        </p>
-                        <div class="flex justify-center mt-6">
-                            <a href="#" class="text-white border-white border py-0.5 px-4 mt-5">Viac
-                            </a>
+                                <p class="text-center text-white text-sm">
+                                    Ja verím, že jeden z najkrajších citov je láska. Robí z ná bytosti
+                                    cítiace a súcitiace. A verím, že toto spojenie prispeje k tomu aby náš
+                                    svet bol krajší.
+                                </p>
+                                <div class="flex justify-center mt-6">
+                                    <a href="https://www.luxusnakniznica.sk/sen-menom-laska" target="_blank"
+                                        rel="nofollow noopener"
+                                        class="text-white border-white border py-0.5 px-4 mt-5">Viac
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute top-0 novinka transition duration-700">
+                    <div class="w-[500px] relative h-[600px] group">
+                        <img src="/assets/produkty/maj_priloha.png" alt="Novinky augustin martin"
+                            class="absolute top-0 left-0 h-full w-full object-cover" />
+                        <div class="hover:bg-black hover:bg-opacity-60">
+                            <div
+                                class="overlay absolute top-0 left-0 w-full h-full flex flex-col justify-center pt-16 px-4 bg-stone-900 bg-opacity-60">
+                                <h2 class="text-center text-white font-bold text-2xl leading-6">
+                                    Máj
+                                </h2>
+                                <p class="text-center text-white text-sm mb-4">
+                                    Hynek Karel Mácha
+                                </p>
+
+                                <p class="text-center text-white my-8 leading-5">
+                                    Slávne Máchovo dielo s výnimočnými ilustráciami Martina Augustína
+                                </p>
+
+                                <p class="text-center text-white">
+                               
+                                    Byl pozdní večer – první máj – <br>
+                                    večerní máj – byl lásky čas. <br>
+                                    Hrdliččin zval ku lásce hlas, <br>
+                                    kde borový zaváněl háj. <br>
+                          
+                                </p>
+                                <div class="flex justify-center mt-6">
+                                    <a href="https://www.luxusnakniznica.sk/maj" target="_blank" rel="nofollow noopener"
+                                        class="text-white border-white border py-0.5 px-4 mt-5">Viac
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="flex-1 h-[600px] flex flex-col  justify-between px-8">
@@ -66,3 +142,20 @@
 
     </div>
 </section>
+
+<script>
+    document.querySelector("#novinky-wrapper-section")
+
+    let novinky = document.querySelector("#novinky-wrapper-section").querySelectorAll(".novinka")
+    let i = 0;
+    let dots = document.querySelector("#dots-wrapper").querySelectorAll(".nav-dot");
+
+    setInterval(() => {
+        novinky[i].className = novinky[i].className.replace("translate-x-full", "");
+        dots[i].className = dots[i].className.replace("active", "")
+        i++;
+        i %= novinky.length;
+        novinky[i].className += " translate-x-full"
+        dots[i].className += " active"
+    }, 5000);
+</script>

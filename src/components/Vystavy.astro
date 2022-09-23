@@ -310,33 +310,33 @@
         },
     ];
 ---
+
 <style lang="scss">
-.accordion {
-	overflow: hidden;
+    .accordion {
+        overflow: hidden;
 
-	&__intro {
-		position: relative;
-		cursor: pointer;
-	}
+        &__intro {
+            position: relative;
+            cursor: pointer;
+        }
 
-	&__content {
-		max-height: 0;
-		overflow: hidden;
-		will-change: max-height;
-		transition: all 0.25s ease-out;
-		opacity: 0;
-	}
+        &__content {
+            max-height: 0;
+            overflow: hidden;
+            will-change: max-height;
+            transition: all 0.25s ease-out;
+            opacity: 0;
+        }
 
 
-	&__active {
-		.accordion__intro {
-		}
+        &__active {
+            .accordion__intro {}
 
-		.accordion__content {
-			opacity: 1;
-		}
-	}
-}
+            .accordion__content {
+                opacity: 1;
+            }
+        }
+    }
 </style>
 <section id="vystavy" class="px-4 accordion accordion-flush py-8">
     <div class="flex gap-16">
@@ -356,12 +356,27 @@
                 <h3 class="text-gray-500 font-medium">{ item.date }</h3>
                 {item.locations.map((location) => (
 
-                <p class="text-gray-500 text-sm py-2" set:html={location} >
+                <p class="text-gray-500 text-sm py-2" set:html={location}>
                 </p>
                 ))}
-
             </div>
             ))}
+
+            <div class="accordion__content">
+                {samostatne_vystavy.slice(5).map((item) => (
+                <div class="item my-2">
+                    <h3 class="text-gray-500 font-medium">{ item.date }</h3>
+                    {item.locations.map((location) =>
+                    <p class="text-gray-500 text-sm py-2" set:html={location}>
+                    </p>
+                    )}
+                </div>
+                ))}
+            </div>
+
+            <div class="flex gap-16 accordion__intro mb-4">
+                <p class="flex-1 text-gray-500 cursor-pointer rozbalit font-bold">rozbaliť</p>
+            </div>
         </div>
 
         <div class="flex-1">
@@ -379,38 +394,28 @@
             <div class="item my-2">
                 <h3 class="text-gray-500 font-medium">{ item.date }</h3>
                 {item.locations.map((location) => (
-                <p class="text-gray-500 text-sm py-2" set:html={location} >
+                <p class="text-gray-500 text-sm py-2" set:html={location}>
                 </p>
                 ))}
 
             </div>
             ))}
-        </div>
-    </div>
-    <div class="accordion">
 
-        
-
-        <div class="flex gap-16 accordion__content">
-            {[samostatne_vystavy, spolocne_vystavy].map((vystavy) => (
-            <div class="flex-1">
-                    {vystavy.slice(4).map((item) => (
-                    <div class="item my-2">
-                        <h3 class="text-gray-500 font-medium">{ item.date }</h3>
-                        {item.locations.map((location) =>
-                        <p class="text-gray-500 text-sm py-2" set:html={location}>
-                        </p>
-                        )}
-                    </div>
-                    ))}
+            <div class="accordion__content">
+                {spolocne_vystavy.slice(5).map((item) => (
+                <div class="item my-2">
+                    <h3 class="text-gray-500 font-medium">{ item.date }</h3>
+                    {item.locations.map((location) =>
+                    <p class="text-gray-500 text-sm py-2" set:html={location}>
+                    </p>
+                    )}
+                </div>
+                ))}
             </div>
-            ))}
-        </div>
-
-        <div class="flex gap-16 accordion__intro mb-4">
-            <p class="flex-1 text-gray-500 cursor-pointer rozbalit font-bold">rozbaliť</p>
         </div>
     </div>
+
+
 
 
 </section>
@@ -419,29 +424,32 @@
     const accordions = document.querySelectorAll(".accordion");
 
     const openAccordion = (accordion) => {
-        const content = accordion.querySelector(".accordion__content");
+        const content = accordion.querySelectorAll(".accordion__content");
+        console.log(content);
         accordion.classList.add("accordion__active");
-        content.style.maxHeight = content.scrollHeight + "px";
-        document.querySelectorAll(".rozbalit").forEach((item) => item.innerText="skryť")
+        content[0].style.maxHeight = content[0].scrollHeight + "px";
+        content[1].style.maxHeight = content[1].scrollHeight + "px";
+        document.querySelectorAll(".rozbalit").forEach((item) => item.innerText = "skryť")
     };
 
     const closeAccordion = (accordion) => {
-        const content = accordion.querySelector(".accordion__content");
+        const content = accordion.querySelectorAll(".accordion__content");
+        console.log(content);
         accordion.classList.remove("accordion__active");
-        content.style.maxHeight = null;
-        document.querySelectorAll(".rozbalit").forEach((item) => item.innerText="rozbaliť")
-
+        content[0].style.maxHeight = null;
+        content[1].style.maxHeight = null;
+        document.querySelectorAll(".rozbalit").forEach((item) => item.innerText = "rozbaliť");
     };
 
     accordions.forEach((accordion) => {
         const intro = accordion.querySelector(".accordion__intro");
         const content = accordion.querySelector(".accordion__content");
-
+        //realne su dva ale nam staci len jeden, pretoze sa bud oba otvoria alebo zatvoria
+        console.log(!!content.style.maxHeight)
         intro.onclick = () => {
             if (content.style.maxHeight) {
                 closeAccordion(accordion);
             } else {
-                accordions.forEach((accordion) => closeAccordion(accordion));
                 openAccordion(accordion);
             }
         };
