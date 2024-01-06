@@ -1,3 +1,65 @@
+---
+const karticky = [
+    {
+        image: "/assets/novinky/MOD PERSPEKT.jpg",
+        title: "Modlitebník",
+        text: [
+            "Mons. ThLic. V. Pleva, M. Augustín, B. Baloghová",
+            "Bibliofília dostupná v Luxusnej knižnici cez link nižšie",
+            "Vydavateľstvo Ikar",
+        ],
+
+        link: "www.luxusnakniznica.sk/modlitebnik",
+    },
+    {
+        image: "/assets/novinky/VyznaniaMA.png",
+        title: "Vyznania",
+        text: [
+            "Kamil Peteraj, Martin Augustín",
+            "Limitovaná edícia",
+            "Bibliofília je dostupná v Luxusnej knižnici cez link nižšie",
+            "Vydavateľstvo Ikar",
+        ],
+
+        link: "https://www.luxusnakniznica.sk/vyznania",
+    },
+    {
+        image: "/assets/novinky/kamil-peteraj.jpg",
+        title: "Sen menom láska",
+        text: [
+            "Som veľmi rád, že moje ilustrácie sprevádzajú krásne a tak pravdivé básne Kamila Peteraja v edícii luxusnej knižnice.",
+            "Ja verím, že jeden z najkrajších citov je láska. Robí z nás bytosti cítiace a súcitiace. A verím, že toto spojenie prispeje k tomu aby náš svet bol krajší.",
+        ],
+    },
+
+    {
+        image: "/assets/produkty/kytice.jpg",
+        title: "Kytice",
+        text: [
+            "Jediná pôvodná básnická zbierka, ktorú Erben vydal",
+            "Jedinečné limitované vydanie",
+        ],
+    },
+
+    {
+        image: "/assets/produkty/maj_priloha.png",
+        title: "Máj",
+        text: [
+            "Limitovaná edícia knihy Máj, dostupná v Českej republike.",
+            "Je súčasťou kráľovskej zbierky Buckinghamského paláca v Londýne.",
+        ],
+    },
+
+    {
+        image: "/assets/spoluprace/zrkadlo_duse.jpg",
+        title: "Zrkadlo duše",
+        text: [
+            "Monografia je súčasťou zbierky Francúzskej národnej knižnice v Paríži.",
+        ],
+    },
+];
+---
+
 <style>
     .nav-dots .nav-dot {
         font-size: 11px;
@@ -10,8 +72,6 @@
         display: inline-block;
         transition: all 0.5s ease-in-out;
         color: rgba(0, 0, 0, 0.253);
-
-
     }
 
     .nav-dot.active {
@@ -25,213 +85,40 @@
 </style>
 
 <section id="novinky" class="py-8">
-    <div class="flex py-10 h-full">
-        <div class="flex-1 px-2">
-            <div class="header-wrapper flex">
-                <h3 class="text-gray-500 mb-2 font-medium text-2xl">Novinky</h3>
-                <div class="nav-dots flex flex-col justify-end pl-2 pb-2">
-                    <div class="flex align-bottom" id="dots-wrapper">
-                        <label for="img-1" class="nav-dot active font-bold">1</label>
-                        <label for="img-1" class="nav-dot font-bold">2</label>
-                        <label for="img-1" class="nav-dot font-bold">3</label>
-                        <label for="img-1" class="nav-dot font-bold">4</label>
-                    </div>
-                </div>
-            </div>
-            <div class="relative w-[500px] h-[600px] overflow-hidden" id="novinky-wrapper-section">
-
-                <div class="absolute top-0 novinka transition duration-700">
-                    <div class="w-[500px] relative h-[600px] group">
-                        <img src="/assets/produkty/kytice.jpg"
-                            alt="Novinky augustin martin" class="absolute top-0 left-0 h-full w-full object-cover" />
-                        <div class="hover:bg-black hover:bg-opacity-60">
-                            <div
-                                class="overlay absolute top-0 left-0 w-full h-full flex flex-col justify-center pt-16 px-4 bg-stone-900 bg-opacity-60">
-                                <h2 class="text-center text-white font-bold text-2xl leading-6">
-                                    KYTICE
-                                </h2>
-                                <p class="text-center text-white text-sm mb-4">
-                                    Karel Jaromír Erben
-                                </p>
-
-                                <p class="text-center text-white my-8 leading-5">
-                                    Jediná pôvodná básnická zbierka, ktorú Erben vydal
-                                </p>
-
-                                <p class="text-center text-white text-sm">
-                                    Jedinečné limitované vydanie
-                                </p>
-
-                                <div class="flex justify-center mt-6">
-                                    <a href="/publikacie/kytice" target="_blank"
-                                        rel="nofollow noopener"
-                                        class="text-white border-white border py-0.5 px-4 mt-5">Viac
-                                    </a>
+    <!--DESKTOP -->
+    <div class="py-10 h-full md:block px-4">
+        <h3 class="text-gray-500 mb-2 font-medium text-2xl">Novinky</h3>
+        <div class="grid md:grid-cols-3 gap-8 md:max-w-6xl">
+            {
+                karticky.map((karticka) => (
+                    <div class="rounded overflow-hidden shadow-lg flex justify-between flex-col">
+                        <div class="">
+                            <img class="w-full" src={karticka.image} alt="" />
+                            <div class="px-6 py-4">
+                                <div class="text-gray-500 text-lg font-semibold mb-2">
+                                    {karticka.title}
+                                </div>
+                                <div class="flex flex-col gap-4">
+                                    {karticka.text.map((item) => (
+                                        <p class="text-gray-700 text-base">
+                                            {item}
+                                        </p>
+                                    ))}
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="absolute top-0 translate-x-full novinka transition duration-700">
-                    <div class="w-[500px] relative h-[600px] group">
-                        <img src="/assets/produkty/maj_priloha.png" alt="Novinky augustin martin"
-                            class="absolute top-0 left-0 h-full w-full object-cover" />
-                        <div class="hover:bg-black hover:bg-opacity-60">
-                            <div
-                                class="overlay absolute top-0 left-0 w-full h-full flex flex-col justify-center pt-16 px-4 bg-stone-900 bg-opacity-60">
-                                <h2 class="text-center text-white font-bold text-2xl leading-6">
-                                    Máj
-                                </h2>
-                                <p class="text-center text-white text-sm mb-4">
-                                    Hynek Karel Mácha
-                                </p>
 
-                                <p class="text-center text-white my-8 leading-5">
-                                    Limitovaná edícia knihy Máj, dostupná v Českej republike.
-                                </p>
-
-                                <p class="text-center text-white">
-                                    Je súčasťou kráľovskej zbierky Buckinghamského paláca v Londýne.
-                                </p>
-                                <div class="flex justify-center mt-6">
-                                    <a href="https://www.luxusnakniznica.sk/maj" target="_blank" rel="nofollow noopener"
-                                        class="text-white border-white border py-0.5 px-4 mt-5">Viac
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="px-6 pt-4 pb-2">
+                            <a
+                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                                href={karticka.link}
+                            >
+                                Zistiť viac
+                            </a>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="absolute top-0 translate-x-full novinka transition duration-700">
-                    <div class="w-[500px] relative h-[600px] group">
-                        <img src="/assets/spoluprace/zrkadlo_duse.jpg" alt="Novinky augustin martin"
-                            class="absolute top-0 left-0 h-full w-full object-cover" />
-                        <div class="hover:bg-black hover:bg-opacity-60">
-                            <div
-                                class="overlay absolute top-0 left-0 w-full h-full flex flex-col justify-center pt-16 px-4 bg-stone-900 bg-opacity-60">
-                                <h2 class="text-center text-white font-bold text-2xl leading-6">
-                                    Zrkadlo duše
-                                </h2>
-                                <p class="text-center text-white text-sm mb-4">
-                                    Ľudovít Petránsky
-                                </p>
-
-                                <p class="text-center text-white my-8 leading-5">
-                                    Monografia je súčasťou zbierky Francúzskej národnej knižnice v Paríži.
-                                </p>
-
-                                <div class="flex justify-center mt-6">
-                                    <a href="https://www.luxusnakniznica.sk/knihy/martin-augustin-zrkadlo-duse"
-                                        target="_blank" rel="nofollow noopener"
-                                        class="text-white border-white border py-0.5 px-4 mt-5">Viac
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="absolute top-0 translate-x-full novinka transition duration-700">
-                    <div class="w-[500px] relative h-[600px] group">
-                        <img src="/assets/news/kamil-peteraj-a-martin-augustin-nestandard1.jpg"
-                            alt="Novinky augustin martin" class="absolute top-0 left-0 h-full w-full object-cover" />
-                        <div class="hover:bg-black hover:bg-opacity-60">
-                            <div
-                                class="overlay absolute top-0 left-0 w-full h-full flex flex-col justify-center pt-16 px-4 bg-stone-900 bg-opacity-60">
-                                <h2 class="text-center text-white font-bold text-2xl leading-6">
-                                    Sen menom láska
-                                </h2>
-                                <p class="text-center text-white text-sm mb-4">
-                                    Kamil Peteraj, Martin Augustín
-                                </p>
-
-                                <p class="text-center text-white my-8 leading-5">
-                                    Som veľmi rád, že moje ilustrácie sprevádzajú krásne a tak
-                                    pravdivé básne Kamila Peteraja v edícii luxusnej knižnice.
-
-                                </p>
-
-                                <p class="text-center text-white text-sm">
-                                    Ja verím, že jeden z najkrajších citov je láska. Robí z ná bytosti cítiace
-                                    a súcitiace. A verím, že toto spojenie prispeje k tomu aby náš svet bol krajší.
-
-                                </p>
-
-
-                                <p class="text-center text-white text-sm">
-                                    Kniha je súčasťou zbierky Francúzskej národnej knižnice v Paríži.
-                                </p>
-
-
-
-                                <div class="flex justify-center mt-6">
-                                    <a href="https://www.luxusnakniznica.sk/sen-menom-laska" target="_blank"
-                                        rel="nofollow noopener"
-                                        class="text-white border-white border py-0.5 px-4 mt-5">Viac
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                
-
-              
-
-
-
-            </div>
+                ))
+            }
         </div>
-
-        <div class="flex-1 h-[600px] flex flex-col  justify-between px-8">
-            <div class="flex-1 flex h-[250px] gap-40">
-                <a class="h-full cursor-pointer" href="/publikacie/kytice">
-                    <h3 class="text-gray-500 mb-2">Publikácie</h3>
-                    <img src="/assets/news/brozovanaPublikacia_obrazyTextySentencie.jpg" alt=""
-                        class="object-contain h-full" />
-                </a>
-                <a class="h-full cursor-pointer" href="/textilie/hodvabna-satka">
-                    <h3 class="text-gray-500 mb-2">Textílie</h3>
-                    <img src="/assets/news/hodvabnaSatka.jpg" alt="" class="object-contain h-full cursor-pointer" />
-                </a>
-            </div>
-
-            <div class="flex-1 flex  h-[250px] gap-40 mt-16">
-                <a class=" h-full cursor-pointer" href="listy/slnko-nad-hlavou">
-                    <h3 class="text-gray-500 mb-2">Grafické listy</h3>
-                    <img src="/assets/news/grafList_slnkoNadHlavou.jpg" alt=""
-                        class="object-contain h-full cursor-pointer" />
-                </a>
-                <a class=" h-full cursor-pointer" href="limitovane/sen-menom-laska">
-                    <h3 class="text-gray-500 mb-2">Limitované edície</h3>
-                    <img src="/assets/news/limitovane_senMenomLaska.jpg" alt="" class="object-contain h-full" />
-                </a>
-            </div>
-
-
-        </div>
-
-
     </div>
 </section>
-
-<script>
-    document.querySelector("#novinky-wrapper-section")
-
-    let novinky = document.querySelector("#novinky-wrapper-section").querySelectorAll(".novinka")
-    let i = 0;
-    let dots = document.querySelector("#dots-wrapper").querySelectorAll(".nav-dot");
-
-    setInterval(() => {
-        novinky[i].className += " translate-x-full"
-        dots[i].className = dots[i].className.replace("active", "")
-        i++;
-        i %= novinky.length;
-        novinky[i].className = novinky[i].className.replace("translate-x-full", "");
-        dots[i].className += " active"
-    }, 5000);
-</script>

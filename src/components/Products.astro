@@ -1,0 +1,45 @@
+---
+const categories = [
+    {
+        name: "Publikácie",
+        image: "/assets/news/brozovanaPublikacia_obrazyTextySentencie.jpg",
+        link: "/publikacie/kytice",
+    },
+    {
+        name: "Textílie",
+        image: "/assets/news/hodvabnaSatka.jpg",
+        link: "/textilie/hodvabna-satka",
+    },
+    {
+        name: "Grafické listy",
+        image: "/assets/news/grafList_slnkoNadHlavou.jpg",
+        link: "/listy/slnko-nad-hlavou",
+    },
+    {
+        name: "Limitované edície",
+        image: "/assets/news/limitovane_senMenomLaska.jpg",
+        link: "/limitovane/sen-menom-laska",
+    },
+];
+---
+
+<section id="products" class="w-full px-4 pt-20 mb-20">
+    <h3 class="text-gray-500 mb-4 font-medium text-2xl">
+        Diela, ktoré je možné zakúpiť
+    </h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-16 max-w-4xl">
+        {
+            categories.map((category) => (
+                <a class="cursor-pointer" href={category.link}>
+                    <h3 class="text-gray-500 mb-2">{category.name}</h3>
+                    <img
+                        src={category.image}
+                        alt=""
+                        class="object-cover h-full"
+                    />
+                </a>
+            ))
+        }
+    </div>
+</section>

@@ -15,7 +15,7 @@
         /* Hidden by default */
         position: fixed;
         /* Stay in place */
-        z-index: 1;
+        z-index: 50;
         /* Sit on top */
         padding-top: 50ppx;
         /* Location of the box */
@@ -62,11 +62,11 @@
 
     @keyframes zoom {
         from {
-            transform: scale(0)
+            transform: scale(0);
         }
 
         to {
-            transform: scale(1)
+            transform: scale(1);
         }
     }
 
@@ -96,66 +96,107 @@
     }
 </style>
 
-<section id="uvod" class="pt-44 pb-12">
-    <div class="flex">
-        <div class="flex-1">
+<section id="uvod" class="pb-12 md:pt-60">
+    <div class="block md:flex">
+        <img
+            src="/assets/welcome-images/m.augustin_22_097w.jpg"
+            alt=""
+            class="w-full object-contain block md:hidden"
+        />
+        <div class="flex-1 py-4 px-4">
             <div class="text-gray-500 text-sm pr-8">
                 <h2 class="font-medium text-2xl">Maľovať je vášeň</h2>
                 <p class="my-4">
-                    „Tvoriť a maľovať je vášeň. Vášeň najsilnejšia a nepremožiteľná, ktorá, aj keď všetky
-                    túžby v tebe pohasli, nesmie pominúť. Všetkého sa môžeš zriecť, vo všetkom rezignovať,
-                    ale v umení nikdy.“ Slová Jana Zrzavého rezonujú aj po mnohých rokoch. Nielen v obrazoch
-                    českého maliara, ale aj v obrazoch, či myslení jeho duchovných nasledovníkov. Patrí k
-                    nim aj Martin, pre ktorého je maľovanie vášňou. Každodennou, vytrvalou, spaľujúcou. Ale
-                    aj intímnou spoveďou s tichým vyznaním. A keď prídu pochybnosti, nikdy nevidieť
-                    rezignáciu. Naopak, jeho ženské tváre odzrkadľujú galériu našich vznešených predstáv i
-                    najtajnejších túžob. Sú blízke i vzdialené, rozmaľované i tajuplne sa vynárajúce z
-                    monochrómnej hmly. Majú veľa chutí i vôní. Sú tam Madame de Pompadour aj Levočská biela
-                    pani.
+                    „Tvoriť a maľovať je vášeň. Vášeň najsilnejšia a
+                    nepremožiteľná, ktorá, aj keď všetky túžby v tebe pohasli,
+                    nesmie pominúť. Všetkého sa môžeš zriecť, vo všetkom
+                    rezignovať, ale v umení nikdy.“ Slová Jana Zrzavého rezonujú
+                    aj po mnohých rokoch. Nielen v obrazoch českého maliara, ale
+                    aj v obrazoch, či myslení jeho duchovných nasledovníkov.
+                    Patrí k nim aj Martin, pre ktorého je maľovanie vášňou.
+                    Každodennou, vytrvalou, spaľujúcou. Ale aj intímnou spoveďou
+                    s tichým vyznaním. A keď prídu pochybnosti, nikdy nevidieť
+                    rezignáciu. Naopak, jeho ženské tváre odzrkadľujú galériu
+                    našich vznešených predstáv i najtajnejších túžob. Sú blízke
+                    i vzdialené, rozmaľované i tajuplne sa vynárajúce z
+                    monochrómnej hmly. Majú veľa chutí i vôní. Sú tam Madame de
+                    Pompadour aj Levočská biela pani.
                 </p>
                 <p class="my-4">
-                    Martin často pripomína, že je šťastný, že môže robiť to, čo ho aj baví. Ale zároveň
-                    zdôrazňuje, že by to nešlo bez ľudí, ktorých stretol a ktorí ho posúvali v jeho živote i
-                    tvorbe. Či už to bola mama Božka, vydavateľka Gabika, galeristka Carmen, básnik Kamil,
-                    brat Andrej - a, samozrejme, jeho tri ženy doma - Daniela, Dorotka a Barborka, ktorým
-                    nežné hovorí „chodiace emócie“. To sú tie dôležité súčasti, ktoré talentu dávajú zmysel
-                    a jeho obrazom zase schopnosť oživiť slová, ktoré povedala líška v Malom princovi:
-                    „Dobre vidíme iba srdcom. To hlavné je očiam neviditeľné.“
+                    Martin často pripomína, že je šťastný, že môže robiť to, čo
+                    ho aj baví. Ale zároveň zdôrazňuje, že by to nešlo bez ľudí,
+                    ktorých stretol a ktorí ho posúvali v jeho živote i tvorbe.
+                    Či už to bola mama Božka, vydavateľka Gabika, galeristka
+                    Carmen, básnik Kamil, brat Andrej - a, samozrejme, jeho tri
+                    ženy doma - Daniela, Dorotka a Barborka, ktorým nežné hovorí
+                    „chodiace emócie“. To sú tie dôležité súčasti, ktoré talentu
+                    dávajú zmysel a jeho obrazom zase schopnosť oživiť slová,
+                    ktoré povedala líška v Malom princovi: „Dobre vidíme iba
+                    srdcom. To hlavné je očiam neviditeľné.“
                 </p>
                 <p class="my-4">
-                    Ako je to teda s Martinom? Nie je to nič zložité. Vidí so srdcom, myslí s vášňou a žije,
-                    či
-                    stretáva sa s ľuďmi, ktorých prítomnosť mu prináša ten správny vietor do plachiet. Čo
-                    viac
-                    si možno priať? Azda už len to, aby to pokračovalo...
+                    Ako je to teda s Martinom? Nie je to nič zložité. Vidí so
+                    srdcom, myslí s vášňou a žije, či stretáva sa s ľuďmi,
+                    ktorých prítomnosť mu prináša ten správny vietor do
+                    plachiet. Čo viac si možno priať? Azda už len to, aby to
+                    pokračovalo...
                 </p>
 
-                <span style="float: right">Kamarát Ľudo</span>
+                <div class="flex justify-end">
+                    <span style="float: right">Kamarát Ľudo</span>
+                </div>
             </div>
         </div>
         <div class="flex-1 flex">
-            <div class="container max-w-[500px] my-auto">
-                <img src="assets/videos/1.png" alt="" id="img1" />
-                <div class="flex my-2 gap-2">
-                    <div class="flex-1">
-                        <img src="assets/videos/2.png" alt="" id="img2" />
+            <div class="container max-w-[500px] my-auto px-2 mt-8">
+                <img
+                    src="/assets/videos/1.png"
+                    alt=""
+                    id="img1"
+                    class="rounded-md"
+                />
+                <p class="text-gray-600 text-sm my-2 px-4">
+                    Pozvánka do ateliéru tajomstiev
+                </p>
+                <div class="w-full md:flex my-2 gap-2">
+                    <div class="flex-1 my-8 md:my-0">
+                        <img
+                            src="/assets/videos/2.png"
+                            alt=""
+                            id="img2"
+                            class="w-full rounded-md"
+                        />
+                        <p class="text-gray-600 text-sm my-2 px-4">
+                            Nikdy som si nemyslel, že budem malovať
+                        </p>
                     </div>
                     <div class="flex-1">
-                        <img src="assets/videos/3.png" alt="" id="img3" />
+                        <img
+                            src="/assets/videos/3.png"
+                            alt=""
+                            id="img3"
+                            class="w-full rounded-md"
+                        />
+                        <p class="text-gray-600 text-sm my-2 px-4">
+                            Obraz | Nečakám ťa na kolenách
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-       <div id="myModal2" class="modal w-full px-12" >
-
+    <div id="myModal2" class="modal w-full px-12">
         <!-- The Close Button -->
         <span class="close2">&times;</span>
 
         <!-- Modal Content (The Image) -->
-        <iframe src="" frameborder="0" id="iframe" class="w-full h-[80vh] mt-20" title="welcome video"></iframe>
+        <iframe
+            src=""
+            frameborder="0"
+            id="iframe"
+            class="w-full h-[80vh] mt-20"
+            title="welcome video"></iframe>
 
         <!-- Modal Caption (Image Text) -->
         <!-- <div id="caption"></div> -->
@@ -163,51 +204,53 @@
 </section>
 
 <script>
+    const pairs = {
+        img1: {
+            image: "videos/1.png",
+            iframe: "https://www.youtube.com/embed/jjzlpjNv6FI",
+        },
+        img2: {
+            image: "videos/2.png",
+            iframe: "https://www.youtube.com/embed/lI_hCfHcRrg",
+        },
+        img3: {
+            image: "videos/3.png",
+            iframe: "https://www.youtube.com/embed/AbXn9KBMz9c",
+        },
+        img4: {
+            image: "videos/4.png",
+            iframe: "https://www.youtube.com/embed/ep8bOUfaS24",
+        },
+    };
 
-const pairs = {
-    img1: {
-        image: "videos/1.png",
-        iframe: "https://www.youtube.com/embed/jjzlpjNv6FI"
-    },
-    img2: {
-        image: "videos/2.png",
-        iframe: "https://www.youtube.com/embed/lI_hCfHcRrg"
-    },
-    img3: {
-        image: "videos/3.png",
-        iframe: "https://www.youtube.com/embed/AbXn9KBMz9c"
-    }, 
-    img4: {
-        image: "videos/4.png",
-        iframe: "https://www.youtube.com/embed/ep8bOUfaS24"
-    }
-}
-
-function showModal(iframeUrl) {
-        console.log("show modal", iframeUrl)
+    function showModal(iframeUrl) {
+        console.log("show modal", iframeUrl);
         var modalFrame = document.getElementById("iframe");
         // var captionText = document.getElementById("caption");
         modal.style.display = "block";
         modalFrame.src = iframeUrl;
         // captionText.innerHTML = img.alt;
-        
+
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close2")[0];
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function () {
             modal.style.display = "none";
-        }
+        };
     }
+
     // Get the modal
     var modal = document.getElementById("myModal2");
 
-    
-
     // Get the image and insert it inside the modal - use its "alt" text as a caption
-    document.getElementById("img1").onclick = (el) => {showModal(pairs[el.target.id].iframe)}
-    document.getElementById("img2").onclick = (el) => {showModal(pairs[el.target.id].iframe)}
-    document.getElementById("img3").onclick = (el) => {showModal(pairs[el.target.id].iframe)}
-
-
+    document.getElementById("img1").onclick = (el) => {
+        showModal(pairs[el.target.id].iframe);
+    };
+    document.getElementById("img2").onclick = (el) => {
+        showModal(pairs[el.target.id].iframe);
+    };
+    document.getElementById("img3").onclick = (el) => {
+        showModal(pairs[el.target.id].iframe);
+    };
 </script>

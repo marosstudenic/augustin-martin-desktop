@@ -1,160 +1,173 @@
 ---
 const kresba = {
-    title: "Červené Záhrady",
-    description: "kresba, koláž, plátkové zlato",
-    date: "2021",
-    image: "welcome-images/cervene_zahrady.jpg",
-}
+  title: "Červené Záhrady",
+  description: "kresba, koláž, plátkové zlato",
+  date: "2021",
+  image: "welcome-images/cervene_zahrady.jpg",
+};
 
-const malba =
-    {
-        title: "Z jedného hniezda",
-        description: "akryl na plátne",
-        date: "2019",
-        image: "cas_plynie/z_jedneho_miesta.jpg",
-    }
+const malba = {
+  title: "Z jedného hniezda",
+  description: "akryl na plátne",
+  date: "2019",
+  image: "cas_plynie/z_jedneho_miesta.jpg",
+};
 ---
 
 <style>
+
 </style>
-<section id="tvorba" class="px-4 py-8 flex gap-18">
-    <div class="kresba flex-1 pr-40">
-        <h2 class="text-gray-500 text-xl font-medium mb-4">Kresba</h2>
-        <div class="items w-full">
-            <div class="item" id="kresba">
-                <img src={"/assets/" + kresba.image} alt={kresba.title} class="h-[600px] w-full object-cover modal-src" />
-                <h3 class="text-gray-500 font-medium mt-2">{ kresba.title }</h3>
+<section id="tvorba" class="px-4 py-8 md:flex gap-18">
+  <div class="kresba flex-1 md:pr-40 pb-8">
+    <h2 class="text-gray-500 text-xl font-medium mb-2">Kresba</h2>
+    <div class="items w-full">
+      <div class="item" id="kresba">
+        <img
+          src={"/assets/" + kresba.image}
+          alt={kresba.title}
+          class="w-full object-cover modal-src rounded-md"
+        />
+        <h3 class="text-gray-500 font-medium mt-2">{kresba.title}</h3>
 
-                <div class="flex justify-between items-center">
-                    <p class="text-gray-500 text-sm" id="kresba-description">
-                        { kresba.description } | { kresba.date }
-                    </p>
-                    <button class="text-gray-500 text-sm hover-underline-animation" id="next-kresba">
-                        nasledujúca
-                    </button>
-                </div>
-            </div>
-
+        <div class="flex justify-between items-center">
+          <p class="text-gray-500 text-sm" id="kresba-description">
+            {kresba.description} | {kresba.date}
+          </p>
+          <button
+            class="text-gray-500 text-sm hover-underline-animation"
+            id="next-kresba"
+          >
+            nasledujúca
+          </button>
         </div>
+      </div>
     </div>
-    <div class="malba flex-1 pr-40">
-        <h2 class="text-gray-500 text-xl font-medium mb-2">Maľba</h2>
-        <div class="items w-full">
-            <div class="item" id="malba">
-                <img src={"/assets/" + malba.image} alt={malba.title} class="h-[600px] w-full object-cover modal-src"/>
-                <h3 class="text-gray-500 font-medium mt-2">{ malba.title }</h3>
+  </div>
+  <div class="malba flex-1 md:pr-40">
+    <h2 class="text-gray-500 text-xl font-medium mb-2">Maľba</h2>
+    <div class="items w-full">
+      <div class="item" id="malba">
+        <img
+          src={"/assets/" + malba.image}
+          alt={malba.title}
+          class="w-full object-cover modal-src rounded-md"
+        />
+        <h3 class="text-gray-500 font-medium mt-2">{malba.title}</h3>
 
-                <div class="flex justify-between items-center">
-                    <p class="text-gray-500 text-sm" id="malba-description">
-                        { malba.description } | { malba.date }
-                    </p>
-                    <button class="text-gray-500 text-sm hover-underline-animation" id="next-malba">
-                        nasledujúca
-                    </button>
-                </div>
-            </div>
-
+        <div class="flex justify-between items-center">
+          <p class="text-gray-500 text-sm" id="malba-description">
+            {malba.description} | {malba.date}
+          </p>
+          <button
+            class="text-gray-500 text-sm hover-underline-animation"
+            id="next-malba"
+          >
+            nasledujúca
+          </button>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
-
-
-
 <script>
-    // function getImageUrl(name) {
-    //   return new URL(`../assets/images/${name}`, import.meta.url).href;
-    // }
+  // function getImageUrl(name) {
+  //   return new URL(`../assets/images/${name}`, import.meta.url).href;
+  // }
 
-    const kresba = [
-        {
-            title: "Červené Záhrady",
-            description: "kresba, koláž, plátkové zlato",
-            date: "2021",
-            image: "welcome-images/cervene_zahrady.jpg",
-        },
-        {
-            title: "V Snoch ukryté...",
-            description: "kresba, koláž, plátkové zlato",
-            date: "2021",
-            image: "novinky/v_snoch_ukryte.jpg",
-        },
-        {
-            title: "Pieseň pre vtáčika",
-            description: "kresba, koláž, plátkové zlato",
-            date: "2021",
-            image: "novinky/piesen_pre_vtacika.jpg",
-        },
-        {
-            title: "Podrž si šťastie v dlaniach",
-            description: "kresba, koláž na japonskom papieri",
-            date: "2021",
-            image: "novinky/podrz_si_stastie_v_dlaniach.jpg",
-        },
-    ];
+  const kresba = [
+    {
+      title: "Červené Záhrady",
+      description: "kresba, koláž, plátkové zlato",
+      date: "2021",
+      image: "welcome-images/cervene_zahrady.jpg",
+    },
+    {
+      title: "V Snoch ukryté...",
+      description: "kresba, koláž, plátkové zlato",
+      date: "2021",
+      image: "novinky/v_snoch_ukryte.jpg",
+    },
+    {
+      title: "Pieseň pre vtáčika",
+      description: "kresba, koláž, plátkové zlato",
+      date: "2021",
+      image: "novinky/piesen_pre_vtacika.jpg",
+    },
+    {
+      title: "Podrž si šťastie v dlaniach",
+      description: "kresba, koláž na japonskom papieri",
+      date: "2021",
+      image: "novinky/podrz_si_stastie_v_dlaniach.jpg",
+    },
+  ];
 
-    const malba = [
-        {
-            title: "Z jedného hniezda",
-            description: "akryl na plátne",
-            date: "2019",
-            image: "cas_plynie/z_jedneho_miesta.jpg",
-        },
-        {
-            title: "Z hĺbky duše",
-            description: "akryl na plátne",
-            date: "2018",
-            image: "cas_plynie/z_hlbky_duse.jpg",
-        },
-        {
-            title: "Odpúšťam",
-            description: "akryl, olej na lipovom dreve",
-            date: "2019",
-            image: "novinky/odpusta.jpg",
-        },
-        {
-            title: "Nečakám ťa na kolenách",
-            description: "akryl, olej na lipovom dreve",
-            date: "2020",
-            image: "cas_plynie/necakam_ta_na_kolenach_1.jpg",
-        },
-    ];
+  const malba = [
+    {
+      title: "Z jedného hniezda",
+      description: "akryl na plátne",
+      date: "2019",
+      image: "cas_plynie/z_jedneho_miesta.jpg",
+    },
+    {
+      title: "Z hĺbky duše",
+      description: "akryl na plátne",
+      date: "2018",
+      image: "cas_plynie/z_hlbky_duse.jpg",
+    },
+    {
+      title: "Odpúšťam",
+      description: "akryl, olej na lipovom dreve",
+      date: "2019",
+      image: "novinky/odpusta.jpg",
+    },
+    {
+      title: "Nečakám ťa na kolenách",
+      description: "akryl, olej na lipovom dreve",
+      date: "2020",
+      image: "cas_plynie/necakam_ta_na_kolenach_1.jpg",
+    },
+  ];
 
-    var kresba_active_index = 0;
-    var malba_active_index = 0;
+  var kresba_active_index = 0;
+  var malba_active_index = 0;
 
-    function increaseKresbaActiveIndex() {
-        kresba_active_index++;
-        if (kresba_active_index >= kresba.length) {
-            kresba_active_index = 0;
-        }
-        let con = document.getElementById("kresba")
-        con.children[0].src="/assets/" + kresba[kresba_active_index].image
-        con.children[1].innerText = kresba[kresba_active_index].title
-        document.getElementById("kresba-description").innerText = kresba[kresba_active_index].description + " | " + kresba[kresba_active_index].date 
-        
-
+  function increaseKresbaActiveIndex() {
+    kresba_active_index++;
+    if (kresba_active_index >= kresba.length) {
+      kresba_active_index = 0;
     }
+    let con = document.getElementById("kresba");
+    con.children[0].src = "/assets/" + kresba[kresba_active_index].image;
+    con.children[1].innerText = kresba[kresba_active_index].title;
+    document.getElementById("kresba-description").innerText =
+      kresba[kresba_active_index].description +
+      " | " +
+      kresba[kresba_active_index].date;
+  }
 
-    function increaseMalbaActiveIndex() {
-        malba_active_index++;
-        if (malba_active_index >= malba.length) {
-            malba_active_index = 0;
-        }
-        let con = document.getElementById("malba")
-        con.children[0].src="/assets/" + malba[malba_active_index].image
-        con.children[1].innerText = malba[malba_active_index].title
-        document.getElementById("malba-description").innerText = malba[malba_active_index].description + " | " + malba[malba_active_index].date 
+  function increaseMalbaActiveIndex() {
+    malba_active_index++;
+    if (malba_active_index >= malba.length) {
+      malba_active_index = 0;
     }
+    let con = document.getElementById("malba");
+    con.children[0].src = "/assets/" + malba[malba_active_index].image;
+    con.children[1].innerText = malba[malba_active_index].title;
+    document.getElementById("malba-description").innerText =
+      malba[malba_active_index].description +
+      " | " +
+      malba[malba_active_index].date;
+  }
 
-    document.getElementById("next-kresba").onclick =() => increaseKresbaActiveIndex();
-    document.getElementById("next-malba").onclick = () => increaseMalbaActiveIndex();
+  document.getElementById("next-kresba").onclick = () =>
+    increaseKresbaActiveIndex();
+  document.getElementById("next-malba").onclick = () =>
+    increaseMalbaActiveIndex();
 
+  var imgs = document.querySelectorAll(".modal-src");
 
-    var imgs = document.querySelectorAll(".modal-src");
-
-	for (let i = 0; i < imgs.length; i++) {
-		imgs[i].onclick = (img) => showModal(img.target)
-	}
-
+  for (let i = 0; i < imgs.length; i++) {
+    imgs[i].onclick = (img) => showModal(img.target);
+  }
 </script>

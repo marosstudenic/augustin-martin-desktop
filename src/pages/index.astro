@@ -1,197 +1,202 @@
 ---
-	// Component Imports
-	import MainHead from '../components/MainHead.astro';
-	import Uvod from '../components/Uvod.astro';
-	import Nav from '../components/Nav.astro';
-	import Novinky from '../components/Novinky.astro';
-	import CasPlynie from '../components/CasPlynie.astro';
-	import Zivotopis from '../components/Zivotopis.astro';
-	import Vystavy from '../components/Vystavy.astro';
-	import Tvorba from '../components/Tvorba.astro';
-	import Spolupraca from '../components/Spolupraca.astro';
-	import Video from '../components/Video.astro';
-	import Gallery from '../components/Gallery.astro';
-	import Kontakt from '../components/Kontakt.astro';
+// Component Imports
+import MainHead from "../components/MainHead.astro";
+import Uvod from "../components/Uvod.astro";
+import Nav from "../components/Nav.astro";
+import Novinky from "../components/Novinky.astro";
+import CasPlynie from "../components/CasPlynie.astro";
+import Zivotopis from "../components/Zivotopis.astro";
+import Vystavy from "../components/Vystavy.astro";
+import Tvorba from "../components/Tvorba.astro";
+import Spolupraca from "../components/Spolupraca.astro";
+import Video from "../components/Video.astro";
+import Gallery from "../components/Gallery.astro";
+import Kontakt from "../components/Kontakt.astro";
+import NavDesktop from "../components/NavDesktop.astro";
+import NavMobile from "../components/NavMobile.astro";
+import Products from "../components/Products.astro";
 
-	// Data Fetching: List all Markdown posts in the repo.
-	const projects = await Astro.glob('./project/**/*.md');
-	const featuredProject = projects[0];
+// Data Fetching: List all Markdown posts in the repo.
+const projects = await Astro.glob("./project/**/*.md");
+const featuredProject = projects[0];
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <html lang="en">
+    <head>
+        <MainHead
+            title="Martin Augustín"
+            description="Slovenský umelec Martin Augustín predstavuje v spolupráci s Galériou u Anjela svoju novú kolekciu obrazov."
+        />
 
-<head>
-	<MainHead title="Martin Augustín"
-		description="Slovenský umelec Martin Augustín predstavuje v spolupráci s Galériou u Anjela svoju novú kolekciu obrazov." />
+        <style lang="scss">
+            $w-s: 750px;
 
+            a {
+                text-decoration: none;
+            }
+        </style>
+    </head>
 
-	<style lang="scss">
-		$w-s: 750px;
+    <body>
+        <NavMobile />
+        <div class="flex">
+            <NavDesktop />
+            <main class="w-full md:w-[80vw]">
+                <Uvod selectedMenu="uvod" />
+                <Novinky />
+                <Products />
+                <CasPlynie />
+                <Zivotopis />
+                <Vystavy />
+                <Tvorba />
+                <Spolupraca />
+                <Video />
+                <Gallery />
+                <Kontakt />
+            </main>
+        </div>
 
-		a {
-			text-decoration: none;
-		}
-	</style>
-</head>
+        <div id="general-modal" class="modal z-50">
+            <!-- The Close Button -->
+            <span class="close-general">&times;</span>
 
-<body>
-	<div class="flex">
-		<Nav />
-		<main class="w-[80vw]">
-			<Uvod selectedMenu="uvod" />
-			<Novinky />
-			<CasPlynie />
-			<Zivotopis />
-			<Vystavy />
-			<Tvorba />
-			<Spolupraca />
-			<Video />
-			<Gallery />
-			<Kontakt />
+            <!-- Modal Content (The Image) -->
+            <img
+                class="modal-content h-[80%] w-[60%] object-contain"
+                id="general-img"
+            />
 
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption-cas-caption"></div>
+        </div>
+        <script is:global>
+            window.lazyLoadOptions = {
+                // Your custom settings go here
+            };
 
+            // Listen to the initialization event
+            // and get the instance of LazyLoad
+            window.addEventListener(
+                "LazyLoad::Initialized",
+                function (event) {
+                    window.lazyLoadInstance = event.detail.instance;
+                },
+                false
+            );
 
-		</main>
-	</div>
+            var modal = document.getElementById("general-modal");
 
-	<div id="general-modal" class="modal">
+            //modal pre img
+            function showModal(img) {
+                var modalImg = document.getElementById("general-img");
+                modal.style.display = "block";
+                modalImg.src = img.src;
 
-		<!-- The Close Button -->
-		<span class="close-general">&times;</span>
+                // Get the <span> element that closes the modal
+                var span = document.querySelector(".close-general");
 
-		<!-- Modal Content (The Image) -->
-		<img class="modal-content h-[80%] w-[60%] object-contain" id="general-img">
-
-		<!-- Modal Caption (Image Text) -->
-		<div id="caption-cas-caption"></div>
-	</div>
-	<script is:global>
-		window.lazyLoadOptions = {
-			// Your custom settings go here
-		};
-
-		// Listen to the initialization event
-		// and get the instance of LazyLoad
-		window.addEventListener("LazyLoad::Initialized", function (event) {
-			window.lazyLoadInstance = event.detail.instance;
-		}, false);
-
-
-		var modal = document.getElementById("general-modal");
-
-		//modal pre img
-		function showModal(img) {
-			var modalImg = document.getElementById("general-img");
-			modal.style.display = "block";
-			modalImg.src = img.src;
-
-			// Get the <span> element that closes the modal
-			var span = document.querySelector(".close-general");
-
-			// When the user clicks on <span> (x), close the modal
-			span.onclick = function () {
-				modal.style.display = "none";
-			}
-		}
-	</script>
-</body>
-
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                };
+            }
+        </script>
+    </body>
 </html>
 <style>
-	html {
-		scroll-behavior: smooth;
+    html {
+        scroll-behavior: smooth;
+    }
 
-	}
+    body {
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    }
 
-	body {
-		font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
-	}
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 50;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9);
+        /* Black w/ opacity */
+    }
 
-	.modal {
-		display: none;
-		/* Hidden by default */
-		position: fixed;
-		/* Stay in place */
-		z-index: 1;
-		/* Sit on top */
-		padding-top: 100px;
-		/* Location of the box */
-		left: 0;
-		top: 0;
-		width: 100%;
-		/* Full width */
-		height: 100%;
-		/* Full height */
-		overflow: auto;
-		/* Enable scroll if needed */
-		background-color: rgb(0, 0, 0);
-		/* Fallback color */
-		background-color: rgba(0, 0, 0, 0.9);
-		/* Black w/ opacity */
-	}
+    /* Modal Content (Image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 900px;
+    }
 
-	/* Modal Content (Image) */
-	.modal-content {
-		margin: auto;
-		display: block;
-		width: 80%;
-		max-width: 900px;
-	}
+    /* Caption of Modal Image (Image Text) - Same Width as the Image */
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
 
-	/* Caption of Modal Image (Image Text) - Same Width as the Image */
-	#caption {
-		margin: auto;
-		display: block;
-		width: 80%;
-		max-width: 700px;
-		text-align: center;
-		color: #ccc;
-		padding: 10px 0;
-		height: 150px;
-	}
+    /* Add Animation - Zoom in the Modal */
+    .modal-content,
+    #caption {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
 
-	/* Add Animation - Zoom in the Modal */
-	.modal-content,
-	#caption {
-		animation-name: zoom;
-		animation-duration: 0.6s;
-	}
+    @keyframes zoom {
+        from {
+            transform: scale(0);
+        }
 
-	@keyframes zoom {
-		from {
-			transform: scale(0)
-		}
+        to {
+            transform: scale(1);
+        }
+    }
 
-		to {
-			transform: scale(1)
-		}
-	}
+    /* The Close Button */
+    .close-general {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: 400;
+        transition: 0.3s;
+    }
 
-	/* The Close Button */
-	.close-general {
-		position: absolute;
-		top: 15px;
-		right: 35px;
-		color: #f1f1f1;
-		font-size: 40px;
-		font-weight: bold;
-		transition: 0.3s;
-	}
+    .close-general:hover,
+    .close-general:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
 
-	.close-general:hover,
-	.close-general:focus {
-		color: #bbb;
-		text-decoration: none;
-		cursor: pointer;
-	}
-
-	/* 100% Image Width on Smaller Screens */
-	@media only screen and (max-width: 700px) {
-		.modal-content {
-			width: 100%;
-		}
-	}
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+        .modal-content {
+            width: 100%;
+        }
+    }
 </style>

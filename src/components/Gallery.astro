@@ -1,345 +1,419 @@
 ---
-    const photos = [
-        {
-            title: "S Waris Dirie",
-            image: "s_waris_dirie.jpg",
-        },
-        {
-            title: "Krst CD Kristíny",
-            image: "krst_cd_kristiny.jpg",
-        },
-        {
-            title: "Krst knihy Kamila Peteraja Toto je moja reč",
-            image: "krst_to_je_moja_rec.jpg",
-        },
-        {
-            title: "S Ludom Petránskym",
-            image: "s_ludom_petranskym.jpg",
-        },
-        {
-            title: "Adriana Kučerová krstí knihu Texty v Obrazoch, Obrazy v Textoch",
-            image: "krst_texty_v_obrazoch_adriana_kucerova.jpg",
-        },
-        {
-            title:
-                "Pavol Hamel, Ivan Pavle pri krste knihy Texty v Obrazoch, Obrazy v Textoch",
-            image: "krst043.jpg",
-        },
-        {
-            title:
-                "Gabika Belopotocká, vydavateľka knihy Texty v Obrazoch, Obrazy v Textoch",
-            image: "krst033.jpg",
-        },
-        {
-            title:
-                "Tomáš Machek, Martin Augustín, Kamil Peteraj, Adriana Kučerová pri krste knihy Texty v Obrazoch, Obrazy v Textoch",
-            image: "krst024.jpg",
-        },
-        {
-            title:
-                "Martin Augustín, Marián Kvasnička, Andrej Augustín na vernisáži v River Gallery v Bratislave",
-            image: "river_gallery.jpg",
-        },
-        {
-            title:
-                "Martin Augustín, Andrej Augustín na výstave v River Gallery v Bratislave",
-            image: "river_gallery_2.jpg",
-        },
-        {
-            title: "Martin Augustín, Marián Hrubý",
-            image: "IMG_2866.jpg",
-        },
-        {
-            title:
-                "Jozef Bednárik, Gabika Belopotocká, Martin Augustín pri krste albumov Obrazy, texty, sentencie v Bratislave",
-            image: "obrazy_texty_sentencie.jpg",
-        },
-        {
-            title:
-                "Martin Augustín, Jozef Bednárik, Kamil Peteraj pri krste albumov Obrazy, texty, sentencie v Bratislave",
-            image: "obrazy_texty_sentencie_2.jpg",
-        },
-        {
-            title: "Martin Augustín, Zuzka Kocúriková, Peter Mikulík, Jozef Augustín",
-            image: "zuzka_kocurikova.jpg",
-        },
-        {
-            title:
-                "Kamil Peteraj, Vincent Polakovič, Martin Augustín na výstave v Danubiana Meulensteen Art Museum",
-            image: "DSCN3097.jpg",
-        },
-        {
-            title:
-                "Kamil Peteraj pri práci v ateliéri na Novohradskej ulici na spoločnom obraze",
-            image: "DSC06538.jpg",
-        },
-        {
-            title:
-                "Kamil Peteraj, Martin Augustín pri práci v ateliéri na Novohradskej ulici na spoločnom obraze",
-            image: "DSC06532.jpg",
-        },
-        {
-            title:
-                "Martin Augustín, Eva Ľuptáková na výstave v ART GALÉRIA Schürger v Tvrdošíne",
-            image: "eva_luptakova.jpg",
-        },
-        {
-            title:
-                "Martin Augustín, Anna Lenková na výstave v ART GALÉRIA Schürger v Tvrdošíne",
-            image: "DSC_6992.jpg",
-        },
-        {
-            title:
-                "Kamil Peteraj, Martin Augustín pri práci v ateliéri na Novohradskej ulici na spoločnom oltári",
-            image: "87613522_819889585183026_7562122860500615168_n.jpg",
-        },
-        {
-            title:
-                "Šaty z autorskej kolekcie Daniely Augustínovej so sublimáciou obrazov Martina Augustína",
-            image: "116790077_386070642365579_5160472585855906953_n.jpg",
-        },
-        {
-            title:
-                "Martin Augustín, Běla Kolčáková na vernisáži v Galérii Pálffyho paláci v Bratislave na Zámockej ulici",
-            image: "26855884_913685932129010_621998245_n.jpg",
-        },
-        {
-            title: "Martin Augustín, Anka Ondrušeková v ateliéri Andreja Augustína",
-            image: "15044772_10209523880367429_505820473_o.jpg",
-        },
-        {
-            title: "Darinka Kollárová, Martin Augustín, Gabriel Kollár",
-            image: "13627062_619148511582755_1989498867098297345_n.jpg",
-        },
-        {
-            title:
-                "Dan Brown s ocenením od vydavateľstva Ikar, autor ceny Martin Augustín",
-            image: "AM509728_016kult10brown.jpg",
-        },
-        {
-            title:
-                "Marián Geišberg číta z knihy Bosá v priesvitných šatách, autor ilustrácií Martin Augustín",
-            image:
-                "1195804_kamil-peteraj-martin-augustin-marian-geisberg-kristina-basne-zbierka-basni-basen-krst-crop.jpg",
-        },
-        {
-            title:
-                "Chantal Poullain- Polívková, Martin Augustín pri krste monografie 66 zím Boženy Augustínovej\n" +
-                "Rochovanskej v Mirbachovom paláci v Bratislave",
-            image: "36.jpg",
-        },
-        {
-            title:
-                "Juraj Šebo prezentuje knihy Martina Augustína na Knižnom veľtrhu v Číne",
-            image: "52a - kópia.jpg",
-        },
-        {
-            title:
-                "Šaty z autorskej kolekcie Daniely Augustínovej so sublimáciou obrazov Martina Augustína",
-            image: "56.jpg",
-        },
-        {
-            title:
-                "Andrej Augustín, Martin Augustín, Christian Prudhomme, riaditeľ Tour de France vo Francúzskom inštitúte v Bratislave",
-            image: "christian_prudhomme.jpg",
-        },
-        {
-            title:
-                "Dan Brown s ocenením od vydavateľstva Ikar, autor ceny Martin Augustín",
-            image: "dan_brown.jpg",
-        },
-        {
-            title:
-                "Carmen Kováčová, Martin Augustín pred oltárom Odpúšťam, v Galérii u Anjela v Kežmarku",
-            image: "carmen_kovacova.jpg",
-        },
-        {
-            title: "Gabika Marcinková krstí knihu Stále ťa mať",
-            image: "gabika_marcinkova.jpg",
-        },
-        {
-            title: "Kamil Peteraj, Martin Augustín",
-            image: "kamil_peteraj.jpg",
-        },
-        {
-            title:
-                "Niki Pagáčová na výstave Martina Augustína v Danubiana Meulensteen Art Museum",
-            image: "DSCN3107.jpg",
-        },
-        {
-            title:
-                "Manželia Petránsky na výstave Martina Augustína v Danubiana Meulensteen Art Museum",
-            image: "20170309_134330.jpeg",
-        },
-        {
-            title:
-                "Luboš Lackovič, Martin Augustín, Jozef Mitošinka na výstave Martina Augustína v Danubiana Meulensteen Art Museum",
-            image: "DSCN3097.jpg",
-        },
-        {
-            title: "Výstava Martina Augustína v Danubiana Meulensteen Art Museum",
-            image: "DSCN3166.jpg",
-        },
-        {
-            title:
-                "Prezentácia listov Obrazy, texty, sentencie vydané vo vydavateľstve Ikar v Radisson Blu Carlton Hoteli v Bratislave",
-            image: "IMG_foto_MATEJ KALINA_094495.jpg",
-        },
-    ];
+const photos = [
+  {
+    title: "S Waris Dirie",
+    image: "s_waris_dirie.jpg",
+  },
+  {
+    title: "Krst CD Kristíny",
+    image: "krst_cd_kristiny.jpg",
+  },
+  {
+    title: "Krst knihy Kamila Peteraja Toto je moja reč",
+    image: "krst_to_je_moja_rec.jpg",
+  },
+  {
+    title: "S Ludom Petránskym",
+    image: "s_ludom_petranskym.jpg",
+  },
+  {
+    title: "Adriana Kučerová krstí knihu Texty v Obrazoch, Obrazy v Textoch",
+    image: "krst_texty_v_obrazoch_adriana_kucerova.jpg",
+  },
+  {
+    title:
+      "Pavol Hamel, Ivan Pavle pri krste knihy Texty v Obrazoch, Obrazy v Textoch",
+    image: "krst043.jpg",
+  },
+  {
+    title:
+      "Gabika Belopotocká, vydavateľka knihy Texty v Obrazoch, Obrazy v Textoch",
+    image: "krst033.jpg",
+  },
+  {
+    title:
+      "Tomáš Machek, Martin Augustín, Kamil Peteraj, Adriana Kučerová pri krste knihy Texty v Obrazoch, Obrazy v Textoch",
+    image: "krst024.jpg",
+  },
+  {
+    title:
+      "Martin Augustín, Marián Kvasnička, Andrej Augustín na vernisáži v River Gallery v Bratislave",
+    image: "river_gallery.jpg",
+  },
+  {
+    title:
+      "Martin Augustín, Andrej Augustín na výstave v River Gallery v Bratislave",
+    image: "river_gallery_2.jpg",
+  },
+  {
+    title: "Martin Augustín, Marián Hrubý",
+    image: "IMG_2866.jpg",
+  },
+  {
+    title:
+      "Jozef Bednárik, Gabika Belopotocká, Martin Augustín pri krste albumov Obrazy, texty, sentencie v Bratislave",
+    image: "obrazy_texty_sentencie.jpg",
+  },
+  {
+    title:
+      "Martin Augustín, Jozef Bednárik, Kamil Peteraj pri krste albumov Obrazy, texty, sentencie v Bratislave",
+    image: "obrazy_texty_sentencie_2.jpg",
+  },
+  {
+    title: "Martin Augustín, Zuzka Kocúriková, Peter Mikulík, Jozef Augustín",
+    image: "zuzka_kocurikova.jpg",
+  },
+  {
+    title:
+      "Kamil Peteraj, Vincent Polakovič, Martin Augustín na výstave v Danubiana Meulensteen Art Museum",
+    image: "DSCN3097.jpg",
+  },
+  {
+    title:
+      "Kamil Peteraj pri práci v ateliéri na Novohradskej ulici na spoločnom obraze",
+    image: "DSC06538.jpg",
+  },
+  {
+    title:
+      "Kamil Peteraj, Martin Augustín pri práci v ateliéri na Novohradskej ulici na spoločnom obraze",
+    image: "DSC06532.jpg",
+  },
+  {
+    title:
+      "Martin Augustín, Eva Ľuptáková na výstave v ART GALÉRIA Schürger v Tvrdošíne",
+    image: "eva_luptakova.jpg",
+  },
+  {
+    title:
+      "Martin Augustín, Anna Lenková na výstave v ART GALÉRIA Schürger v Tvrdošíne",
+    image: "DSC_6992.jpg",
+  },
+  {
+    title:
+      "Kamil Peteraj, Martin Augustín pri práci v ateliéri na Novohradskej ulici na spoločnom oltári",
+    image: "87613522_819889585183026_7562122860500615168_n.jpg",
+  },
+  {
+    title:
+      "Šaty z autorskej kolekcie Daniely Augustínovej so sublimáciou obrazov Martina Augustína",
+    image: "116790077_386070642365579_5160472585855906953_n.jpg",
+  },
+  {
+    title:
+      "Martin Augustín, Běla Kolčáková na vernisáži v Galérii Pálffyho paláci v Bratislave na Zámockej ulici",
+    image: "26855884_913685932129010_621998245_n.jpg",
+  },
+  {
+    title: "Martin Augustín, Anka Ondrušeková v ateliéri Andreja Augustína",
+    image: "15044772_10209523880367429_505820473_o.jpg",
+  },
+  {
+    title: "Darinka Kollárová, Martin Augustín, Gabriel Kollár",
+    image: "13627062_619148511582755_1989498867098297345_n.jpg",
+  },
+  {
+    title:
+      "Dan Brown s ocenením od vydavateľstva Ikar, autor ceny Martin Augustín",
+    image: "AM509728_016kult10brown.jpg",
+  },
+  {
+    title:
+      "Marián Geišberg číta z knihy Bosá v priesvitných šatách, autor ilustrácií Martin Augustín",
+    image:
+      "1195804_kamil-peteraj-martin-augustin-marian-geisberg-kristina-basne-zbierka-basni-basen-krst-crop.jpg",
+  },
+  {
+    title:
+      "Chantal Poullain- Polívková, Martin Augustín pri krste monografie 66 zím Boženy Augustínovej\n" +
+      "Rochovanskej v Mirbachovom paláci v Bratislave",
+    image: "36.jpg",
+  },
+  {
+    title:
+      "Juraj Šebo prezentuje knihy Martina Augustína na Knižnom veľtrhu v Číne",
+    image: "52a - kópia.jpg",
+  },
+  {
+    title:
+      "Šaty z autorskej kolekcie Daniely Augustínovej so sublimáciou obrazov Martina Augustína",
+    image: "56.jpg",
+  },
+  {
+    title:
+      "Andrej Augustín, Martin Augustín, Christian Prudhomme, riaditeľ Tour de France vo Francúzskom inštitúte v Bratislave",
+    image: "christian_prudhomme.jpg",
+  },
+  {
+    title:
+      "Dan Brown s ocenením od vydavateľstva Ikar, autor ceny Martin Augustín",
+    image: "dan_brown.jpg",
+  },
+  {
+    title:
+      "Carmen Kováčová, Martin Augustín pred oltárom Odpúšťam, v Galérii u Anjela v Kežmarku",
+    image: "carmen_kovacova.jpg",
+  },
+  {
+    title: "Gabika Marcinková krstí knihu Stále ťa mať",
+    image: "gabika_marcinkova.jpg",
+  },
+  {
+    title: "Kamil Peteraj, Martin Augustín",
+    image: "kamil_peteraj.jpg",
+  },
+  {
+    title:
+      "Niki Pagáčová na výstave Martina Augustína v Danubiana Meulensteen Art Museum",
+    image: "DSCN3107.jpg",
+  },
+  {
+    title:
+      "Manželia Petránsky na výstave Martina Augustína v Danubiana Meulensteen Art Museum",
+    image: "20170309_134330.jpeg",
+  },
+  {
+    title:
+      "Luboš Lackovič, Martin Augustín, Jozef Mitošinka na výstave Martina Augustína v Danubiana Meulensteen Art Museum",
+    image: "DSCN3097.jpg",
+  },
+  {
+    title: "Výstava Martina Augustína v Danubiana Meulensteen Art Museum",
+    image: "DSCN3166.jpg",
+  },
+  {
+    title:
+      "Prezentácia listov Obrazy, texty, sentencie vydané vo vydavateľstve Ikar v Radisson Blu Carlton Hoteli v Bratislave",
+    image: "IMG_foto_MATEJ KALINA_094495.jpg",
+  },
+
+  {
+    title:
+      "Otvorenie výstavy Augustínovci na zámku, Šimák zákok Pezinok, z ľava: Andrej Augustín, Martin Augustín, Ľudovít Petránsky, Štefan Šimák",
+    image: "403398487_921535148817673_7224725596321032112_n.jpg",
+  },
+
+  {
+    title:
+      "Stretnutie s priateľmi v Paríži pri príležitosti otvorenia výstavy Ticho v kostole Sainte Marie-Madeleine v Paríži, z ľava: Martin Augustín, Daniela Augustínová, Jana Kňažková, Jana Bittnerová",
+    image: "20231125_163731.jpg",
+  },
+
+  {
+    title:
+      "Otvorenie výstavy ANIOŁ STRÓŻ v Krakove, v Poľsku, z ľava Carmen Kováčová kurátorka, Martin Augustín",
+    image: "20231006_105750.jpg",
+  },
+
+  {
+    title:
+      "Príprava knihy Kamila Peteraja Vyznania (edícia wwwluxusnakniznica.sk) vo vydavateľstve Ikar, z ľava: Gabika Belopotocká, Kamil Peteraj, Mychal Synak, Marek Néma",
+    image: "20230329_212253.jpg",
+  },
+  {
+    title:
+      "Pred otvorením výstavy Ticho v v kostole Sainte Marie-Madeleine v Paríži",
+    image: "20231126_133407.jpg",
+  },
+  {
+    title: "Propagácia knihy Vyznania v televízii Markíza",
+    image: "Screenshot_20230614-170224_Instagram.jpg",
+  },
+
+  {
+    title: "Expozícia výstavy v Oravskej galérii v Dolnom Kubíne",
+    image: "augustinovci_06.jpg",
+  },
+  {
+    title: "Kamil Peteraj, Martin Augustín",
+    image: "!cid_EE4FDF86-72FB-4B8A-A963-D25E6193863Clan.jpg",
+  },
+
+  {
+    title: "Propagácia v relácii Peniaze, RTVS",
+    image: "IMG-20231025-WA0001(1).jpg",
+  },
+  {
+    title:
+      "Uvedenie knihy Kamila Peteraja Sen menom láska, v edícii www.luxusnakniznica.sk",
+    image: "krst_-_019.jpg",
+  },
+  {
+    title: "Pri prezentácii kníh Kytice a Máj v Prahe, foto: Tonda Tran",
+    image: "!cid_f_lerbdqle3.jpg",
+  },
+  {
+    title:
+      "Banner na muzikál Jesus Christ Superstar, Divadlo Jonáša Záborského v Prešove",
+    image: "20200923_143833.jpg",
+  },
+  {
+    title:
+      "Stretnutie pri Sympóziu ORA ET ARS v Skalke, z ľava: Martin Augustín, Erik Ondreička, Jozef Augustín",
+    image: "286402250_1152374975338513_1992786246655429374_n.jpg",
+  },
+  {
+    title:
+      "Výstava Shadows and Colors, Božena, Andrej, martin Augustínovci v Zoya Gallery v Bratislave",
+    image: "411827446_1746038_n.jpg",
+  },
+];
 ---
 
-<style >
-    #myImg {
-        border-radius: 5px;
-        cursor: pointer;
-        transition: 0.3s;
+<style>
+  #myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  #myImg:hover {
+    opacity: 0.7;
+  }
+
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 50;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+  }
+
+  /* Modal Content (Image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 900px;
+  }
+
+  /* Caption of Modal Image (Image Text) - Same Width as the Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+
+  /* Add Animation - Zoom in the Modal */
+  .modal-content,
+  #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+
+  @keyframes zoom {
+    from {
+      transform: scale(0);
     }
 
-    #myImg:hover {
-        opacity: 0.7;
+    to {
+      transform: scale(1);
     }
+  }
 
-    /* The Modal (background) */
-    .modal {
-        display: none;
-        /* Hidden by default */
-        position: fixed;
-        /* Stay in place */
-        z-index: 1;
-        /* Sit on top */
-        padding-top: 100px;
-        /* Location of the box */
-        left: 0;
-        top: 0;
-        width: 100%;
-        /* Full width */
-        height: 100%;
-        /* Full height */
-        overflow: auto;
-        /* Enable scroll if needed */
-        background-color: rgb(0, 0, 0);
-        /* Fallback color */
-        background-color: rgba(0, 0, 0, 0.9);
-        /* Black w/ opacity */
-    }
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
 
-    /* Modal Content (Image) */
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px) {
     .modal-content {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 900px;
+      width: 100%;
     }
-
-    /* Caption of Modal Image (Image Text) - Same Width as the Image */
-    #caption {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 700px;
-        text-align: center;
-        color: #ccc;
-        padding: 10px 0;
-        height: 150px;
-    }
-
-    /* Add Animation - Zoom in the Modal */
-    .modal-content,
-    #caption {
-        animation-name: zoom;
-        animation-duration: 0.6s;
-    }
-
-    @keyframes zoom {
-        from {
-            transform: scale(0)
-        }
-
-        to {
-            transform: scale(1)
-        }
-    }
-
-    /* The Close Button */
-    .close {
-        position: absolute;
-        top: 15px;
-        right: 35px;
-        color: #f1f1f1;
-        font-size: 40px;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: #bbb;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    /* 100% Image Width on Smaller Screens */
-    @media only screen and (max-width: 700px) {
-        .modal-content {
-            width: 100%;
-        }
-    }
+  }
 </style>
-<section id="galeria" class="pr-60 py-20">
-    <h2 class="font-medium text-xl text-gray-500 mb-4">Fotogaléria</h2>
-    <div class="grid grid-cols-3 gap-4">
-        {photos.map((item) => (
+<!--TODO fix opening of photo-->
+<section id="galeria" class="px-4 md:pr-60 md:py-20">
+  <h2 class="font-medium text-xl text-gray-500 mb-4">Fotogaléria</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {
+      photos.map((item) => (
         <div>
-            <div class="text-sm text-gray-500 cursor-pointer">
-                <img src={"/assets/gallery/" + item.image} data-image={item.image} alt={item.title}
-                    class="h-60 object-cover w-full modalImg" />
-            </div>
+          <div class="text-sm text-gray-500 cursor-pointer">
+            <img
+              src={"/assets/gallery/" + item.image}
+              data-image={item.image}
+              alt={item.title}
+              class="md:h-60 object-cover w-full modalImg rounded-md"
+            />
+            <p class="pt-2 md:hidden">{item.title}</p>
+          </div>
         </div>
-        ))}
-    </div>
+      ))
+    }
+  </div>
 
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- The Close Button -->
+    <span class="close">&times;</span>
 
+    <!-- Modal Content (The Image) -->
+    <img class="modal-content" id="img01" />
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-
-        <!-- The Close Button -->
-        <span class="close">&times;</span>
-
-        <!-- Modal Content (The Image) -->
-        <img class="modal-content" id="img01">
-
-        <!-- Modal Caption (Image Text) -->
-        <div id="caption"></div>
-    </div>
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption"></div>
+  </div>
 </section>
 
-
 <script>
+  function showModal(img) {
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    modal.style.display = "block";
+    modalImg.src = "/assets/gallery-1440/" + img.getAttribute("data-image");
+    captionText.innerHTML = img.alt;
 
-    function showModal(img) {
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-        modal.style.display = "block";
-        modalImg.src = "/assets/gallery-1440/" + img.getAttribute("data-image");
-        captionText.innerHTML = img.alt;
-        
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-    }
-    // Get the modal
-    var modal = document.getElementById("myModal");
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    };
+  }
 
-    // Get the image and insert it inside the modal - use its "alt" text as a caption
-    var imgs = document.getElementsByClassName("modalImg");
+  // Get the modal
+  var modal = document.getElementById("myModal");
 
-    for (let i = 0; i < imgs.length; i++) {
-        imgs[i].onclick = (img) => showModal(img.target)
-    }
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var imgs = document.getElementsByClassName("modalImg");
 
+  for (let i = 0; i < imgs.length; i++) {
+    imgs[i].onclick = (img) => showModal(img.target);
+  }
 </script>

@@ -1,0 +1,200 @@
+---
+import CasPlynie from "./CasPlynie.astro";
+var menu_items = [
+    {
+        section: "/#novinky",
+        title: "Novinky",
+    },
+    {
+        section: "/#cas-plynie",
+        title: "Čas plynie",
+    },
+    {
+        section: "/#zivotopis",
+        title: "Životopis",
+    },
+    {
+        section: "/#samostatne-vystavy",
+        title: "Výstavy",
+    },
+    {
+        section: "/#tvorba",
+        title: "Tvorba",
+    },
+    {
+        section: "/#ikar",
+        title: "IKAR",
+    },
+    {
+        section: "/#video",
+        title: "Video",
+    },
+    {
+        section: "/#galeria",
+        title: "Fotogaléria",
+    },
+    {
+        section: "/#kontakt",
+        title: "Kontakt",
+    },
+];
+---
+
+<header
+    class="h-16 shaddow bg-white fixed top-0 w-full z-40 block md:hidden px-4 mt-4"
+>
+    <div class="flex justify-between h-full w-full px-4 rounded-lg bg-[#fff]">
+        <div class="logo max-h-14 my-auto">
+            <img
+                alt="Augustin Martin logo"
+                class="logo object-contain h-10 my-auto"
+                src="/assets/logo/new_logotyp_augustin.png"
+            />
+        </div>
+        <div class="flex">
+            <a
+                href="https://www.instagram.com/martin.augustin1968/"
+                target="_blank"
+                rel="noopener nofollow"
+                class="flex-col flex justify-center"
+            >
+                <img
+                    alt="Instagram Icon"
+                    class="logo object-contain h-5 px-1 my-auto cursor-pointer"
+                    src="/assets/icons/instagram-50.png"
+                />
+            </a>
+            <a
+                href="https://www.facebook.com/martin.augustin.37"
+                target="_blank"
+                rel="noopener nofollow"
+                class="flex-col flex justify-center"
+            >
+                <img
+                    alt="Facebook Icon"
+                    class="logo object-contain h-5 px-1 my-auto cursor-pointer"
+                    src="/assets/icons/facebook.svg"
+                />
+            </a>
+
+            <div class="h-full flex flex-col justify-center pl-1 z-60">
+                <div id="menuicon" class="menuicon">
+                    <!--            <input type="checkbox" id="check"/>-->
+                    <div class="line select-none"></div>
+                    <div class="line select-none"></div>
+                    <div class="line select-none"></div>
+                </div>
+            </div>
+
+            <!--        <img-->
+            <!--          alt="Menu Icon"-->
+            <!--          class="logo object-contain h-6 my-auto"-->
+            <!--          src="@/assets/icons/instagram-50.png"-->
+            <!--          @click="toggleMenu"-->
+            <!--        />-->
+
+            <nav class="hidden">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<nav
+    class="fixed top-16 left-0 bg-white z-30 h-screen w-screen closed"
+    id="mobile-menu"
+>
+    <ul class="w-full h-full flex flex-col justify-start pt-56">
+        {
+            menu_items.map((item) => (
+                <li class="flex justify-center text-gray-500 py-1 text-lg">
+                    <a class="text-gray-500" href={item.section}>
+                        {item.title}
+                    </a>
+                </li>
+            ))
+        }
+
+        <li class="my-6 flex justify-center text-gray-500 py-1 text-lg">
+            <a class="pr-2 font-semibold text-gray-500" href="/">Slovenčina</a> |
+            <a class="pl-2 text-gray-500" href="/en">English</a>
+        </li>
+    </ul>
+</nav>
+
+<style scoped>
+    .fixedPosition {
+        /*position: fixed;*/
+        touch-action: none;
+    }
+
+    #mobile-menu {
+        transform: translateY(-69px);
+        transition: transform 0.5s ease-in-out;
+        background-color: white;
+        color: black;
+    }
+
+    #mobile-menu.closed {
+        transform: translateY(-120%);
+    }
+
+    .menuicon {
+        display: flex;
+        flex-direction: column;
+        width: 25px;
+        cursor: pointer;
+        justify-items: flex-end;
+    }
+
+    .menuicon .line {
+        background: #000;
+        border-radius: 10px;
+        height: 3px;
+        margin: 2px 0;
+        transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+        align-self: flex-end;
+        opacity: 1;
+    }
+
+    .line:nth-of-type(1) {
+        width: 100%;
+    }
+
+    .line:nth-of-type(2) {
+        width: 100%;
+    }
+
+    .line:nth-of-type(3) {
+        width: 80%;
+    }
+
+    .menuicon.closed .line:nth-of-type(1) {
+        transform-origin: bottom;
+        transform: rotatez(45deg) translate(4px, 4px);
+    }
+
+    .menuicon.closed .line:nth-of-type(2) {
+        transform-origin: top;
+        transform: rotatez(-45deg);
+    }
+
+    .menuicon.closed .line:nth-of-type(3) {
+        opacity: 0;
+    }
+</style>
+
+<script>
+    document.getElementById("menuicon").addEventListener("click", function () {
+        this.classList.toggle("closed");
+        document.getElementById("mobile-menu").classList.toggle("closed");
+    });
+
+    document
+        .getElementById("mobile-menu")
+        .addEventListener("click", function () {
+            this.classList.toggle("closed");
+            document.getElementById("menuicon").classList.toggle("closed");
+        });
+</script>

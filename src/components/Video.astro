@@ -1,166 +1,192 @@
 ---
-    const video =
-    {
-        type: "yotuube",
-        link: "https://www.youtube.com/embed/z9uVCpjJgv8",
-    }
+// const video = {
+//   type: "yotuube",
+//   link: "https://www.youtube.com/embed/z9uVCpjJgv8",
+// };
 
+const videos = [
+  {
+    type: "raw",
+    link: "/assets/video/Vyznania JOJ.mp4",
+    image: "/assets/videa/vyznania_markiza.png",
+    text: "Vyznania Kamila Peteraja | Markíza",
+  },
+
+  {
+    type: "raw",
+    link: "/assets/video/Vyznania Markiza.mp4",
+    text: "Nová kniha Kamila Peteraja | Markíza",
+    image: "/assets/videa/vyznania_markiza_2.png",
+  },
+  {
+    type: "raw",
+    link: "/assets/video/Vyznania RTVS.mp4",
+    text: "Vyznania Kamila Peteraja | RTVS",
+    image: "/assets/videa/vyznania_rtvs.png",
+  },
+  {
+    type: "redirect",
+    link: "https://www.youtube.com/watch?v=z9uVCpjJgv8",
+    image: "/assets/videa/obrazy_v_textoch.webp",
+    text: "Texty v obrazoch | Obrazy v textoch (Kamil&nbsp;Peteraj&nbsp;a&nbsp;Martin&nbsp;Augustín)",
+  },
+  {
+    type: "redirect",
+    link: "https://www.youtube.com/watch?v=St63eT8PlPk",
+    text: "Martin Augustin - Ateliér tajomstiev",
+    image: "/assets/videa/atelier_tajomstiev.png",
+  },
+
+  {
+    type: "redirect",
+    link: "https://www.youtube.com/watch?v=85qyGQwXlCk",
+    text: "Kamil Peteraj: Bosá v priesvitných šatách",
+    image: "/assets/videa/bosa_v_priesvitnych_satach.png",
+  },
+
+  {
+    type: "redirect",
+    link: "https://www.youtube.com/watch?v=f9KTa1UA67M",
+    text: "Martin Augustín & Kamil Peteraj: Slová v obrazoch – obrazy v&nbsp;slovách 1",
+    image: "/assets/videa/slova_v_obrazoch1.jpg",
+  },
+
+  {
+    type: "redirect",
+    link: "https://www.youtube.com/watch?v=nMIJhZMCJNM",
+    text: "Martin Augustín & Kamil Peteraj: Slová v obrazoch – obrazy v&nbsp;slovách 3",
+    image: "/assets/videa/slova_v_obrazoch3.jpg",
+  },
+
+  {
+    type: "redirect",
+    link: "https://www.ta3.com/relacia/20291/atelier-tajomstiev-manzelstvo-celebrit-prelomu-storocia-restaurovanie-filmov-na-kavicke-s-barborou-bobulovou",
+    text: "Ateliér tajomstiev TA3",
+    image: "/assets/videa/atelier_ta3.png",
+  },
+  {
+    type: "redirect",
+    link: "https://www.ta3.com/relacia/11043/na-co-je-nam-vizualne-umenie",
+    text: "Na čo je nám vizuálne umenie TA3",
+    image: "/assets/videa/naco-je-nam-vizualne-umenie.png",
+  },
+  {
+    type: "redirect",
+    link: "https://www.rtvs.sk/televizia/archiv/14625/264389",
+    image: "/assets/videa/kultura_sk.png",
+    text: "Kultúra SK RTVS",
+  },
+  // broken llink
+  // {
+  //   type: "redirect",
+  //   link: "https://fb.watch/dKNzq6DjW7/",
+  //   image: "videa/facebook_obrazy.jpg",
+  // },
+];
 ---
 
 <style is:global>
-    .hover-underline-animation {
-        display: inline-block;
-        position: relative;
-        /* color: black; */
-    }
+  .hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    /* color: black; */
+  }
 
-    .hover-underline-animation:after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 2px;
-        bottom: -2px;
-        left: 0;
-        background-color: rgb(107 114 128);
-        transform-origin: bottom right;
-        transition: transform 0.25s ease-out;
-    }
+  .hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: rgb(107 114 128);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
 
-    .hover-underline-animation:hover:after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-    }
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 </style>
 
-<section id="video" class="py-8 pr-60">
-    <h2 class="text-gray-500 font-medium mb-4 text-xl">Video</h2>
-    <div class="items mb-4 overflow-hidden h-[700px]">
-        <div class="video-container item w-full">
-            <!-- youtube + ta3 -->
-            <iframe id="player" class="w-full h-[700px]" marginwidth="0" marginheight="0" src={video.link}
-                scrolling="no" title="martin augustin vystavuje nove diela"></iframe>
-            <!-- redirect -->
-            <div class="image-container hidden" id="redirect">
-                <a href={video.link} target="_blank" class="w-full flex justify-center">
-                    <img src="todo" class="h-[700px] object-contain" />
-                </a>
+<section id="video" class="py-8 md:pr-60 px-4">
+  <h2 class="text-gray-500 font-medium mb-4 text-xl">Video</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {
+      videos.map((video) => {
+        if (video.type === "redirect") {
+          return (
+            <div class="mb-6">
+              <a
+                href={video.link}
+                target="_blank"
+                class="w-full flex justify-center"
+              >
+                <div class="relative w-full">
+                  <img
+                    src={video.image}
+                    class="rounded-md h-64 w-full object-cover"
+                  />
+                  <img
+                    src="/assets/icons/play-512.png"
+                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-12"
+                  />
+                </div>
+              </a>
+              <p class="text-gray-500 text-sm pt-2" set:html={video.text} />
             </div>
-        </div>
-    </div>
-    <div class="flex justify-between">
-        <p class="text-sm text-gray-500 hover-underline-animation cursor-pointer" id="prev-video">
-            predchádzajúca
-        </p>
-        <p class="text-sm text-gray-500 hover-underline-animation cursor-pointer" id="next-video">
-            nasledujúca
-        </p>
-    </div>
+          );
+        } else if (video.type === "raw") {
+          return (
+            <div>
+              <div class="relative">
+                <video
+                  class="w-full rounded-md h-64"
+                  poster={video.image}
+                  controls
+                >
+                  <source src={video.link} type="video/mp4" />
+                </video>
+                <img
+                  src="/assets/icons/play-512.png"
+                  class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-12 z-20 player-icon"
+                />
+                <img
+                  src={video.image}
+                  class="object-cover rounded-md h-64 w-full z-10 top-0 absolute video-cover"
+                />
+              </div>
+
+              <p class="text-gray-500 text-sm pt-2" set:html={video.text} />
+            </div>
+          );
+        }
+      })
+    }
+  </div>
 </section>
 
-<!-- <style>
-    .items {
-        position: relative;
-    }
-
-    .item {
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translateX(120%);
-        transition: transform 0.5s;
-    }
-
-    .item.active {
-        transform: translateX(0);
-    }
-</style> -->
-
-
 <script>
+  function startVideo(el) {
+    let parrent = el.parentElement;
+    parrent.querySelector(".player-icon").classList.toggle("hidden");
+    parrent.querySelector(".video-cover").classList.toggle("hidden");
 
-    const videos = [
-        {
-            type: "yotuube",
-            link: "https://www.youtube.com/embed/z9uVCpjJgv8",
-        },
-        {
-            type: "yotuube",
-            link: "https://www.youtube.com/embed/St63eT8PlPk",
-        },
+    parrent.querySelector("video").play();
+  }
 
-        {
-            type: "yotuube",
-            link: "https://www.youtube.com/embed/85qyGQwXlCk",
-        },
-        {
-            type: "yotuube",
-            link: "https://www.youtube.com/embed/nMIJhZMCJNM",
-        },
+  document.querySelectorAll(".video-cover").forEach((el) => {
+    el.addEventListener("click", () => {
+      startVideo(el);
+    });
+  });
 
-        {
-            type: "yotuube",
-            link: "https://www.youtube.com/embed/f9KTa1UA67M",
-        },
-        {
-            type: "ta3",
-            link: "https://www.ta3.com/embed/20210410-hw-fb527ab6-eeb3-45bc-b153-93fbecff9ce0",
-        },
-        {
-            type: "ta3",
-            link: "https://www.ta3.com/embed/20160514-D1BDAD10-40BB-4DFE-9FBF-237037D31F38",
-        },
-        {
-            type: "redirect",
-            link: "https://www.rtvs.sk/televizia/archiv/14625/264389",
-            image: "videa/rtvs_thumbnail.jpg",
-        },
-        {
-            type: "redirect",
-            link: "https://fb.watch/dKNzq6DjW7/",
-            image: "videa/facebook_obrazy.jpg",
-        },
-    ];
-
-    var video_active_index = 0;
-
-    function replaceContent(video_active_index) {
-        let currentVideo = videos[video_active_index]
-        if (currentVideo.type === "redirect") {
-            document.getElementById('player').className = "hidden"
-            let imageContainer = document.getElementById("redirect")
-            imageContainer.className = "image-container"
-            imageContainer.children[0].href = currentVideo.link
-            console.log(imageContainer)
-
-            imageContainer.children[0].children[0].src = '/assets/' + currentVideo.image
-        } else {
-            let iframe = document.getElementById('player')
-            iframe.className = "w-full h-[700px]"
-            iframe.src = currentVideo.link
-
-            let imageContainer = document.getElementById("redirect")
-            imageContainer.className = "hidden"
-
-        }
-    }
-
-    function increaseVideoActiveIndex() {
-        video_active_index =
-            (video_active_index + 1) % videos.length;
-        console.log(video_active_index)
-
-        replaceContent(video_active_index)
-    }
-
-    function decreaseVideoActiveIndex() {
-        video_active_index = video_active_index - 1;
-        if (video_active_index < 0) {
-            video_active_index = videos.length - 1;
-        }
-        replaceContent(video_active_index)
-    }
-
-    document.getElementById("prev-video").onclick = () => decreaseVideoActiveIndex();
-    document.getElementById("next-video").onclick = () => increaseVideoActiveIndex();
+  document.querySelectorAll(".player-icon").forEach((el) => {
+    el.addEventListener("click", () => {
+      startVideo(el);
+    });
+  });
 </script>

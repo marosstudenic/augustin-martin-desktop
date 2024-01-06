@@ -1,88 +1,113 @@
 ---
-  const spolupraca = [
-    {
-      title: "Texty v Obrazoch Obrazy v textoch",
-      authors: "Kamil Peteraj, Martin Augustín",
-      vydavatelstvo: "Vydavateľstvo IKAR",
-      image: "spoluprace/texty_v_obrazoch.jpg",
-      link: "https://www.luxusnakniznica.sk/otto",
-    },
-    {
-      title: "Sen menom láska",
-      authors: "Kamil Peteraj, Martin Augustín",
-      vydavatelstvo: "Vydavateľstvo IKAR",
-      image: "produkty/limitovane_senMenomLaska.jpg",
-      link: "https://www.luxusnakniznica.sk/sen-menom-laska",
-    },
-    {
-      title: "Stále ťa mať",
-      authors: "Kamil Peteraj",
-      vydavatelstvo: "Vydavateľstvo IKAR",
-      image: "spoluprace/stale_ta_mat.jpg",
-      link: "https://www.luxusnakniznica.sk/le/stale-ta-mat/index.html",
-    },
-    {
-      title: "Zrkadielka ku knihe Stále ťa mať",
-      authors: "Kamil Peteraj",
-      vydavatelstvo: "Vydavateľstvo IKAR",
-      image: "spoluprace/zrkadielko_stale_ta_mat.png",
-      link: "https://www.luxusnakniznica.sk/le/stale-ta-mat/index.html",
-    },
-    {
-      title: "Zrkadlo duše, monografia",
-      authors: "Ľudovít Petránsky",
-      vydavatelstvo: "Vydavateľstvo IKAR",
-      image: "spoluprace/zrkadlo_duse.jpg",
-      link: "https://www.luxusnakniznica.sk/knihy/martin-augustin-zrkadlo-duse",
-    },
-    {
-      title: "Máj",
-      authors: "Karel Hynek Mácha",
-      vydavatelstvo: "Vydavateľstvo IKAR",
-      image: "produkty/obalka_knihy_maj.jpg",
-      link: "https://www.rosier.cz/",
-    },
+const spolupraca = [
+  {
+    title: "Modlitebník",
+    authors: "Mons. ThLic. V. Pleva, M. Augustín, B. Baloghová",
+    vydavatelstvo: "Vydavateľstvo IKAR",
+    image: "novinky/MOD PERSPEKT.jpg",
+    link: "https://www.luxusnakniznica.sk/modlitebnik",
+  },
 
-    {
-      title: "KYTICE",
-      authors: "Karel Jaromír Erben",
-      vydavatelstvo: "Vydavateľstvo IKAR",
-      image: "produkty/kytice.jpg",
-      link: "/publikacie/kytice",
-    },
-  ];
+  {
+    title: "Vyznania",
+    authors: "Kamil Peteraj, Martin Augustín",
+    vydavatelstvo: "Vydavateľstvo IKAR",
+    image: "novinky/VyznaniaMA.png",
+    link: "https://www.luxusnakniznica.sk/vyznania",
+  },
+  {
+    title: "Texty v Obrazoch Obrazy v textoch",
+    authors: "Kamil Peteraj, Martin Augustín",
+    vydavatelstvo: "Vydavateľstvo IKAR",
+    image: "spoluprace/texty_v_obrazoch.jpg",
+    link: "https://www.luxusnakniznica.sk/otto",
+  },
+  {
+    title: "Sen menom láska",
+    authors: "Kamil Peteraj, Martin Augustín",
+    vydavatelstvo: "Vydavateľstvo IKAR",
+    image: "produkty/limitovane_senMenomLaska.jpg",
+    link: "https://www.luxusnakniznica.sk/sen-menom-laska",
+  },
+  {
+    title: "Stále ťa mať",
+    authors: "Kamil Peteraj",
+    vydavatelstvo: "Vydavateľstvo IKAR",
+    image: "spoluprace/stale_ta_mat.jpg",
+    link: "https://www.luxusnakniznica.sk/le/stale-ta-mat/index.html",
+  },
+  {
+    title: "Zrkadielka ku knihe Stále ťa mať",
+    authors: "Kamil Peteraj",
+    vydavatelstvo: "Vydavateľstvo IKAR",
+    image: "spoluprace/zrkadielko_stale_ta_mat.png",
+    link: "https://www.luxusnakniznica.sk/le/stale-ta-mat/index.html",
+  },
+  {
+    title: "Zrkadlo duše, monografia",
+    authors: "Ľudovít Petránsky",
+    vydavatelstvo: "Vydavateľstvo IKAR",
+    image: "spoluprace/zrkadlo_duse.jpg",
+    link: "https://www.luxusnakniznica.sk/knihy/martin-augustin-zrkadlo-duse",
+  },
+  {
+    title: "Máj",
+    authors: "Karel Hynek Mácha",
+    vydavatelstvo: "Vydavateľstvo IKAR",
+    image: "produkty/obalka_knihy_maj.jpg",
+    link: "https://www.rosier.cz/",
+  },
+
+  {
+    title: "KYTICE",
+    authors: "Karel Jaromír Erben",
+    vydavatelstvo: "Vydavateľstvo IKAR",
+    image: "produkty/kytice.jpg",
+    link: "/publikacie/kytice",
+  },
+];
 ---
 
 <section id="ikar" class="px-4 py-20">
   <h2 class="text-gray-500 text-xl font-medium mb-4">
     Spolupráca s vydavateľstvom IKAR
   </h2>
-  <div class="grid grid-cols-2">
-    {spolupraca.map((item) => (
-    <div class="w-full py-12 h-72">
-      <div class="flex">
-        <img src={"/assets/" + item.image} alt={item.title} class="w-52 object-contain mr-4 h-full my-auto modal-src" />
-        <div class="my-auto">
-          <h2 class="text-md font-medium">{ item.title }</h2>
-          <p class="text-gray-500 text-sm my-1">{ item.authors }</p>
-          <p class="text-gray-500 text-sm mb-2">{ item.vydavatelstvo }</p>
-          <a href={item.link} target="_blank" class="border border-black py-0.5 px-6" rel="nofollow noopener">  
-              <button class="btn">
-                <span class="text-sm text-black">viac</span>
-              </button>
-          </a>
+  <div class="grid grid-cols-1 md:grid-cols-2">
+    {
+      spolupraca.map((item) => (
+        <div class="w-full my-6 md:py-12 md:h-72">
+          <div class="flex">
+            <img
+              src={"/assets/" + item.image}
+              alt={item.title}
+              class="w-32 md:w-52 object-contain mr-4 h-full my-auto modal-src"
+            />
+            <div class="my-auto">
+              <h2 class="text-md font-medium">{item.title}</h2>
+              <p class="text-gray-500 text-sm my-1">{item.authors}</p>
+              <p class="text-gray-500 text-sm mb-2">{item.vydavatelstvo}</p>
+              <a
+                href={item.link}
+                target="_blank"
+                class="border border-black py-0.5 px-6"
+                rel="nofollow noopener"
+              >
+                <button class="btn">
+                  <span class="text-sm text-black">viac</span>
+                </button>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    ))}
+      ))
+    }
   </div>
-
 </section>
 
 <script>
-var imgs = document.querySelectorAll(".modal-src");
+  var imgs = document.querySelectorAll(".modal-src");
 
-	for (let i = 0; i < imgs.length; i++) {
-		imgs[i].onclick = (img) => showModal(img.target)
-	}
+  for (let i = 0; i < imgs.length; i++) {
+    imgs[i].onclick = (img) => showModal(img.target);
+  }
 </script>
