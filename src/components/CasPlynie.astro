@@ -272,18 +272,17 @@ const seasons = [
 				<div class="my-12 listing">
 					<h2 class="text-gray-500 text-lg font-semibold text-align-end mb-4">
 						{season.headline}
-						<!-- 
+
 						<span class="text-gray-500 pl-4 text-sm font-normal detail-btn cursor-pointer">
 							detail
 						</span>
-					-->
 					</h2>
 					<div class="flex gap-2 md:w-[75vw] overflow-x-auto scroll4">
 						{season.items.map((item) => (
 							<img
 								src={"/assets/cas_plynie/" + item.filename}
 								alt={item.title}
-								class="h-[300px] mb-2 cas-plynie-img"
+								class="h-[300px] md:h-[500px] mb-2 cas-plynie-img"
 							/>
 						))}
 					</div>
@@ -292,11 +291,11 @@ const seasons = [
 			))
 		}
 	</div>
-	<div class="season grid-cols-2 hidden z-50" id="detail">
+	<div class="season grid-cols-1 md:grid-cols-2 hidden z-50" id="detail">
 		{
 			seasons.map((season, index) => (
 				<div class="season-wrapper my-8">
-					<div class="season-item w-[400px]">
+					<div class="season-item max-w-[400px]">
 						<h2 class="text-gray-500 text-lg font-semibold text-align-end mb-4">
 							{season.headline}
 						</h2>
@@ -339,7 +338,7 @@ const seasons = [
 	let pos = { top: 0, left: 0, x: 0, y: 0 };
 	let currentEl = null;
 	const mouseDownHandler = function (e) {
-		currentEl = e.path[1];
+		currentEl = e.target;
 
 		currentEl.style.cursor = "grabbing";
 		currentEl.style.userSelect = "none";
@@ -663,6 +662,8 @@ const seasons = [
 	var imgs = document.querySelectorAll(".cas-plynie-img");
 
 	for (let i = 0; i < imgs.length; i++) {
-		imgs[i].onclick = (img) => { console.log(img); console.log(showModal);showModal(img.target)};
+		imgs[i].onclick = (img) => {
+			showModal(img.target.src, img.target.alt);
+		};
 	}
 </script>
