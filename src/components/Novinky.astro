@@ -9,7 +9,7 @@ const karticky = [
             "Vydavateľstvo Ikar",
         ],
 
-        link: "www.luxusnakniznica.sk/modlitebnik",
+        link: "https://www.luxusnakniznica.sk/modlitebnik",
     },
     {
         image: "/assets/novinky/VyznaniaMA.png",
@@ -93,7 +93,11 @@ const karticky = [
                 karticky.map((karticka) => (
                     <div class="rounded overflow-hidden shadow-lg flex justify-between flex-col">
                         <div class="">
-                            <img class="w-full" src={karticka.image} alt="" />
+                            <img
+                                class="w-full aspect-square object-cover"
+                                src={karticka.image}
+                                alt=""
+                            />
                             <div class="px-6 py-4">
                                 <div class="text-gray-500 text-lg font-semibold mb-2">
                                     {karticka.title}
@@ -110,10 +114,14 @@ const karticky = [
 
                         <div class="px-6 pt-4 pb-2">
                             <a
-                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
                                 href={karticka.link}
+                                target="_blank"
+                                class="border border-black py-0.5 px-6"
+                                rel="nofollow noopener"
                             >
-                                Zistiť viac
+                                <button class="btn">
+                                    <span class="text-sm text-black">viac</span>
+                                </button>
                             </a>
                         </div>
                     </div>

@@ -128,7 +128,7 @@ const videos = [
                 <div class="relative w-full">
                   <img
                     src={video.image}
-                    class="rounded-md h-64 w-full object-cover"
+                    class="rounded-md h-68 w-full object-cover"
                   />
                   <img
                     src="/assets/icons/play-512.png"
@@ -143,11 +143,7 @@ const videos = [
           return (
             <div>
               <div class="relative">
-                <video
-                  class="w-full rounded-md h-64"
-                  poster={video.image}
-                  controls
-                >
+                <video class="w-full rounded-md" poster={video.image} controls>
                   <source src={video.link} type="video/mp4" />
                 </video>
                 <img
@@ -156,7 +152,7 @@ const videos = [
                 />
                 <img
                   src={video.image}
-                  class="object-cover rounded-md h-64 w-full z-10 top-0 absolute video-cover"
+                  class="object-cover rounded-md h-68 w-full z-10 top-0 absolute video-cover"
                 />
               </div>
 

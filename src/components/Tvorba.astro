@@ -21,7 +21,7 @@ const malba = {
   <div class="kresba flex-1 md:pr-40 pb-8">
     <h2 class="text-gray-500 text-xl font-medium mb-2">Kresba</h2>
     <div class="items w-full">
-      <div class="item" id="kresba">
+      <div class="item overflow-hidden" id="kresba">
         <img
           src={"/assets/" + kresba.image}
           alt={kresba.title}
@@ -46,7 +46,7 @@ const malba = {
   <div class="malba flex-1 md:pr-40">
     <h2 class="text-gray-500 text-xl font-medium mb-2">Maľba</h2>
     <div class="items w-full">
-      <div class="item" id="malba">
+      <div class="item overflow-y-hidden" id="malba">
         <img
           src={"/assets/" + malba.image}
           alt={malba.title}
@@ -132,18 +132,24 @@ const malba = {
   var kresba_active_index = 0;
   var malba_active_index = 0;
 
+  function switchImage(id, data) {
+    let con = document.getElementById(id);
+    con.classList.toggle("fade-out");
+    setTimeout(() => {
+      con.children[0].src = "/assets/" + data.image;
+      con.children[1].innerText = data.title;
+      con.classList.toggle("fade-out");
+    }, 500);
+    document.getElementById(id + "-description").innerText =
+      data.description + " | " + data.date;
+  }
+
   function increaseKresbaActiveIndex() {
     kresba_active_index++;
     if (kresba_active_index >= kresba.length) {
       kresba_active_index = 0;
     }
-    let con = document.getElementById("kresba");
-    con.children[0].src = "/assets/" + kresba[kresba_active_index].image;
-    con.children[1].innerText = kresba[kresba_active_index].title;
-    document.getElementById("kresba-description").innerText =
-      kresba[kresba_active_index].description +
-      " | " +
-      kresba[kresba_active_index].date;
+    switchImage("kresba", kresba[kresba_active_index]);
   }
 
   function increaseMalbaActiveIndex() {
@@ -151,13 +157,7 @@ const malba = {
     if (malba_active_index >= malba.length) {
       malba_active_index = 0;
     }
-    let con = document.getElementById("malba");
-    con.children[0].src = "/assets/" + malba[malba_active_index].image;
-    con.children[1].innerText = malba[malba_active_index].title;
-    document.getElementById("malba-description").innerText =
-      malba[malba_active_index].description +
-      " | " +
-      malba[malba_active_index].date;
+    switchImage("malba", malba[malba_active_index]);
   }
 
   document.getElementById("next-kresba").onclick = () =>
@@ -168,6 +168,37 @@ const malba = {
   var imgs = document.querySelectorAll(".modal-src");
 
   for (let i = 0; i < imgs.length; i++) {
-    imgs[i].onclick = (img) => showModal(img.target);
+    imgs[i].onclick = (img) => {
+      showModal(img.target.src, img.target.alt);
+    };
   }
 </script>
+
+<style>
+  .item.fade-out > .modal-src {
+    transform: translateY(-100%);
+  }
+
+  .item > .modal-src {
+    transform: translateY(0);
+    transition: transform 0.5s;
+  }
+
+  .item > h3 {
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+
+  .item.fade-out > h3 {
+    opacity: 0;
+  }
+
+  .item > div {
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+
+  .item.fade-out > div {
+    opacity: 0;
+  }
+</style>
