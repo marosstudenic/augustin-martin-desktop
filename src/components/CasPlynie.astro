@@ -381,7 +381,7 @@ const seasons = [
 	// hide sliders, show detail
 	const detailBtns = document.getElementsByClassName("detail-btn");
 	for (let i = 0; i < detailBtns.length; i++) {
-		detailBtns[i].onclick = function () {
+		(detailBtns[i] as HTMLElement).onclick = function () {
 			let listings = document.getElementById("listing");
 			listings.style.display = "none";
 			let detail = document.getElementById("detail");
@@ -636,7 +636,7 @@ const seasons = [
 	}
 
 	for (let i = 0; i < nexts.length; i++) {
-		nexts[i].onclick = function (e) {
+		(nexts[i] as HTMLElement).onclick = function (e) {
 			let seasonIndex = e.target.id.split("-")[1];
 			counters[seasonIndex]++;
 			if (counters[seasonIndex] > seasons[seasonIndex].items.length) {
@@ -662,7 +662,7 @@ const seasons = [
 	var imgs = document.querySelectorAll(".cas-plynie-img");
 
 	for (let i = 0; i < imgs.length; i++) {
-		imgs[i].onclick = (img) => {
+		(imgs[i] as HTMLElement).onclick = (img) => {
 			showModal(img.target.src, img.target.alt);
 		};
 	}
