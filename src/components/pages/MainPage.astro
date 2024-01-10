@@ -1,0 +1,244 @@
+---
+// Component Imports
+import MainHead from "../MainHead.astro";
+import Uvod from "../Uvod.astro";
+import Novinky from "../Novinky.astro";
+import CasPlynie from "../CasPlynie.astro";
+import Zivotopis from "../Zivotopis.astro";
+import Vystavy from "../Vystavy.astro";
+import Tvorba from "../Tvorba.astro";
+import Spolupraca from "../Spolupraca.astro";
+import Video from "../Video.astro";
+import Gallery from "../Gallery.astro";
+import Kontakt from "../Kontakt.astro";
+import NavDesktop from "../NavDesktop.astro";
+import NavMobile from "../NavMobile.astro";
+import Products from "../Products.astro";
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<style>
+    .modal-content,
+    #caption {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+        .modal-content {
+            width: 100%;
+        }
+    }
+</style>
+
+<MainHead
+    title="Martin Augustín"
+    description="Slovenský umelec Martin Augustín predstavuje v spolupráci s Galériou u Anjela svoju novú kolekciu obrazov."
+/>
+
+<style lang="scss">
+    $w-s: 750px;
+
+    a {
+        text-decoration: none;
+    }
+</style>
+
+<body>
+    <NavMobile />
+    <div class="flex">
+        <NavDesktop />
+        <main class="w-full md:w-[80vw]">
+            <Uvod selectedMenu="uvod" />
+            <Novinky />
+            <Products />
+            <CasPlynie />
+            <Zivotopis />
+            <Vystavy />
+            <Tvorba />
+            <Spolupraca />
+            <Video />
+            <Gallery />
+            <Kontakt />
+        </main>
+    </div>
+
+    <!-- The Modal -->
+    <div
+        id="myModal"
+        class="modal fixed h-full w-full justify-center align-middle hidden top-0 left-0 overflow-hidden z-[80]"
+    >
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
+
+        <div class="p-20 h-full flex flex-col justify-center align-middle">
+            <figure class="h-full w-full flex flex-col justify-center">
+                <img
+                    class="modal-content max-w-full max-h-full object-contain mx-auto"
+                    id="img01"
+                />
+                <figcaption id="caption" class="text-white pt-2 text-center">
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <!-- <div
+            id="general-modal"
+            class="modal z-50 fixed top-0 left-0 w-full h-full hidden justify-center items-center"
+        >
+            <span class="close-general">&times;</span>
+
+            <img
+                class="modal-content object-contain mx-auto"
+                id="general-img"
+            />
+
+            <div id="caption-cas-caption" class="text-white"></div>
+        </div> -->
+    <script is:global>
+        window.lazyLoadOptions = {
+            // Your custom settings go here
+        };
+
+        // Listen to the initialization event
+        // and get the instance of LazyLoad
+        window.addEventListener(
+            "LazyLoad::Initialized",
+            function (event) {
+                window.lazyLoadInstance = event.detail.instance;
+            },
+            false
+        );
+
+        function showModal(src, caption) {
+            modal.classList.toggle("hidden");
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+            modalImg.src = src;
+            captionText.innerHTML = caption;
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.classList.toggle("hidden");
+            };
+        }
+
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // var modal = document.getElementById("general-modal");
+
+        // //modal pre img
+        // function showModal(img) {
+        //     var modalImg = document.getElementById("general-img");
+        //     modal.classList.toggle("hidden");
+        //     modalImg.src = img.src;
+
+        //     // Get the <span> element that closes the modal
+        //     var span = document.querySelector(".close-general");
+
+        //     // When the user clicks on <span> (x), close the modal
+        //     span.onclick = function () {
+        //         modal.classList.toggle("hidden");
+        //     };
+        // }
+    </script>
+</body>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    }
+
+    .modal {
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9);
+        /* Black w/ opacity */
+    }
+
+    /* Modal Content (Image) */
+
+    /* Caption of Modal Image (Image Text) - Same Width as the Image */
+
+    /* Add Animation - Zoom in the Modal */
+    .modal-content,
+    #caption {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    /* The Close Button */
+    .close-general {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: 400;
+        transition: 0.3s;
+    }
+
+    .close-general:hover,
+    .close-general:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+        .modal-content {
+            width: 100%;
+        }
+    }
+</style>

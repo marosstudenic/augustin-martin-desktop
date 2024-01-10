@@ -1,41 +1,47 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import CasPlynie from "./CasPlynie.astro";
+
+const lang = getLangFromUrl(Astro.url);
+
+const isSlovak = lang === "sk";
+const t = useTranslations(lang);
 var menu_items = [
     {
         section: "/#novinky",
-        title: "Novinky",
+        title: t("nav.news"),
     },
     {
         section: "/#cas-plynie",
-        title: "Čas plynie",
+        title: t("nav.time-passes"),
     },
     {
         section: "/#zivotopis",
-        title: "Životopis",
+        title: t("nav.biography"),
     },
     {
         section: "/#samostatne-vystavy",
-        title: "Výstavy",
+        title: t("nav.exhibitions"),
     },
     {
         section: "/#tvorba",
-        title: "Tvorba",
+        title: t("nav.work"),
     },
     {
         section: "/#ikar",
-        title: "IKAR",
+        title: t("nav.ikar"),
     },
     {
         section: "/#video",
-        title: "Video",
+        title: t("nav.video"),
     },
     {
         section: "/#galeria",
-        title: "Fotogaléria",
+        title: t("nav.gallery"),
     },
     {
         section: "/#kontakt",
-        title: "Kontakt",
+        title: t("nav.contact"),
     },
 ];
 
@@ -122,8 +128,20 @@ let { selectedMenu, isFixed = true } = Astro.props;
         }
 
         <li class="my-6 flex justify-center text-gray-500 py-1 text-lg">
-            <a class="pr-2 font-semibold text-gray-500" href="/">Slovenčina</a> |
-            <a class="pl-2 text-gray-500" href="/en">English</a>
+            <a
+                class:list={[
+                    "pr-2 text-gray-500 cursor-pointer",
+                    { "font-semibold": isSlovak },
+                ]}
+                href="/">Slovenčina</a
+            > |
+            <a
+                class:list={[
+                    "pl-2 text-gray-500",
+                    { "font-semibold": !isSlovak },
+                ]}
+                href="/en">English</a
+            >
         </li>
     </ul>
 </nav>

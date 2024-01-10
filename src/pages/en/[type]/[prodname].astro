@@ -1,9 +1,9 @@
 ---
-import ProductPage from "../../components/pages/ProductPage.astro";
-import { products } from "../../data/sk/products.astro";
+import ProductPage from "../../../components/pages/ProductPage.astro";
+import { products } from "../../../data/sk/products.astro";
 
 export function getStaticPaths() {
-  let gg = [];
+  let gg: { params: { type: string; prodname: string } }[] = [];
   Object.keys(products).forEach(function (key, index) {
     products[key].items.map((item) =>
       gg.push({
