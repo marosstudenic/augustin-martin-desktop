@@ -1,18 +1,23 @@
 ---
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import {
+    getLangFromUrl,
+    useTranslatedPath,
+    useTranslations,
+} from "../i18n/utils";
 let { selectedMenu } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 
 const isSlovak = lang === "sk";
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <nav class="hidden md:block w-[20vw]">
     <div class="h-[100vh] fixed top-0 px-8 py-8">
         <div>
             <div class="logo">
-                <a href="/"
+                <a href={translatePath("/")}
                     ><img
                         src="/assets/logo/new_logotyp_augustin.png"
                         alt=""
@@ -51,7 +56,7 @@ const t = useTranslations(lang);
                     ]}
                     id="nav-uvod"
                 >
-                    <a class="text-gray-500" href="/#uvod"
+                    <a class="text-gray-500" href={translatePath("/#uvod")}
                         >{t("nav.prologue")}
                     </a>
                 </li>
@@ -63,41 +68,49 @@ const t = useTranslations(lang);
                     ]}
                     id="nav-novinky"
                 >
-                    <a class="text-gray-500" href="/#novinky"
+                    <a class="text-gray-500" href={translatePath("/#novinky")}
                         >{t("nav.news")}
                     </a>
                 </li>
                 <li class="my-2 cursor-pointer" id="nav-cas-plynie">
-                    <a class="text-gray-500" href="/#cas-plynie"
+                    <a
+                        class="text-gray-500"
+                        href={translatePath("/#cas-plynie")}
                         >{t("nav.time-passes")}
                     </a>
                 </li>
                 <li class="my-2 cursor-pointer" id="nav-zivotopis">
-                    <a class="text-gray-500" href="/#zivotopis"
+                    <a class="text-gray-500" href={translatePath("/#zivotopis")}
                         >{t("nav.biography")}
                     </a>
                 </li>
                 <li class="my-2 cursor-pointer" id="nav-vystavy">
-                    <a class="text-gray-500" href="/#vystavy"
+                    <a class="text-gray-500" href={translatePath("/#vystavy")}
                         >{t("nav.exhibitions")}
                     </a>
                 </li>
                 <li class="my-2 cursor-pointer" id="nav-tvorba">
-                    <a class="text-gray-500" href="/#tvorba">{t("nav.work")}</a>
+                    <a class="text-gray-500" href={translatePath("/#tvorba")}
+                        >{t("nav.work")}
+                    </a>
                 </li>
                 <li class="my-2 cursor-pointer" id="nav-ikar">
-                    <a class="text-gray-500" href="/#ikar">{t("nav.ikar")}</a>
+                    <a class="text-gray-500" href={translatePath("/#ikar")}
+                        >{t("nav.ikar")}
+                    </a>
                 </li>
                 <li class="my-2 cursor-pointer" id="nav-video">
-                    <a class="text-gray-500" href="/#video">{t("nav.video")}</a>
+                    <a class="text-gray-500" href={translatePath("/#video")}
+                        >{t("nav.video")}
+                    </a>
                 </li>
                 <li class="my-2 cursor-pointer" id="nav-galeria">
-                    <a class="text-gray-500" href="/#galeria"
+                    <a class="text-gray-500" href={translatePath("/#galeria")}
                         >{t("nav.gallery")}
                     </a>
                 </li>
                 <li class="my-2 cursor-pointer" id="nav-kontakt">
-                    <a class="text-gray-500" href="/#kontakt"
+                    <a class="text-gray-500" href={translatePath("/#kontakt")}
                         >{t("nav.contact")}
                     </a>
                 </li>

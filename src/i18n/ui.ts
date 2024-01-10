@@ -16,6 +16,7 @@ export const languages = {
 };
 
 export const defaultLang = 'sk';
+export const showDefaultLang = false;
 
 export const ui = {
     en: {

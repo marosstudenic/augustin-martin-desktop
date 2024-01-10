@@ -1,46 +1,51 @@
 ---
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import {
+    getLangFromUrl,
+    useTranslatedPath,
+    useTranslations,
+} from "../i18n/utils";
 import CasPlynie from "./CasPlynie.astro";
 
 const lang = getLangFromUrl(Astro.url);
 
 const isSlovak = lang === "sk";
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 var menu_items = [
     {
-        section: "/#novinky",
+        section: translatePath("/#novinky"),
         title: t("nav.news"),
     },
     {
-        section: "/#cas-plynie",
+        section: translatePath("/#cas-plynie"),
         title: t("nav.time-passes"),
     },
     {
-        section: "/#zivotopis",
+        section: translatePath("/#zivotopis"),
         title: t("nav.biography"),
     },
     {
-        section: "/#samostatne-vystavy",
+        section: translatePath("/#samostatne-vystavy"),
         title: t("nav.exhibitions"),
     },
     {
-        section: "/#tvorba",
+        section: translatePath("/#tvorba"),
         title: t("nav.work"),
     },
     {
-        section: "/#ikar",
+        section: translatePath("/#ikar"),
         title: t("nav.ikar"),
     },
     {
-        section: "/#video",
+        section: translatePath("/#video"),
         title: t("nav.video"),
     },
     {
-        section: "/#galeria",
+        section: translatePath("/#galeria"),
         title: t("nav.gallery"),
     },
     {
-        section: "/#kontakt",
+        section: translatePath("/#kontakt"),
         title: t("nav.contact"),
     },
 ];
