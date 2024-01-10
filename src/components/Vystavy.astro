@@ -35,7 +35,7 @@ const spolocne_vystavy = t("exhibitions.group");
     }
   }
 </style>
-<section id="vystavy" class="px-4 py-8">
+<section id="vystavy" class="px-4 pt-20">
   <div class="grid grid-cols-1 md:grid-cols-2">
     <div class="accordion accordion-flush">
       <div class="flex justify-between">
@@ -160,8 +160,6 @@ const spolocne_vystavy = t("exhibitions.group");
       .querySelectorAll(".rozbalit")
       .forEach((item) => (item.innerText = expand));
   };
-
-  console.log(accordions, "accordions");
 
   accordions.forEach((accordion) => {
     const intro = accordion.querySelector(".accordion__intro");
