@@ -152,7 +152,6 @@ const spolocne_vystavy = t("exhibitions.group");
 
   const closeAccordion = (accordion) => {
     const content = accordion.querySelectorAll(".accordion__content");
-    console.log(content);
     accordion.classList.remove("accordion__active");
     content[0].style.maxHeight = null;
     // content[1].style.maxHeight = null;
@@ -165,7 +164,6 @@ const spolocne_vystavy = t("exhibitions.group");
     const intro = accordion.querySelector(".accordion__intro");
     const content = accordion.querySelector(".accordion__content");
     //realne su dva ale nam staci len jeden, pretoze sa bud oba otvoria alebo zatvoria
-    console.log(!!content.style.maxHeight);
     intro.onclick = () => {
       if (content.style.maxHeight) {
         closeAccordion(accordion);

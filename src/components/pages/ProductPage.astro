@@ -26,8 +26,6 @@ Object.keys(products).forEach(function (key) {
 
 currentType = products[currentType];
 
-console.log("currentType", currentType);
-
 var currentProduct = currentType.items.find((el) => el.slug == prodname);
 
 var orderOfProduct = currentType.items.indexOf(currentProduct);
