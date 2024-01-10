@@ -1,63 +1,9 @@
 ---
-const karticky = [
-    {
-        image: "/assets/novinky/MOD PERSPEKT.jpg",
-        title: "Modlitebník",
-        text: [
-            "Mons. ThLic. V. Pleva, M. Augustín, B. Baloghová",
-            "Bibliofília dostupná v Luxusnej knižnici cez link nižšie",
-            "Vydavateľstvo Ikar",
-        ],
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { NewsItem } from "../i18n/data/news";
 
-        link: "https://www.luxusnakniznica.sk/modlitebnik",
-    },
-    {
-        image: "/assets/novinky/VyznaniaMA.png",
-        title: "Vyznania",
-        text: [
-            "Kamil Peteraj, Martin Augustín",
-            "Limitovaná edícia",
-            "Bibliofília je dostupná v Luxusnej knižnici cez link nižšie",
-            "Vydavateľstvo Ikar",
-        ],
-
-        link: "https://www.luxusnakniznica.sk/vyznania",
-    },
-    {
-        image: "/assets/novinky/kamil-peteraj.jpg",
-        title: "Sen menom láska",
-        text: [
-            "Som veľmi rád, že moje ilustrácie sprevádzajú krásne a tak pravdivé básne Kamila Peteraja v edícii luxusnej knižnice.",
-            "Ja verím, že jeden z najkrajších citov je láska. Robí z nás bytosti cítiace a súcitiace. A verím, že toto spojenie prispeje k tomu aby náš svet bol krajší.",
-        ],
-    },
-
-    {
-        image: "/assets/produkty/kytice.jpg",
-        title: "Kytice",
-        text: [
-            "Jediná pôvodná básnická zbierka, ktorú Erben vydal",
-            "Jedinečné limitované vydanie",
-        ],
-    },
-
-    {
-        image: "/assets/produkty/maj_priloha.png",
-        title: "Máj",
-        text: [
-            "Limitovaná edícia knihy Máj, dostupná v Českej republike.",
-            "Je súčasťou kráľovskej zbierky Buckinghamského paláca v Londýne.",
-        ],
-    },
-
-    {
-        image: "/assets/spoluprace/zrkadlo_duse.jpg",
-        title: "Zrkadlo duše",
-        text: [
-            "Monografia je súčasťou zbierky Francúzskej národnej knižnice v Paríži.",
-        ],
-    },
-];
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <style>
@@ -90,7 +36,7 @@ const karticky = [
         <h3 class="text-gray-500 mb-2 font-medium text-2xl">Novinky</h3>
         <div class="grid md:grid-cols-3 gap-8 md:max-w-6xl">
             {
-                karticky.map((karticka) => (
+                (t("news.items") as NewsItem[]).map((karticka) => (
                     <div class="rounded overflow-hidden shadow-lg flex justify-between flex-col">
                         <div class="">
                             <img
@@ -112,18 +58,22 @@ const karticky = [
                             </div>
                         </div>
 
-                        <div class="px-6 pt-4 pb-2">
-                            <a
-                                href={karticka.link}
-                                target="_blank"
-                                class="border border-black py-0.5 px-6 rounded-md"
-                                rel="nofollow noopener"
-                            >
-                                <button class="btn">
-                                    <span class="text-sm text-black">viac</span>
-                                </button>
-                            </a>
-                        </div>
+                        {karticka.link && (
+                            <div class="px-6 pt-4 pb-2">
+                                <a
+                                    href={karticka.link}
+                                    target="_blank"
+                                    class="border border-black py-0.5 px-6 rounded-md"
+                                    rel="nofollow noopener"
+                                >
+                                    <button class="btn">
+                                        <span class="text-sm text-black">
+                                            {t("utils.more")}
+                                        </span>
+                                    </button>
+                                </a>
+                            </div>
+                        )}
                     </div>
                 ))
             }

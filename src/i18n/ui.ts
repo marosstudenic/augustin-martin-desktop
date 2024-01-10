@@ -20,6 +20,7 @@ export const ui = {
         'nav.video': 'Video',
         'nav.gallery': 'Gallery',
         'nav.contact': 'Contact',
+        'utils.more': 'More',
 
         ...enPrologue,
         ...enNews,
@@ -35,6 +36,8 @@ export const ui = {
         'nav.video': 'Video',
         'nav.gallery': 'Fotogaléria',
         'nav.contact': 'Kontakt',
+
+        'utils.more': 'Viac',
 
         ...skPrologue,
         ...skNews,
