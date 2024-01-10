@@ -277,10 +277,10 @@ const nextLink =
       <main class="w-full md:w-[80vw] h-full md:pt-20" id="novinky">
         <div class="container mx-auto px-4 flex flex-col pb-4">
           <div
-            class="flex flex-col lg:flex-row md:gap-20 justify-start md:justify-between"
+            class="flex flex-col lg:flex-row md:gap-20 justify-start md:justify-between mb-12 md:mb-20"
           >
             <div class="w-full flex-1">
-              <div class="flex justify-between">
+              <div class="flex justify-between max-w-xl">
                 <a href="/#novinky" class="flex align-middle">
                   <svg
                     class="h-10 py-2"
@@ -323,7 +323,7 @@ const nextLink =
                 class="img-container w-full relative overflow-hidden transition-all duration-500"
               >
                 <img
-                  class="w-full object-cover active"
+                  class="w-full object-cover active max-w-xl"
                   src={"/assets/" + currentProduct.image}
                   alt={currentProduct.title}
                   id="prod-img"
@@ -398,8 +398,10 @@ const nextLink =
           <!-- show other product from same category -->
           {
             currentType.items.length > 1 && (
-              <div class="mt-12 md:mt-40 max-w-4xl">
-                <h3 class="font-semibold text-gray-500">Ostatné produkty</h3>
+              <div class="max-w-4xl">
+                <h3 class="font-semibold text-gray-500">
+                  Všetky {currentType.title}
+                </h3>
 
                 <div class="grid grid-cols-2 md:grid-cols-4 justify-between gap-2 md:gap-8">
                   {currentType.items.map((item) => (
@@ -421,6 +423,40 @@ const nextLink =
                   ))}
                 </div>
               </div>
+            )
+          }
+
+          <!-- show products from all categories except the currentOne -->
+          {
+            Object.keys(products).map(
+              (key) =>
+                key != currentType.slug && (
+                  <div class="mt-12 max-w-4xl">
+                    <h3 class="font-semibold text-gray-500">
+                      {products[key].title}
+                    </h3>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 justify-between gap-2 md:gap-8">
+                      {products[key].items.map((item) => (
+                        <a
+                          href={"/" + products[key].slug + "/" + item.slug}
+                          class=" py-2"
+                        >
+                          <img
+                            class="w-full translate-y-0 aspect-square"
+                            src={"/assets/" + item.image}
+                            alt={item.title}
+                          />
+                          <p class="text-gray-500 text-sm pt-2">
+                            <span class="font-semibold">{item.title}</span>
+                            <br />
+                            {item.author}
+                          </p>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )
             )
           }
 
