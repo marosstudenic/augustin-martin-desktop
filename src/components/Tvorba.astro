@@ -300,6 +300,21 @@ const malba = {
       showModal(img.target.src, img.target.alt);
     };
   }
+
+  function preloadImage(url) {
+    var img = new Image();
+    img.src = url;
+  }
+
+  function preloadAllImages() {
+    for (let i = 0; i < kresba.length; i++) {
+      preloadImage("/assets/" + kresba[i].image);
+    }
+    for (let i = 0; i < malba.length; i++) {
+      preloadImage("/assets/" + malba[i].image);
+    }
+  }
+  preloadAllImages();
 </script>
 
 <style>
