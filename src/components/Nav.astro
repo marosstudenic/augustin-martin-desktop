@@ -1,8 +1,8 @@
 ---
 import NavDesktop from "./NavDesktop.astro";
 import NavMobile from "./NavMobile.astro";
-let { selectedMenu } = Astro.props;
+let { selectedMenu, mainPage } = Astro.props;
 ---
 
-<NavMobile />
-<NavDesktop selectedMenu={selectedMenu} />
+<NavMobile mainPage={mainPage} />
+<NavDesktop selectedMenu={selectedMenu} mainPage={mainPage} />

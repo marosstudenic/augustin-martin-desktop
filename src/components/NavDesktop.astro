@@ -4,7 +4,7 @@ import {
     useTranslatedPath,
     useTranslations,
 } from "../i18n/utils";
-let { selectedMenu } = Astro.props;
+let { selectedMenu, mainPage = true } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 
@@ -145,120 +145,153 @@ const translatePath = useTranslatedPath(lang);
     </div>
 </nav>
 
-<script>
-    window.onscroll = function () {
-        let navs = document.getElementsByClassName("nav")[0].children;
+<script define:vars={{ mainPage: mainPage }}>
+    if (mainPage) {
+        window.onscroll = function () {
+            let navs = document.getElementsByClassName("nav")[0].children;
 
-        if (
-            window.pageYOffset >
-            document.getElementById("kontakt").offsetTop -
-                window.innerHeight / 2
-        ) {
-            for (let i = 0; i < navs.length; i++) {
-                navs[i].className = navs[i].className.replace("font-bold", "");
-            }
-            document.getElementById("nav-kontakt").className =
-                "my-2 cursor-pointer font-bold";
+            if (
+                window.pageYOffset >
+                document.getElementById("kontakt").offsetTop -
+                    window.innerHeight / 2
+            ) {
+                for (let i = 0; i < navs.length; i++) {
+                    navs[i].className = navs[i].className.replace(
+                        "font-bold",
+                        ""
+                    );
+                }
+                document.getElementById("nav-kontakt").className =
+                    "my-2 cursor-pointer font-bold";
 
-            // Do something
-        } else if (
-            window.pageYOffset >
-            document.getElementById("galeria").offsetTop -
-                window.innerHeight / 2
-        ) {
-            for (let i = 0; i < navs.length; i++) {
-                navs[i].className = navs[i].className.replace("font-bold", "");
-            }
-            document.getElementById("nav-galeria").className =
-                "my-2 cursor-pointer font-bold";
-            // Do something
-        } else if (
-            window.pageYOffset >
-            document.getElementById("video").offsetTop - window.innerHeight / 2
-        ) {
-            for (let i = 0; i < navs.length; i++) {
-                navs[i].className = navs[i].className.replace("font-bold", "");
-            }
-            document.getElementById("nav-video").className =
-                "my-2 cursor-pointer font-bold";
-            // Do something
-        } else if (
-            window.pageYOffset >
-            document.getElementById("ikar").offsetTop - window.innerHeight / 2
-        ) {
-            for (let i = 0; i < navs.length; i++) {
-                navs[i].className = navs[i].className.replace("font-bold", "");
-            }
-            document.getElementById("nav-ikar").className =
-                "my-2 cursor-pointer font-bold";
-            // Do something
-        } else if (
-            window.pageYOffset >
-            document.getElementById("tvorba").offsetTop - window.innerHeight / 2
-        ) {
-            for (let i = 0; i < navs.length; i++) {
-                navs[i].className = navs[i].className.replace("font-bold", "");
-            }
-            document.getElementById("nav-tvorba").className =
-                "my-2 cursor-pointer font-bold";
-            // Do something
-        } else if (
-            window.pageYOffset >
-            document.getElementById("vystavy").offsetTop -
-                window.innerHeight / 2
-        ) {
-            for (let i = 0; i < navs.length; i++) {
-                navs[i].className = navs[i].className.replace("font-bold", "");
-            }
-            document.getElementById("nav-vystavy").className =
-                "my-2 cursor-pointer font-bold";
-            // Do something
-        } else if (
-            window.pageYOffset >
-            document.getElementById("zivotopis").offsetTop -
-                window.innerHeight / 2
-        ) {
-            for (let i = 0; i < navs.length; i++) {
-                navs[i].className = navs[i].className.replace("font-bold", "");
-            }
-            document.getElementById("nav-zivotopis").className =
-                "my-2 cursor-pointer font-bold";
-            // Do something
-        } else if (
-            window.pageYOffset >
-            document.getElementById("cas-plynie").offsetTop -
-                window.innerHeight / 2
-        ) {
-            for (let i = 0; i < navs.length; i++) {
-                navs[i].className = navs[i].className.replace("font-bold", "");
-            }
-            document.getElementById("nav-cas-plynie").className =
-                "my-2 cursor-pointer font-bold";
-            // Do something
-        } else if (
-            window.pageYOffset >
-            document.getElementById("novinky").offsetTop -
-                window.innerHeight / 2
-        ) {
-            for (let i = 0; i < navs.length; i++) {
-                navs[i].className = navs[i].className.replace("font-bold", "");
-            }
-            document.getElementById("nav-novinky").className =
-                "my-2 cursor-pointer font-bold";
-            // Do something
-        } else if (
-            window.pageYOffset >
-            document.getElementById("uvod").offsetTop - window.innerHeight / 2
-        ) {
-            for (let i = 0; i < navs.length; i++) {
-                navs[i].className = navs[i].className = navs[
-                    i
-                ].className.replace("font-bold", "");
-            }
-            document.getElementById("nav-uvod").className =
-                "my-2 cursor-pointer font-bold";
+                // Do something
+            } else if (
+                window.pageYOffset >
+                document.getElementById("galeria").offsetTop -
+                    window.innerHeight / 2
+            ) {
+                for (let i = 0; i < navs.length; i++) {
+                    navs[i].className = navs[i].className.replace(
+                        "font-bold",
+                        ""
+                    );
+                }
+                document.getElementById("nav-galeria").className =
+                    "my-2 cursor-pointer font-bold";
+                // Do something
+            } else if (
+                window.pageYOffset >
+                document.getElementById("video").offsetTop -
+                    window.innerHeight / 2
+            ) {
+                for (let i = 0; i < navs.length; i++) {
+                    navs[i].className = navs[i].className.replace(
+                        "font-bold",
+                        ""
+                    );
+                }
+                document.getElementById("nav-video").className =
+                    "my-2 cursor-pointer font-bold";
+                // Do something
+            } else if (
+                window.pageYOffset >
+                document.getElementById("ikar").offsetTop -
+                    window.innerHeight / 2
+            ) {
+                for (let i = 0; i < navs.length; i++) {
+                    navs[i].className = navs[i].className.replace(
+                        "font-bold",
+                        ""
+                    );
+                }
+                document.getElementById("nav-ikar").className =
+                    "my-2 cursor-pointer font-bold";
+                // Do something
+            } else if (
+                window.pageYOffset >
+                document.getElementById("tvorba").offsetTop -
+                    window.innerHeight / 2
+            ) {
+                for (let i = 0; i < navs.length; i++) {
+                    navs[i].className = navs[i].className.replace(
+                        "font-bold",
+                        ""
+                    );
+                }
+                document.getElementById("nav-tvorba").className =
+                    "my-2 cursor-pointer font-bold";
+                // Do something
+            } else if (
+                window.pageYOffset >
+                document.getElementById("vystavy").offsetTop -
+                    window.innerHeight / 2
+            ) {
+                for (let i = 0; i < navs.length; i++) {
+                    navs[i].className = navs[i].className.replace(
+                        "font-bold",
+                        ""
+                    );
+                }
+                document.getElementById("nav-vystavy").className =
+                    "my-2 cursor-pointer font-bold";
+                // Do something
+            } else if (
+                window.pageYOffset >
+                document.getElementById("zivotopis").offsetTop -
+                    window.innerHeight / 2
+            ) {
+                for (let i = 0; i < navs.length; i++) {
+                    navs[i].className = navs[i].className.replace(
+                        "font-bold",
+                        ""
+                    );
+                }
+                document.getElementById("nav-zivotopis").className =
+                    "my-2 cursor-pointer font-bold";
+                // Do something
+            } else if (
+                window.pageYOffset >
+                document.getElementById("cas-plynie").offsetTop -
+                    window.innerHeight / 2
+            ) {
+                for (let i = 0; i < navs.length; i++) {
+                    navs[i].className = navs[i].className.replace(
+                        "font-bold",
+                        ""
+                    );
+                }
+                document.getElementById("nav-cas-plynie").className =
+                    "my-2 cursor-pointer font-bold";
+                // Do something
+            } else if (
+                window.pageYOffset >
+                document.getElementById("novinky").offsetTop -
+                    window.innerHeight / 2
+            ) {
+                for (let i = 0; i < navs.length; i++) {
+                    navs[i].className = navs[i].className.replace(
+                        "font-bold",
+                        ""
+                    );
+                }
+                document.getElementById("nav-novinky").className =
+                    "my-2 cursor-pointer font-bold";
+                // Do something
+            } else if (
+                window.pageYOffset >
+                document.getElementById("uvod").offsetTop -
+                    window.innerHeight / 2
+            ) {
+                for (let i = 0; i < navs.length; i++) {
+                    navs[i].className = navs[i].className = navs[
+                        i
+                    ].className.replace("font-bold", "");
+                }
+                document.getElementById("nav-uvod").className =
+                    "my-2 cursor-pointer font-bold";
 
-            // Do something
-        }
-    };
+                // Do something
+            }
+        };
+    }
 </script>
