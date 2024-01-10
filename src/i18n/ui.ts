@@ -1,3 +1,6 @@
+import { sk as skPrologue, en as enPrologue } from './data/prologue';
+import { sk as skNews, en as enNews } from './data/news';
+
 export const languages = {
     en: 'English',
     sk: 'Slovenčína',
@@ -17,6 +20,9 @@ export const ui = {
         'nav.video': 'Video',
         'nav.gallery': 'Gallery',
         'nav.contact': 'Contact',
+
+        ...enPrologue,
+        ...enNews,
     },
     sk: {
         'nav.prologue': 'Úvod',
@@ -29,5 +35,9 @@ export const ui = {
         'nav.video': 'Video',
         'nav.gallery': 'Fotogaléria',
         'nav.contact': 'Kontakt',
+
+        ...skPrologue,
+        ...skNews,
     },
+
 } as const;
