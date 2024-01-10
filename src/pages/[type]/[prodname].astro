@@ -1,13 +1,14 @@
 ---
 import ProductPage from "../../components/pages/ProductPage.astro";
 import { products } from "../../data/sk/products.astro";
+// jeden zdroj je z translations a druhy z product, lebo nacitavania ts z dynamic path nejako nefunguje
 
 export function getStaticPaths() {
   let gg = [];
   Object.keys(products).forEach(function (key, index) {
     products[key].items.map((item) =>
       gg.push({
-        params: { type: products[key].slug, prodname: item.slug },
+        params: { type: products[key]["slug"], prodname: item["slug"] },
       })
     );
   });

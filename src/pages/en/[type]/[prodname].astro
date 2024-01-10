@@ -1,6 +1,7 @@
 ---
 import ProductPage from "../../../components/pages/ProductPage.astro";
 import { products } from "../../../data/sk/products.astro";
+// jeden zdroj je z translations a druhy z product, lebo nacitavania ts z dynamic path nejako nefunguje
 
 export function getStaticPaths() {
   let gg: { params: { type: string; prodname: string } }[] = [];

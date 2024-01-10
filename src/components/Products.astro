@@ -1,8 +1,13 @@
 ---
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import {
+    getLangFromUrl,
+    useTranslatedPath,
+    useTranslations,
+} from "../i18n/utils";
 import { IProductCategory } from "../i18n/data/products";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <section id="products" class="w-full px-4 pt-20 mb-20">
@@ -13,7 +18,7 @@ const t = useTranslations(lang);
     <div class="grid grid-cols-1 md:grid-cols-4 gap-16 max-w-4xl">
         {
             (t("products.categories") as IProductCategory[]).map((category) => (
-                <a class="cursor-pointer" href={category.link}>
+                <a class="cursor-pointer" href={translatePath(category.link)}>
                     <h3 class="text-gray-500 mb-2">{category.name}</h3>
                     <img
                         src={category.image}

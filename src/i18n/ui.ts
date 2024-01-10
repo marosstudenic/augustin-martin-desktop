@@ -34,6 +34,9 @@ export const ui = {
         'utils.expand': 'expand',
         'utils.hide': 'hide',
         'utils.next': 'next',
+        'utils.all': "All",
+        'utils.contact': "Contact",
+        'utils.next-image': 'Next image',
 
         ...enPrologue,
         ...enNews,
@@ -65,6 +68,9 @@ export const ui = {
         'utils.expand': 'rozbaliť',
         'utils.hide': 'skryť',
         'utils.next': 'nasledujúca',
+        'utils.all': 'Všetky',
+        'utils.contact': "Kontaktovať",
+        'utils.next-image': 'Ďalší obrázok',
 
         ...skPrologue,
         ...skNews,

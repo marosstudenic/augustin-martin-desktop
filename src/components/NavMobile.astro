@@ -61,11 +61,13 @@ let { selectedMenu, isFixed = true } = Astro.props;
 >
     <div class="flex justify-between h-full w-full px-4 rounded-lg bg-[#fff]">
         <div class="logo max-h-14 my-auto">
-            <img
-                alt="Augustin Martin logo"
-                class="logo object-contain h-10 my-auto"
-                src="/assets/logo/new_logotyp_augustin.png"
-            />
+            <a href={translatePath("/")}>
+                <img
+                    alt="Augustin Martin logo"
+                    class="logo object-contain h-10 my-auto"
+                    src="/assets/logo/new_logotyp_augustin.png"
+                />
+            </a>
         </div>
         <div class="flex">
             <a
