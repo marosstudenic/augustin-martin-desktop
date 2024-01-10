@@ -1,326 +1,11 @@
 ---
-const samostatne_vystavy = [
-  {
-    date: "1990",
-    locations: [
-      "Galéria ARPEX, Bratislava, spolu s Andrejom Augustínom",
-      "Galéria Simone, Bratislava, spolu s Andrejom Augustínom",
-    ],
-  },
-  {
-    date: "1992",
-    locations: [
-      "Galéria Alexy, Dom slovenskej kultúry v Prahe, Praha, spolu s Alenou Burianovou a Ronaldom Štefkom",
-      "Galéria Dielo Centrum, Bratislava, spolu s Andrejom Augustínom",
-      "Galéria Dielo, Trenčín, spolu s Andrejom Augustínom",
-    ],
-  },
-  {
-    date: "1993",
-    locations: [
-      "<i>Svetlo, tiene, tma,</i> Štúdio Lasica & Satinský, Bratislava, koncepcia výstavy Bohumír Bachratý, pod záštitou pani Magdy Vášáryovej, spolu s Andrejom Augustínom a Marekom Ormandíkom",
-    ],
-  },
-  {
-    date: "1994",
-    locations: [
-      "<i>Grafika,</i> Galéria u Prstenu, Praha, spolu s Andrejom Augustínom",
-      "<i>Augustínovci</i>, Slovácké Muzeum, Uherské Hradište, spolu s Boženou Augustínovou a Andrejom Augustínom",
-    ],
-  },
-  {
-    date: "1999",
-    locations: [
-      "<i>Artprotis, maľba, kresba,</i> Galéria MaratArt, Bratislava, spolu s Boženou Augustínovou a Andrejom Augustínom, výstava venovaná Růžene Rochovanskej",
-    ],
-  },
-  {
-    date: "2002",
-    locations: [
-      "<i>Božena Augustínová, Martin Augustín,</i> Galéria Michalský dvor, Bratislava, koncepcia výstavy Bohumír Bachratý",
-    ],
-  },
-  {
-    date: "2004",
-    locations: [
-      "<i>Dobrý deň,</i> Galéria Živa, Severozápadná bašta zvolenského zámku, Zvolen, koncepcia výstavy Ľudmila Holíková, spolu s Boženou Augustínovou a Andrejom Augustínom",
-      "Božena, Andrej, Martin Augustínovci, Galerie Podkova, Olomouc, spolu s Boženou Augustínovou a Andrejom Augustínom",
-    ],
-  },
-  {
-    date: "2005",
-    locations: [
-      "<i>Artprotis, kresba,</i> Galéria Miro, Bratislava, spolu s Boženou Augustínovou",
-    ],
-  },
-  {
-    date: "2006",
-    locations: [
-      "<i>Andrej a Martin Augustín 66 zím</i>, Galéria Slovenskej sporiteľne, Bratislava, výstava venovaná Božene Augustínovej, spolu s Andrejom Augustínom, kurátor výstavy Ľudovít Petránsky",
-      "<i>Andrej a Martin Augustín 66 zím,</i> Galéria M. A. Bazovského, Trenčín, výstava venovaná Božene Augustínovej, spolu s Andrejom Augustínom",
-    ],
-  },
-  {
-    date: "2007",
-    locations: [
-      "<i>Plumes de Paris,</i> Slovenské veľvyslanectvo, Paríž, spolu s Boženou Augustínovou a Andrejom Augustínom",
-      "<i>Martin Augustín kresba,</i> Galéria spánku, Spoločenské centrum SLK, Kúpeľný ostrov, Piešťany",
-      "<i>Hommage au Tour de France,</i> Francúzsky inštitút v Bratislave, koncepcia výstavy Petr Volný (Les Petites Femmes), pod záštitou J. E. Henri Kuny, veľvyslanca francúzskej republiky na Slovensku a Christiana Prudhomma, generálneho riaditeľa Tour de France, spolu s Andrejom Augustínom, Petrom Balharom a Petrom Stankovičom",
-    ],
-  },
-  {
-    date: "2008",
-    locations: [
-      "Kresba, Mestská galéria Trenčín, spolu s Andrejom Augustínom",
-      "<i>Martin a Daniela Augustínovci,</i> Galéria Podkova, Olomouc",
-      "<i>Andrej a Martin Augustínovci,</i> Art Galéria, Nitra, spolu s Andrejom Augustínom",
-      "<i>40</i>, Galéria BYZANT, Bratislava, kurátor výstavy Ľudovít Petránsky",
-      "Galéria českého kultúrneho centra, Bratislava, spolu s Yvone Baalbaky",
-    ],
-  },
-  {
-    date: "2009",
-    locations: [
-      "Božena Augustínová a synovia Andrej a Martin, Dom umenia, Bratislava, spolus Boženou Augustínovou a Andrejom Augustínom, kurátor výstavy Ľudovít Petránsky",
-    ],
-  },
-  {
-    date: "2010",
-    locations: [
-      "<i>Príbehy</i>, Oravská galéria, Dolný Kubín, spolu s Boženou Augustínovou a Andrejom Augustínom, kurátor výstavy Ľudovít Petránsky",
-      "Severozápadná bašta zvolenského zámku, Zvolen, spolu s Andrejom Augustínom",
-    ],
-  },
-  {
-    date: "2011",
-    locations: [
-      "<i>Z JEDNOGO GNIAZDA</i>, Slovenský inštitút vo Varšave, spolu s Boženou Augustínovou a Andrejom Augustínom",
-      "<i>Z jednoho hnízda</i>, Slovácké Muzeum, Uherské Hradište, spolu s Boženou Augustínovou a Andrejom Augustínom, kurátor výstavy Marie Martykánová",
-      "<i>Skryté sny</i>, Galéria M locus arte, Žilina, spolu s Danielou Augustínovou, kurátor výstavy Ľudovít Petránsky",
-    ],
-  },
-  {
-    date: "2012",
-    locations: [
-      "<i>Geheimnisse unseres Ateliers</i>, Galéria Slovenského inštitútu v Berlíne, Nemecko, spolu s Boženou Augustínovou a Andrejom Augustínom, kurátor výstavy Ľudovít Petránsky",
-      "<i>Stretnutie s Picassom</i>, Pablo Picasso, Andrej a Martin Augustínovci, River Gallery, Bratislava",
-      "<i>Verše v obrazoch</i>, Carlton Hall Radisson Blu Carlton, Bratislava, spolu s Kamilom Peterajom, s krstom knihy Kamila Peteraja Bosá v priesvitných šatách",
-      "<i>Andrej a Martin Augustínovci </i> - výtvarná tvorba, MG Art Galéria, Považská Bystrica, spolu s Andrejom Augustínom, kurátor výstavy Milan Mazúr",
-    ],
-  },
-  {
-    date: "2013",
-    locations: [
-      "<i>Na červenom koberci</i>, Galéria na poschodí Bratislava úvodné slovo Kamil Peteraj, spolu s Andrejom Augustínom",
-      "<i>Vôňa ženy</i>, Hotel International, Veľká Lomnica, kurátor výstavy Carmen Kováčová",
-    ],
-  },
-  {
-    date: "2014",
-    locations: [
-      "<i>Vôňa ženy</i>, Mestská knižnica Hany Zelinovej, Vrútky",
-      "<i>3 x A</i>, Galéria M locus arte, Žilina, spolu s Danielou Augustínovou a Andrejom Augustínom",
-    ],
-  },
-  {
-    date: "2015",
-    locations: [
-      "<i>Harmónia farebných tónov</i>, Slovenská filharmónia – Reduta , Bratislava, spolu s Kamilom Peterajom, pri príležitosti Bratislavských hudobných slávností",
-    ],
-  },
-  {
-    date: "2016",
-    locations: [
-      "<i>Medzi nebom a ženou</i>, Tatranská galéria v Poprade, spolu s Boženou Augustínovou a Andrejom Augustínom",
-    ],
-  },
-  {
-    date: "2017",
-    locations: [
-      "<i>Slová v obrazoch – Obrazy v slovách</i>, spolu s Kamilom Peterajom, Danubiana Meulensteen Art Museum, Bratislava",
-    ],
-  },
-  {
-    date: "2018",
-    locations: [
-      "<i>Dve generácie</i>, Kasárne/Kulturpark, Galéria Alfa, Košice, spolu s Boženou Augustínovou a Andrejom Augustínom, kurátor výstavy Ľudovít Petránsky",
-      "<i>Tajomstvá</i>, Art galéria Schürger, Tvrdošín, kurátor výstavy Anna Lenková",
-      "<i>Martin Augustín La Parisienne</i>, rezidencia veľvyslanca SR vo Francúzsku, Paríž",
-    ],
-  },
-  {
-    date: "2019",
-    locations: [
-      "<i>Martin Augustín - Dotyk nehy</i>, Grand Hotel Kempinski, Štrbské Pleso, kurátor výstavy Carmen Kováčová",
-      "<i>Obrazárium Martina Augustína</i>, Botanická záhrada, Bratislava",
-    ],
-  },
-  {
-    date: "2020",
-    locations: [
-      "<i>Výstava Ateliér duše</i> M Locus Arte, Žilina, koncepcia výstavy Marika Dudášová",
-    ],
-  },
-  {
-    date: "2021",
-    locations: [
-      "<i>Tajomstvá ateliéru Martina Augustína</i>, Galéria Bořek Šípek, Dessewffyho palác, Bratislava, koncepcia výstavy Carmen Kováčová",
-      "<i>Letné ateléry Andreja a Martina Augustínovcov</i>, Magna Gallery Piešťany",
-      "<i>Galéria v Podkroví</i>, Štátna vedecká knižnica, Banská Bystrica – spolu s Andrejom Augustínom, kurátor výstavy Ľudovít Petránsky",
-      "<i>Hľadači snov</i>, Štátna vedecká knižnica, Galéria v Podkroví, Banská Bystrica, koncepcia výstavy Ľudovít Petránsky",
-    ],
-  },
-  {
-    date: "2022",
-    locations: [
-      "<i>Spiegel der Seele</i>, Slovenský inštitút v Berlíne, koncepcia výstavy Carmen Kováčová",
-      "<i>Le Roman</i>, Slovenský inštitút v Ríme, koncepcia výstavy Carmen Kováčová\n",
-      "<i>Všetky lásky</i>, výstavné priestory Českej sporiteľne, Brno, koncepcia výstavy Carmen Kováčová",
-    ],
-  },
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
-  {
-    date: "2023",
-    locations: [
-      "Zrkadlo duše, Oravská galéria v Dolnom Kubíne, kurátor výstavy Ľudovít Petránsky",
-      "Augustínovci na zámku, ŠIMÁK ZÁMOK PEZINOK, kurátor výstavy Ľudovít Petránsky",
-      "ANIOŁ STRÓŻ, Galéria slovenského spolku v Krakove, Poľsko, kurátorka výstavy Carmen Kováčová",
-      "MARTIN AUGUSTÍN, LE SILENCE, Église Sainte Marie-Madeleine v Paríži, Francúzsko, kurátor výstavy Ľudovít Petránsky",
-    ],
-  },
-];
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
-const spolocne_vystavy = [
-  {
-    date: "1984",
-    locations: ["Art of Today II., Budapešť"],
-  },
-  {
-    date: "1988",
-    locations: [
-      "Folkové léto, Zámocký park, Telč, ČR",
-      "Výtvarný salón, Sříbrnické paseky, Stříbrnice, ČR",
-    ],
-  },
-  {
-    date: "1989",
-    locations: ["SVOČ, VŠUP Praha"],
-  },
-  {
-    date: "1990",
-    locations: [
-      "Kulturní dům Karviná, ČR",
-      "Bienále plagátu, Mexico City",
-      "Výstava plagátu - Cooper Union, New York",
-      "Praha - Viedeň, Gasometer Viedeň a kláštor Emauzy, Praha",
-    ],
-  },
-  {
-    date: "1991",
-    locations: [
-      "<i>Bologna Fiere</i>, (UNICEF), Bologna, Taliansko",
-      "<i>Bienále voľnej grafiky</i>, Sapporo, Japonsko",
-      "<i>Umprumáci - Bolo nás jedenásť</i>, Galéria Arpex, Bratislava",
-    ],
-  },
-  {
-    date: "1992",
-    locations: [
-      "Bologna Fiere: Itabashi Art Museum, Sano Art Museum, Otani Memorial Art Museum, Kurashiki City Museum",
-      "Bienále plagátu, Mexico City",
-    ],
-  },
-  {
-    date: "1993",
-    locations: ["Big Night Bratislava, Kultúrny dom Ružinov, Bratislava"],
-  },
-  {
-    date: "1995",
-    locations: [
-      "<i>Slovenské umenie</i>, Galéria Mannedorf, Mannedorf, Švajčiarsko",
-    ],
-  },
-  {
-    date: "1996",
-    locations: [
-      "<i>Ĺ art slovaque á Montparnasse</i>, Centre Gaité Montparnasse, Paríž, kurátor výstavy Ľudovít Petránsky",
-      "<i>Slovenské umenie z Montparnassu na Slovensku</i>, Galéria Glass Art Simone, Bratislava",
-    ],
-  },
-  {
-    date: "2004",
-    locations: [
-      "<i>Slovenské výtvarné umenie</i>, ArtBeKo Gallery, Bratislava, kurátor výstavy Bohumír Bachratý",
-    ],
-  },
-  {
-    date: "2006",
-    locations: [
-      "<i>Na husličkách maľované</i>: Reduta, Slovenská filharmónia, Bratislava - Incheba, Bratislava - Štátna filharmónia Košice",
-      "<i>Slnko, slnečníky, slnečnice</i>, Štúdio Lasica & Satinský, Bratislava, kurátor výstavy Bohumír Bachratý",
-      "<i>Art for Life</i>, KBC Toren, zaal Scaldis, Schoenmarkt, Antverpy, Belgicko",
-      "<i>Súčasné slovenské umenie</i>, Plastika, kresba, Galerie Lehalle, Paríž",
-    ],
-  },
-  {
-    date: "2007",
-    locations: [
-      "<i>Mosty V.</i>, Slovensko - Fínsko, Galéria Fontána, Piešťany, koncepcia výstavy Zora Petrášová",
-      "<i>Na husličkách maľované</i>: Západoslovenské múzeum, Trnava Bologna, Palazo Re Enzo, Taliansko Oxford - Randolf, Tower Hall, Spojené kráľovstvo - Kaštieľ Šalgovce, Piešťany - Múzeum mesta Bratislavy, Stará radnica, Bratislava - Galéria slovenského umenia, Krakow - Supetar, Brač, Chorvátsko - Synagóga, Nitra - Krajské múzeum, Prešov",
-      "<i>Modern Art of Slovakia</i>, The Hague City Hall (Atrium), Haag, koncepcia výstavy Zora Petrášová",
-      "<i>Umenie 2007</i>, Dom umenia, Bratislava 2008",
-    ],
-  },
-  {
-    date: "2008",
-    locations: [
-      "<i>Kresba</i>, Epreuve d Artiste Grafiekgalerie, Antverpy, Belgicko",
-      "<i>Na husličkách maľované</i>:     Mestské múzeum, Sereď - Európsky parlament, Brusel, Štrasburg - BF - stav, Pravenec, Prievidza Galéria slovenského inštitútu, Budapešť",
-    ],
-  },
-  {
-    date: "2009",
-    locations: [
-      "<i>Slovenské a maďarské umenie</i>, Atrium radnice, Haag",
-      "<i>Aktuálne PF-ky od slovenských výtvarných umelcov (Pocta Kolomanovi Sokolovi)</i>, Centrum - Kolomana Sokola, Liptovský Mikuláš, koncepcia výstavy Zuzana Gažíková",
-      "Galéria Doktorhaus, Oberdiessbach, Švajčiarsko",
-      "Vienna Gate, Bratislava, pri príležitosti otvorenia rezidenčného komplexu, kurátor výstavy Ľudovít Petránsky",
-      "<i>MOSTY</i>, Dvorana MK SR, Bratislava, koncepcia a autor projektu Zora Petrášová",
-      "<i>PF pre Kolomana Sokola</i>, Centrum Kolomana Sokola, Liptovský Mikuláš, koncepcia výstavy Zuzana Gažíková",
-    ],
-  },
-  {
-    date: "2010",
-    locations: [
-      "<i>Asociácia ASA - reflexie</i>, kaštieľ Oščadnica, (Les petites femmes)",
-      "<i>Bienále kresby Plzeň</i>, Východočeské múzeum Plzeň, ČR",
-      "<i>Reflexie II.</i>, Galéria Velvet Bojnice, kurátori výstavy: Z. Sýkorová, Pavol Muška",
-    ],
-  },
-  {
-    date: "2012",
-    locations: [
-      "<i>PF 2012 pre Kolomana Sokola</i>, Centrum K. Sokola, Liptovský Mikuláš koncepcia výstavy Zuzana Gažíková",
-      "<i>Mosty/Bridges 2003 - 2012</i>, Dom umenia Piešťany, autorka projektu Zora Petrášová 2013",
-    ],
-  },
-  {
-    date: "2013",
-    locations: ["<i>Okuliarmi fantázie</i>, Galéria na poschodí, Bratislava"],
-  },
-  {
-    date: "2015",
-    locations: [
-      "<i>Dialogues – Dialógy</i>, Paris Bratislava, Cité Internationale des Arts, Paríž",
-    ],
-  },
-  {
-    date: "2022",
-    locations: [
-      "<i> Tiene a farby, Božena, Andrej, Martin Augustínovci</i>, Zoya Gallery, koncepcia výstavy Ľudovít Petránsky, Iveta Ledecká\n",
-    ],
-  },
-];
+const samostatne_vystavy = t("exhibitions.solo");
+const spolocne_vystavy = t("exhibitions.group");
 ---
 
 <style lang="scss">
@@ -355,7 +40,7 @@ const spolocne_vystavy = [
     <div class="accordion accordion-flush">
       <div class="flex justify-between">
         <h2 class="text-gray-500 font-medium text-xl mt-4">
-          Samostatné výstavy
+          {t("exhibitions.solo.title")}
         </h2>
         <div class="flex justify-end flex-col">
           <h3
@@ -396,14 +81,16 @@ const spolocne_vystavy = [
 
       <div class="flex gap-16 accordion__intro mb-4">
         <p class="flex-1 text-gray-500 cursor-pointer rozbalit font-bold">
-          rozbaliť
+          {t("utils.expand")}
         </p>
       </div>
     </div>
 
     <div class="accordion accordion-flush">
       <div class="flex justify-between">
-        <h2 class="text-gray-500 font-medium text-xl mt-4">Spoločné výstavy</h2>
+        <h2 class="text-gray-500 font-medium text-xl mt-4">
+          {t("exhibitions.group.title")}
+        </h2>
         <div class="flex justify-end flex-col">
           <h3
             class="text-gray-500 text-sm align-bottom"
@@ -443,25 +130,24 @@ const spolocne_vystavy = [
 
       <div class="flex gap-16 accordion__intro mb-4">
         <p class="flex-1 text-gray-500 cursor-pointer rozbalit font-bold">
-          rozbaliť
+          {t("utils.expand")}
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<script>
+<script define:vars={{ rozbalit: t("utils.expand"), hide: t("utils.hide") }}>
   const accordions = document.querySelectorAll(".accordion");
 
   const openAccordion = (accordion) => {
     const content = accordion.querySelectorAll(".accordion__content");
-    console.log(content);
     accordion.classList.add("accordion__active");
     content[0].style.maxHeight = content[0].scrollHeight + "px";
     // content[1].style.maxHeight = content[1].scrollHeight + "px";
-    document
+    accordion
       .querySelectorAll(".rozbalit")
-      .forEach((item) => (item.innerText = "skryť"));
+      .forEach((item) => (item.innerText = hide));
   };
 
   const closeAccordion = (accordion) => {
@@ -470,9 +156,9 @@ const spolocne_vystavy = [
     accordion.classList.remove("accordion__active");
     content[0].style.maxHeight = null;
     // content[1].style.maxHeight = null;
-    document
+    accordion
       .querySelectorAll(".rozbalit")
-      .forEach((item) => (item.innerText = "rozbaliť"));
+      .forEach((item) => (item.innerText = expand));
   };
 
   console.log(accordions, "accordions");
