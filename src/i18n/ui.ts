@@ -2,6 +2,7 @@ import { sk as skPrologue, en as enPrologue } from './data/prologue';
 import { sk as skNews, en as enNews } from './data/news';
 import { sk as skProducts, en as enProducts } from './data/products';
 import { sk as skTimePasses, en as enTimePasses } from './data/time-passes';
+import { sk as skBiography, en as enBiography } from './data/biography';
 export const languages = {
     en: 'English',
     sk: 'Slovenčína',
@@ -26,7 +27,8 @@ export const ui = {
         ...enPrologue,
         ...enNews,
         ...enProducts,
-        ...enTimePasses
+        ...enTimePasses,
+        ...enBiography
 
     },
     sk: {
@@ -46,7 +48,8 @@ export const ui = {
         ...skPrologue,
         ...skNews,
         ...skProducts,
-        ...skTimePasses
+        ...skTimePasses,
+        ...skBiography
     },
 
 } as const;
