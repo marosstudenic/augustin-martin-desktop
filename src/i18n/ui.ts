@@ -7,6 +7,9 @@ import { sk as skExhibitions, en as enExhibitions } from './data/exhibitions';
 import { sk as skWork, en as enWork } from './data/work';
 import { sk as skIkar, en as enIkar } from './data/coworkWithIkar';
 import { sk as skVideo, en as enVideo } from './data/video';
+import { sk as skGallery, en as enGallery } from './data/gallery';
+import { sk as skContact, en as enContact } from './data/contact';
+
 export const languages = {
     en: 'English',
     sk: 'Slovenčína',
@@ -39,7 +42,9 @@ export const ui = {
         ...enExhibitions,
         ...enWork,
         ...enIkar,
-        ...enVideo
+        ...enVideo,
+        ...enGallery,
+        ...enContact
 
     },
     sk: {
@@ -68,7 +73,9 @@ export const ui = {
         ...skExhibitions,
         ...skWork,
         ...skIkar,
-        ...skVideo
+        ...skVideo,
+        ...skGallery,
+        ...skContact
     },
 
 } as const;

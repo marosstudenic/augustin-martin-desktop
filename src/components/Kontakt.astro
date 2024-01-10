@@ -1,13 +1,20 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <section id="kontakt" class="py-20 px-4">
-  <h2 class="text-xl font-medium text-gray-500">Kontakt</h2>
-  <p class="font-bold text-gray-500">Galéria u Anjela</p>
+  <h2 class="text-xl font-medium text-gray-500">{t("contact.title")}</h2>
+  <p class="font-bold text-gray-500">{t("contact.place")}</p>
   <p class="text-gray-500">Kežmarok</p>
   <p>
     <a href="http://galeriauanjela.sk" class="text-gray-500"
-      >www.galeriauanjela.sk</a
-    >
+      >{t("contact.web")}
+    </a>
   </p>
   <p>
-    <a href="tel:+421905517486" class="text-gray-500">+421 905 517 486</a>
+    <a href="tel:+421905517486" class="text-gray-500">{t("contact.phone")}</a>
   </p>
 </section>
