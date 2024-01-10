@@ -5,6 +5,7 @@ import { sk as skTimePasses, en as enTimePasses } from './data/time-passes';
 import { sk as skBiography, en as enBiography } from './data/biography';
 import { sk as skExhibitions, en as enExhibitions } from './data/exhibitions';
 import { sk as skWork, en as enWork } from './data/work';
+import { sk as skIkar, en as enIkar } from './data/coworkWithIkar';
 export const languages = {
     en: 'English',
     sk: 'Slovenčína',
@@ -35,7 +36,8 @@ export const ui = {
         ...enTimePasses,
         ...enBiography,
         ...enExhibitions,
-        ...enWork
+        ...enWork,
+        ...enIkar
 
     },
     sk: {
@@ -62,7 +64,8 @@ export const ui = {
         ...skTimePasses,
         ...skBiography,
         ...skExhibitions,
-        ...skWork
+        ...skWork,
+        ...skIkar
     },
 
 } as const;
