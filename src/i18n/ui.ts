@@ -1,5 +1,6 @@
 import { sk as skPrologue, en as enPrologue } from './data/prologue';
 import { sk as skNews, en as enNews } from './data/news';
+import { sk as skProducts, en as enProducts } from './data/products';
 
 export const languages = {
     en: 'English',
@@ -24,6 +25,7 @@ export const ui = {
 
         ...enPrologue,
         ...enNews,
+        ...enProducts
     },
     sk: {
         'nav.prologue': 'Úvod',
@@ -41,6 +43,7 @@ export const ui = {
 
         ...skPrologue,
         ...skNews,
+        ...skProducts
     },
 
 } as const;
