@@ -84,8 +84,8 @@ videos.map((item)=> {
                   src={playButton}
                   class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-12 z-20 player-icon"
                 />
-                <img
-                  src={video.image}
+                <Image
+                  src={images[video.image]()}
                   class="object-cover rounded-md h-68 w-full z-10 top-0 absolute video-cover"
                 />
               </div>
