@@ -1,9 +1,20 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const photos = t("gallery.items");
+
+
+const bigImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/gallery/*');
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/gallery-1440/*');
+
+
+photos.map((item) => {
+    if (!bigImages["/src/assets/gallery/" + item.image]) throw new Error(`"${item.image}" does not exist in glob: '/src/assets/novinky/*'`);
+})
 ---
 
 <style>
@@ -80,8 +91,8 @@ const photos = t("gallery.items");
       photos.map((item) => (
         <div>
           <div class="text-sm text-gray-500 cursor-pointer">
-            <img
-              src={"/assets/gallery/" + item.image}
+            <Image
+              src={bigImages["/src/assets/gallery/" + item.image]()}
               data-image={item.image}
               alt={item.title}
               class="md:h-60 object-cover w-full modalImg rounded-md"
@@ -91,6 +102,17 @@ const photos = t("gallery.items");
         </div>
       ))
     }
+
+{
+  photos.map((item) => (
+        <Image
+          src={images["/src/assets/gallery-1440/" + item.image]()}
+          data-image={item.image}
+          alt={item.title}
+          class="h-screen w-screen hidden"
+        />
+  ))
+}
   </div>
 </section>
 
@@ -102,7 +124,7 @@ const photos = t("gallery.items");
     imgs[i].onclick = (img) => {
       img = img.target;
       showModal(
-        "/assets/gallery-1440/" + img.getAttribute("data-image"),
+        "/src/assets/gallery-1440/" + img.getAttribute("data-image"),
         img.alt
       );
     };
