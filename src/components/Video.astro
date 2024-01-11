@@ -3,6 +3,8 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 
+import playButton from "../assets/icons/play-512.png";
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const videos = t("video.items");
@@ -62,8 +64,8 @@ videos.map((item)=> {
                     class="rounded-md h-68 w-full object-cover"
                     alt=""
                   />
-                  <img
-                    src="/assets/icons/play-512.png"
+                  <Image
+                    src={playButton}
                     class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-12"
                   />
                 </div>
@@ -78,8 +80,8 @@ videos.map((item)=> {
                 <video class="w-full rounded-md" poster={video.image} controls>
                   <source src={video.link} type="video/mp4" />
                 </video>
-                <img
-                  src="/assets/icons/play-512.png"
+                <Image
+                  src={playButton}
                   class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-12 z-20 player-icon"
                 />
                 <img
