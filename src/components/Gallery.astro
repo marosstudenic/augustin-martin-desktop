@@ -99,19 +99,24 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/gallery
         </div>
       ))
     }
+  </div>
+</section>
 
 {
   photos.map((item) => (
+    <div>
+      <div class="text-sm text-gray-500 cursor-pointer">
         <Image
-          src={images["/src/assets/gallery-1440/" + item.image]()}
+          src={bigImages["/src/assets/gallery/" + item.image]()}
           data-image={item.image}
           alt={item.title}
-          class="h-screen w-screen hidden"
+          class="h-screen w-screen object-contain hidden"
         />
+        <p class="pt-2 md:hidden">{item.title}</p>
+      </div>
+    </div>
   ))
 }
-  </div>
-</section>
 
 <script>
   // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -120,8 +125,10 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/gallery
   for (let i = 0; i < imgs.length; i++) {
     imgs[i].onclick = (img) => {
       img = img.target;
+      console.log(img.srcset)
+
       showModal(
-        "/src/assets/gallery-1440/" + img.getAttribute("data-image"),
+        "/assets/gallery-1440/" + img.getAttribute('data-image'),
         img.alt
       );
     };

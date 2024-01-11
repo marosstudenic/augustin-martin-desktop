@@ -146,6 +146,23 @@ const lang = getLangFromUrl(Astro.url);
             false
         );
 
+        // Function to extract URLs and sizes from srcset
+        const parseSrcset = (srcset) => {
+            return srcset.split(',').map(src => {
+                const [url, size] = src.trim().split(' ');
+                return { url, size: parseInt(size, 10) };
+            });
+        };
+
+
+
+        function getLargestUrl(srcset) {
+            const images = parseSrcset(srcset);
+            const largestImage = images.reduce((max, img) => max.size > img.size ? max : img);
+            console.log(largestImage.size);
+            return largestImage.url;
+        }
+
         function showModal(src, caption) {
             modal.classList.toggle("hidden");
             var modalImg = document.getElementById("img01");
