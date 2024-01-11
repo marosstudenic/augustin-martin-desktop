@@ -1,6 +1,17 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
+import { Image } from "astro:assets";
+import img1 from "../assets/uvod/MA_uvod1.png";
+import img2 from "../assets/uvod/MA_uvod2.png";
+import img3 from "../assets/uvod/MA_uvod3.png";
+import img4 from "../assets/uvod/MA_uvod4.png";
+import img5 from "../assets/uvod/MA_uvod5.png";
+
+import video1 from "../assets/videos/1.png";
+import video2 from "../assets/videos/2.png";
+import video3 from "../assets/videos/3.png";
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
@@ -103,11 +114,37 @@ const t = useTranslations(lang);
 
 <section id="uvod" class="pb-12 md:pt-60">
     <div class="block md:flex">
-        <img
-            src="/assets/welcome-images/m.augustin_22_097w.jpg"
+        <Image
+            id="intro1"
             alt=""
-            class="w-full object-contain block md:hidden"
+            class="w-full object-cover hidden h-[540px]"
+            src={img1}
         />
+        <Image
+            id="intro2"
+            alt=""
+            class="w-full object-cover hidden md:w-1/2 h-[540px]"
+            src={img2}
+        />
+        <Image
+            id="intro3"
+            alt=""
+            class="w-full object-cover hidden  md:w-1/2 h-[540px]"
+            src={img3}
+        />
+        <Image
+            id="intro4"
+            alt=""
+            class="w-full object-cover hidden md:w-1/2 h-[540px]"
+            src={img4}
+        />
+        <Image
+            id="intro5"
+            alt=""
+            class="w-full object-cover hidden md:w-1/2 h-[540px]"
+            src={img5}
+        />
+
         <div class="flex-1 py-4 px-4">
             <div class="text-gray-500 text-sm pr-8">
                 <h2 class="font-medium text-2xl">{t("prologue.title")}</h2>
@@ -128,8 +165,8 @@ const t = useTranslations(lang);
         </div>
         <div class="flex-1 flex">
             <div class="container max-w-[500px] my-auto px-2 mt-8">
-                <img
-                    src="/assets/videos/1.png"
+                <Image
+                    src={video1}
                     alt=""
                     id="img1"
                     class="rounded-md"
@@ -139,8 +176,8 @@ const t = useTranslations(lang);
                 </p>
                 <div class="w-full md:flex my-2 gap-2">
                     <div class="flex-1 my-8 md:my-0">
-                        <img
-                            src="/assets/videos/2.png"
+                        <Image
+                            src={video2}
                             alt=""
                             id="img2"
                             class="w-full rounded-md"
@@ -150,8 +187,8 @@ const t = useTranslations(lang);
                         </p>
                     </div>
                     <div class="flex-1">
-                        <img
-                            src="/assets/videos/3.png"
+                        <Image
+                            src={video3}
                             alt=""
                             id="img3"
                             class="w-full rounded-md"
@@ -231,4 +268,15 @@ const t = useTranslations(lang);
     document.getElementById("img3").onclick = (el) => {
         showModal(pairs[el.target.id].iframe);
     };
+
+    function selectIntroImage() {
+        // choose random number between 1 and 5
+        let random = Math.floor(Math.random() * 5) + 1;
+        let name = "intro" + random;
+        console.log(name)
+        let img = document.getElementById(name);
+        img.classList.remove("hidden");
+    }
+
+    selectIntroImage();
 </script>
