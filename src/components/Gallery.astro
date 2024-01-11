@@ -12,9 +12,6 @@ const bigImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/gall
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/gallery-1440/*');
 
 
-photos.map((item) => {
-    if (!bigImages["/src/assets/gallery/" + item.image]) throw new Error(`"${item.image}" does not exist in glob: '/src/assets/novinky/*'`);
-})
 ---
 
 <style>
