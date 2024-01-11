@@ -1,10 +1,16 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import { TimePassesItem } from "../i18n/data/time-passes";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const seasons = t("time-passes.seasons");
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/cas_plynie/*');
+
 ---
 
 <style>
@@ -51,10 +57,10 @@ const seasons = t("time-passes.seasons");
 					</h2>
 					<div class="flex gap-2 md:w-[75vw] overflow-x-auto scroll4">
 						{season.items.map((item) => (
-							<img
-								src={"/assets/cas_plynie/" + item.filename}
+							<Image
+								src={images[item.filename]()}
 								alt={item.title}
-								class="h-[300px] md:h-[500px] mb-2 cas-plynie-img"
+								class="h-[300px] md:h-[500px] mb-2 cas-plynie-img w-auto"
 							/>
 						))}
 					</div>
@@ -72,11 +78,8 @@ const seasons = t("time-passes.seasons");
 							{season.headline}
 						</h2>
 						<div id={"season-" + index}>
-							<img
-								src={
-									"/assets/cas_plynie/" +
-									season.items[0].filename
-								}
+							<Image
+								src={images[season.items[0].filename]()}	
 								alt={season.items[0].title}
 								class="h-[550px] mb-2 object-contain cas-plynie img"
 							/>
@@ -182,7 +185,6 @@ const seasons = t("time-passes.seasons");
 
 			let el = document.getElementById("season-" + seasonIndex);
 			el.children[0].src =
-				"/assets/cas_plynie/" +
 				seasons[seasonIndex].items[counters[seasonIndex]].filename;
 			el.children[1].textContent =
 				seasons[seasonIndex].items[counters[seasonIndex]].title;
