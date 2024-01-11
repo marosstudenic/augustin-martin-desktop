@@ -109,7 +109,7 @@ export const sk = {
                     descriptions: [
                         "technika limitovaný ofset",
                         "náklad 200 ks, 70 x 50 cm",
-                        "200€ + poštovné",
+                        "Nedostupné",
                         "signovaný autormi Martinom Augustínom, Kamilom Peterajom\n",
                     ],
                 },
@@ -120,7 +120,7 @@ export const sk = {
                     descriptions: [
                         "technika limitovaný ofset",
                         "náklad 200 ks, 70 x 50 cm",
-                        "200€ + poštovné",
+                        "Nedostupné",
                         "signovaný autormi Martinom Augustínom, Kamilom Peterajom\n",
                     ],
                 },
@@ -250,7 +250,7 @@ export const en = {
                     descriptions: [
                         "limited offset printing technique",
                         "printing 200 ks, 70 x 50 cm",
-                        "200€ + shipping",
+                        "Unavailable",
                         "signed by the authors Martin Augustín and Kamil Peteraj\n",
                     ],
                 },
@@ -261,7 +261,7 @@ export const en = {
                     descriptions: [
                         "limited offset printing technique",
                         "printing 200 ks, 70 x 50 cm",
-                        "200€ + shipping",
+                        "Unavailable",
                         "signed by the authors Martin Augustín and Kamil Peteraj\n",
                     ],
                 },

@@ -254,7 +254,7 @@ export const sk = {
         },
         {
             title:
-                "Výstava Shadows and Colors, Božena, Andrej, martin Augustínovci v Zoya Gallery v Bratislave",
+                "Výstava Shadows and Colors, Božena, Andrej, Martin Augustínovci v Zoya Gallery v Bratislave",
             image: "411827446_1746038_n.jpg",
         }]
 }

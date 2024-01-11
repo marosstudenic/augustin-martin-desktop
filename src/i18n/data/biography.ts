@@ -53,7 +53,7 @@ export const sk = {
         {
             date: "2015",
             text: [
-                "- Cena BIBIANY, medzinárodný dom umenia pre deti, Najkrajšia detská kniha za ilustrácie ku knihe Eros a Psyché (Perfekt)",
+                "Cena BIBIANY, medzinárodný dom umenia pre deti, Najkrajšia detská kniha za ilustrácie ku knihe Eros a Psyché (Perfekt)",
             ],
         },
         {
