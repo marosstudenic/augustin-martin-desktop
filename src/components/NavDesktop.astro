@@ -5,6 +5,11 @@ import {
     useTranslations,
 } from "../i18n/utils";
 let { selectedMenu, mainPage = true } = Astro.props;
+import { Image } from 'astro:assets';
+
+import instagramIcon from "../assets/icons/iconIG.png";
+import facebookIcon from "../assets/icons/iconFB.png";
+import logo from "../assets/logo/new_logotyp_augustin.png";
 
 const lang = getLangFromUrl(Astro.url);
 
@@ -18,8 +23,8 @@ const translatePath = useTranslatedPath(lang);
         <div>
             <div class="logo">
                 <a href={translatePath("/")}
-                    ><img
-                        src="/assets/logo/new_logotyp_augustin.png"
+                    ><Image
+                        src={logo}
                         alt=""
                         class="img-contain w-[150px]"
                     />
@@ -120,8 +125,8 @@ const translatePath = useTranslatedPath(lang);
                         href="https://www.facebook.com/augustinmartinart"
                         target="_blank"
                         rel="nofollow noopenner"
-                        ><img
-                            src="/assets/icons/iconFB.png"
+                        ><Image
+                            src={facebookIcon}
                             class="h-4 w-4 object-contain text-gray-500"
                             alt=""
                         />
@@ -134,7 +139,7 @@ const translatePath = useTranslatedPath(lang);
                         target="_blank"
                         rel="nofollow noopenner"
                         ><img
-                            src="/assets/icons/iconIG.png"
+                            src={instagramIcon}
                             class="h-4 w-4 object-contain text-gray-500"
                             alt=""
                         />

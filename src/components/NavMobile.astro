@@ -6,6 +6,12 @@ import {
 } from "../i18n/utils";
 import CasPlynie from "./CasPlynie.astro";
 
+import { Image } from 'astro:assets';
+
+import logo from '../assets/logo/new_logotyp_augustin.png';
+import instagram from '../assets/icons/instagram-50.png';
+import facebook from '../assets/icons/facebook.svg';
+
 const lang = getLangFromUrl(Astro.url);
 
 const isSlovak = lang === "sk";
@@ -62,10 +68,10 @@ let { selectedMenu, isFixed = true } = Astro.props;
     <div class="flex justify-between h-full w-full px-4 rounded-lg bg-[#fff]">
         <div class="logo max-h-14 my-auto">
             <a href={translatePath("/")}>
-                <img
+                <Image
                     alt="Augustin Martin logo"
                     class="logo object-contain h-10 my-auto"
-                    src="/assets/logo/new_logotyp_augustin.png"
+                    src={logo}
                 />
             </a>
         </div>
@@ -76,10 +82,10 @@ let { selectedMenu, isFixed = true } = Astro.props;
                 rel="noopener nofollow"
                 class="flex-col flex justify-center"
             >
-                <img
+                <Image
                     alt="Instagram Icon"
                     class="logo object-contain h-5 px-1 my-auto cursor-pointer"
-                    src="/assets/icons/instagram-50.png"
+                    src={instagram}
                 />
             </a>
             <a
@@ -88,10 +94,10 @@ let { selectedMenu, isFixed = true } = Astro.props;
                 rel="noopener nofollow"
                 class="flex-col flex justify-center"
             >
-                <img
+                <Image
                     alt="Facebook Icon"
                     class="logo object-contain h-5 px-1 my-auto cursor-pointer"
-                    src="/assets/icons/facebook.svg"
+                    src={facebook}
                 />
             </a>
 
