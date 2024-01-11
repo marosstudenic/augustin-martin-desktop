@@ -114,6 +114,10 @@ const t = useTranslations(lang);
 
 <section id="uvod" class="pb-12 md:pt-60">
     <div class="block md:flex">
+        <img  id="placeholder"
+            class="w-full object-cover md:hidden md:w-1/2 h-[540px]"
+        />
+
         <Image
             id="intro1"
             alt=""
@@ -280,6 +284,7 @@ const t = useTranslations(lang);
         let name = "intro" + random;
         console.log(name)
         let img = document.getElementById(name);
+        document.getElementById("placeholder").classList.add("hidden");
         img.classList.remove("hidden");
     }
 
