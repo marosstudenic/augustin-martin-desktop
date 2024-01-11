@@ -156,22 +156,22 @@ export const en = {
 
     'products.categories': [{
         name: "Publications",
-        image: "/assets/news/brozovanaPublikacia_obrazyTextySentencie.jpg",
+        image: "/src/assets/news/brozovanaPublikacia_obrazyTextySentencie.jpg",
         link: "/publikacie/kytice",
     },
     {
         name: "Textiles",
-        image: "/assets/news/hodvabnaSatka.jpg",
+        image: "/src/assets/news/hodvabnaSatka.jpg",
         link: "/textilie/hodvabna-satka",
     },
     {
         name: "Art prints",
-        image: "/assets/news/grafList_slnkoNadHlavou.jpg",
+        image: "/src/assets/news/grafList_slnkoNadHlavou.jpg",
         link: "/listy/slnko-nad-hlavou",
     },
     {
         name: "Limited editions",
-        image: "/assets/news/limitovane_senMenomLaska.jpg",
+        image: "/src/assets/news/limitovane_senMenomLaska.jpg",
         link: "/limitovane/sen-menom-laska",
     },],
     'products.details.categories': {
