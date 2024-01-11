@@ -42,7 +42,7 @@ export const sk = {
                     title: "KYTICE",
                     slug: "kytice",
                     author: "Karel Jaromír Erben",
-                    image: "produkty/kytice.jpg",
+                    image: "/src/assets/produkty/kytice.jpg",
                     descriptions: [
                         "litografia",
                         "23 × 23 cm, 252 stran",
@@ -54,7 +54,7 @@ export const sk = {
                 {
                     title: "Obrazy, texty, sentencie",
                     slug: "obrazy-texty-sentencie",
-                    image: "spoluprace/brozovanaPublikacia_obrazyTextySentencie.jpg",
+                    image: "/src/assets/produkty/brozovanaPublikacia_obrazyTextySentencie.jpg",
                     author: "Kamil Peteraj, Martin Augustín",
                     descriptions: [
                         "brožovaná publikácia",
@@ -66,7 +66,7 @@ export const sk = {
                     title: "Zrkadlo duše",
                     slug: "zrkadlo-duse",
                     author: "Martin Augustín, autor textu Ľudovít Petranský",
-                    image: "spoluprace/zrkadlo_duse.jpg",
+                    image: "/src/assets/produkty/zrkadlo_duse.jpg",
                     descriptions: [
                         "monografia",
                         "214 strán, 31 x 25,5 cm",
@@ -77,7 +77,7 @@ export const sk = {
                     title: "Máj",
                     slug: "maj",
                     author: "Hynek Karel Mácha",
-                    image: "produkty/obalka_knihy_maj.jpg",
+                    image: "/src/assets/produkty/obalka_knihy_maj.jpg",
                     descriptions: [
                         "22,54€ + poštovné",
                         "Dostupné cez <a href='https://www.martinus.sk/?uItem=1548731&gclid=CjwKCAjw2f-VBhAsEiwAO4lNeCilwRS-' class='text-gray-600 cursor-pointer hover:text-gray-900 underline'>martinus.sk</a>",
@@ -92,8 +92,8 @@ export const sk = {
                 {
                     title: "Hodvábna šatka s motívom obrazu Martina Augustína",
                     slug: "hodvabna-satka",
-                    image: "produkty/hodvabnaSatka_detail.jpg",
-                    altImage: "produkty/hodvabnaSatkaObraz.jpg",
+                    image: "/src/assets/produkty/hodvabnaSatka_detail.jpg",
+                    altImage: "/src/assets/produkty/hodvabnaSatkaObraz.jpg",
                     descriptions: ["90 x 90 cm", "90€ + poštovné"],
                 },
             ],
@@ -105,7 +105,7 @@ export const sk = {
                 {
                     title: "Slnko nad hlavou",
                     slug: "slnko-nad-hlavou",
-                    image: "produkty/grafList_slnkoNadHlavou.jpg",
+                    image: "/src/assets/produkty/grafList_slnkoNadHlavou.jpg",
                     descriptions: [
                         "technika limitovaný ofset",
                         "náklad 200 ks, 70 x 50 cm",
@@ -116,7 +116,7 @@ export const sk = {
                 {
                     title: "Raz uvidíš",
                     slug: "raz-uvidis",
-                    image: "produkty/grafList_razUvidis.jpg",
+                    image: "/src/assets/produkty/grafList_razUvidis.jpg",
                     descriptions: [
                         "technika limitovaný ofset",
                         "náklad 200 ks, 70 x 50 cm",
@@ -133,7 +133,7 @@ export const sk = {
                 {
                     title: "Sen menom láska",
                     slug: "sen-menom-laska",
-                    image: "produkty/limitovane_senMenomLaska.jpg",
+                    image: "/src/assets/produkty/limitovane_senMenomLaska.jpg",
                     descriptions: [
                         "limitovaná kniha poézie",
                         "hodvábna šatka s dielom M. Augustína",

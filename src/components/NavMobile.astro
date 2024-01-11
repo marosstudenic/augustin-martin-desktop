@@ -65,17 +65,17 @@ let { selectedMenu, isFixed = true } = Astro.props;
         { fixed: isFixed, block: !isFixed },
     ]}
 >
-    <div class="flex justify-between h-full w-full px-4 rounded-lg bg-[#fff]">
+    <div class="flex justify-between gap-20 h-full w-full px-4 rounded-lg bg-[#fff]">
         <div class="logo max-h-14 my-auto">
             <a href={translatePath("/")}>
                 <Image
                     alt="Augustin Martin logo"
-                    class="logo object-contain h-10 my-auto"
+                    class="logo object-contain h-10 w-auto"
                     src={logo}
                 />
             </a>
         </div>
-        <div class="flex">
+        <div class="flex max-w-28 gap-2">
             <a
                 href="https://www.instagram.com/martin.augustin1968/"
                 target="_blank"
@@ -84,7 +84,7 @@ let { selectedMenu, isFixed = true } = Astro.props;
             >
                 <Image
                     alt="Instagram Icon"
-                    class="logo object-contain h-5 px-1 my-auto cursor-pointer"
+                    class="logo object-contain h-8 w-12 my-auto cursor-pointer"
                     src={instagram}
                 />
             </a>

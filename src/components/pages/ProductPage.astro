@@ -10,9 +10,18 @@ import {
 } from "../../i18n/utils";
 import Nav from "../Nav.astro";
 
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/produkty/*');
+
+
+console.log(images);
 
 const products = t("products.details.categories");
 
@@ -35,7 +44,7 @@ const nextLink =
     currentType.items[(orderOfProduct + 1) % currentType.items.length].slug;
 ---
 
-<html lang="en">
+<html lang={lang}>
     <head>
         <MainHead
             title={currentProduct.title}
@@ -113,16 +122,27 @@ const nextLink =
                             <div
                                 class="img-container w-full relative overflow-hidden transition-all duration-500"
                             >
-                                <img
-                                    class="w-full object-cover active max-w-xl"
-                                    src={"/assets/" + currentProduct.image}
+                                <Image
+                                    class="w-full object-cover active max-w-xl rolling"
+                                    src={images[currentProduct.image]()}
                                     alt={currentProduct.title}
                                     id="prod-img"
-                                    data-alt={"/assets/" +
+                                    data-alt={
                                         currentProduct.altImage}
-                                    data-orig={"/assets/" +
+                                    data-orig={
                                         currentProduct.image}
                                 />
+                                {
+                                    currentProduct.altImage && (
+                                        <Image
+                                            class="w-full object-cover hidden absolute-top-0"
+                                            src={images[currentProduct.altImage]()}
+                                            alt={currentProduct.title}
+                                            id="alt-img"
+                                        />
+                                    )
+                                }
+
 
                                 <!-- {
                   currentProduct.altImage && (
@@ -211,9 +231,9 @@ const nextLink =
                                             )}
                                             class=" py-2"
                                         >
-                                            <img
+                                            <Image
                                                 class="w-full translate-y-0 aspect-square"
-                                                src={"/assets/" + item.image}
+                                                src={images[item.image]()}
                                                 alt={item.title}
                                             />
                                             <p class="text-gray-500 text-sm pt-2">
@@ -251,12 +271,9 @@ const nextLink =
                                                     )}
                                                     class=" py-2"
                                                 >
-                                                    <img
+                                                    <Image
                                                         class="w-full translate-y-0 aspect-square"
-                                                        src={
-                                                            "/assets/" +
-                                                            item.image
-                                                        }
+                                                        src={images[item.image]()}
                                                         alt={item.title}
                                                     />
                                                     <p class="text-gray-500 text-sm pt-2">
@@ -283,13 +300,13 @@ const nextLink =
                 font-family: "Neue Haas Grotesk Display Pro", sans-serif;
             }
 
-            img {
+            img.rolling {
                 transform: translateY(-120%);
                 transition: all 1s ease-in-out;
                 animation-delay: 0.5s;
             }
 
-            img.active {
+            img.rolling.active {
                 transform: translateY(0);
             }
         </style>
