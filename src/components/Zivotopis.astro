@@ -1,11 +1,17 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { Image } from 'astro:assets';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const studium = t("biography.studies");
 const ocenenia = t("biography.awards");
+
+import zivotopis from "../assets/augustin-portret.jpg";
+
+
+
 ---
 
 <section id="zivotopis" class="px-4 md:pt-20 md:flex pt-20">
@@ -15,7 +21,7 @@ const ocenenia = t("biography.awards");
         </h2>
 
         <figure class="md:hidden py-2">
-            <img src="/assets/augustin-portret.jpg" alt="" />
+            <Image src={zivotopis} alt="fotka martin augustin" />
             <figcaption class="text-center text-gray-500 mt-2">
                 {t("biography.photo")}
             </figcaption>
