@@ -14,22 +14,22 @@ export const sk = {
 
     'products.categories': [{
         name: "Publikácie",
-        image: "/assets/news/brozovanaPublikacia_obrazyTextySentencie.jpg",
+        image: "/src/assets/news/brozovanaPublikacia_obrazyTextySentencie.jpg",
         link: "/publikacie/kytice",
     },
     {
         name: "Textílie",
-        image: "/assets/news/hodvabnaSatka.jpg",
+        image: "/src/assets/news/hodvabnaSatka.jpg",
         link: "/textilie/hodvabna-satka",
     },
     {
         name: "Grafické listy",
-        image: "/assets/news/grafList_slnkoNadHlavou.jpg",
+        image: "/src/assets/news/grafList_slnkoNadHlavou.jpg",
         link: "/listy/slnko-nad-hlavou",
     },
     {
         name: "Limitované edície",
-        image: "/assets/news/limitovane_senMenomLaska.jpg",
+        image: "/src/assets/news/limitovane_senMenomLaska.jpg",
         link: "/limitovane/sen-menom-laska",
     },],
 
