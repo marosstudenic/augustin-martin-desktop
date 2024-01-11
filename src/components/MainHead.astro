@@ -1,8 +1,8 @@
 ---
 import "../styles/global.scss";
 const {
-  title = "Jeanine White: Personal Site",
-  description = "The personal site of Jeanine White",
+  title = "Martin Augustin",
+  description = "Martin Augustín je slovenský umelec, ktorý sa venuje maľbe, grafike, kresbe a knižnej ilustrácii.",
 } = Astro.props;
 ---
 
@@ -10,6 +10,7 @@ const {
 <meta name="description" property="og:description" content={description} />
 <meta name="viewport" content="width=device-width" />
 <title>{title}</title>
+<link rel="sitemap" href="/sitemap-index.xml" />
 
 <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.png" />
 <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />

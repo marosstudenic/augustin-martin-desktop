@@ -183,7 +183,7 @@ export const en = {
                     title: "KYTICE",
                     slug: "kytice",
                     author: "KAREL JAROMÍR ERBEN",
-                    image: "produkty/kytice.jpg",
+                    image: "/src/assets/produkty/kytice.jpg",
                     descriptions: [
                         "lithography",
                         "23 × 23 cm, 252 pages",
@@ -195,7 +195,7 @@ export const en = {
                 {
                     title: "Obrazy, texty, sentencie",
                     slug: "obrazy-texty-sentencie",
-                    image: "spoluprace/brozovanaPublikacia_obrazyTextySentencie.jpg",
+                    image: "/src/assets/produkty/brozovanaPublikacia_obrazyTextySentencie.jpg",
                     author: "Kamil Peteraj and Martin Augustín",
                     descriptions: [
                         "paperback",
@@ -207,7 +207,7 @@ export const en = {
                     title: "Zrkadlo duše",
                     slug: "zrkadlo-duse",
                     author: "Martin Augustín, text authored by Ľudovít Petranský",
-                    image: "spoluprace/zrkadlo_duse.jpg",
+                    image: "/src/assets/produkty/zrkadlo_duse.jpg",
                     descriptions: [
                         "monograph",
                         "214 pages, 31 x 25,5 cm",
@@ -218,7 +218,7 @@ export const en = {
                     title: "Máj",
                     slug: "maj",
                     author: "Hynek Karel Mácha",
-                    image: "produkty/obalka_knihy_maj.jpg",
+                    image: "/src/assets/produkty/obalka_knihy_maj.jpg",
                     descriptions: [
                         "22,54€ + shipping",
                         "available at <a href='https://www.martinus.sk/?uItem=1548731&gclid=CjwKCAjw2f-VBhAsEiwAO4lNeCilwRS-' class='text-gray-600 cursor-pointer hover:text-gray-900 underline'>martinus.sk</a>",
@@ -233,8 +233,8 @@ export const en = {
                 {
                     title: "SILK SCARF WITH THE MOTIF OF MARTIN AUGUSTÍN’S WORK",
                     slug: "hodvabna-satka",
-                    image: "produkty/hodvabnaSatka_detail.jpg",
-                    altImage: "produkty/hodvabnaSatkaObraz.jpg",
+                    image: "/src/assets/produkty/hodvabnaSatka_detail.jpg",
+                    altImage: "/src/assets/produkty/hodvabnaSatkaObraz.jpg",
                     descriptions: ["90 x 90 cm", "90€ + shipping"],
                 },
             ],
@@ -246,7 +246,7 @@ export const en = {
                 {
                     title: "Slnko nad hlavou",
                     slug: "slnko-nad-hlavou",
-                    image: "produkty/grafList_slnkoNadHlavou.jpg",
+                    image: "/src/assets/produkty/grafList_slnkoNadHlavou.jpg",
                     descriptions: [
                         "limited offset printing technique",
                         "printing 200 ks, 70 x 50 cm",
@@ -257,7 +257,7 @@ export const en = {
                 {
                     title: "Raz uvidíš",
                     slug: "raz-uvidis",
-                    image: "produkty/grafList_razUvidis.jpg",
+                    image: "/src/assets/produkty/grafList_razUvidis.jpg",
                     descriptions: [
                         "limited offset printing technique",
                         "printing 200 ks, 70 x 50 cm",
@@ -274,7 +274,7 @@ export const en = {
                 {
                     title: "Sen menom láska",
                     slug: "sen-menom-laska",
-                    image: "produkty/limitovane_senMenomLaska.jpg",
+                    image: "/src/assets/produkty/limitovane_senMenomLaska.jpg",
                     descriptions: [
                         "limited book of poetry",
                         "silk scarf with the motif of M. Augustín’s work",
