@@ -1,17 +1,18 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import type { ImageMetadata } from 'astro';
-import { Image } from 'astro:assets';
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const photos = t("gallery.items");
 
-
-const bigImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/gallery/*');
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/gallery-1440/*');
-
-
+const bigImages = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/gallery/*",
+);
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/gallery-1440/*",
+);
 ---
 
 <style>
@@ -107,10 +108,10 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/gallery
     <div>
       <div class="text-sm text-gray-500 cursor-pointer">
         <Image
-          src={bigImages["/src/assets/gallery/" + item.image]()}
-          data-image={item.image}
+          src={images["/src/assets/gallery-1440/" + item.image]()}
+          id={"/src/assets/gallery-1440/" + item.image}
           alt={item.title}
-          class="h-screen w-screen object-contain hidden"
+          class="h-[1400px] w-[1440px] object-contain hidden"
         />
         <p class="pt-2 md:hidden">{item.title}</p>
       </div>
@@ -125,11 +126,11 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/gallery
   for (let i = 0; i < imgs.length; i++) {
     imgs[i].onclick = (img) => {
       img = img.target;
-      console.log(img.srcset)
+      console.log(img.srcset);
 
       showModal(
-        "/assets/gallery-1440/" + img.getAttribute('data-image'),
-        img.alt
+        "/src/assets/gallery-1440/" + img.getAttribute("data-image"),
+        img.alt,
       );
     };
   }

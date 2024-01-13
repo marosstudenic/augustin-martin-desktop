@@ -167,10 +167,10 @@ const imagesMalba = import.meta.glob<{ default: ImageMetadata }>(
 
   function preloadAllImages() {
     for (let i = 0; i < kresba.length; i++) {
-      preloadImage("/assets/" + kresba[i].image);
+      preloadImage(kresba[i].image.replace(/\/src/, ""));
     }
     for (let i = 0; i < malba.length; i++) {
-      preloadImage("/assets/" + malba[i].image);
+      preloadImage(malba[i].image.replace(/\/src/, ""));
     }
   }
   preloadAllImages();
