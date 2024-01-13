@@ -129,7 +129,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       console.log(img.srcset);
 
       showModal(
-        "/src/assets/gallery-1440/" + img.getAttribute("data-image"),
+        "/assets/gallery-1440/" + img.getAttribute("data-image"),
         img.alt,
       );
     };
