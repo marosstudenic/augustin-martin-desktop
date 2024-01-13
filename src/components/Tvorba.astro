@@ -1,7 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import type { ImageMetadata } from 'astro';
-import { Image } from 'astro:assets';
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -9,18 +9,19 @@ const t = useTranslations(lang);
 const kresba = t("work.drawing.items");
 const malba = t("work.painting.items");
 
-const imagesKresba = import.meta.glob<{ default: ImageMetadata }>('/src/assets/tvorba/kresba/*');
-const imagesMalba = import.meta.glob<{ default: ImageMetadata }>('/src/assets/tvorba/malba/*');
+const imagesKresba = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/tvorba/kresba/*",
+);
+const imagesMalba = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/tvorba/malba/*",
+);
 
 // (kresba).map((item) => {
 //     if (!imagesKresba[item.image]) throw new Error(`"${item.image}" does not exist in glob: '/src/assets/novinky/*'`);
 // })
-
 ---
 
-<style>
-
-</style>
+<style></style>
 <section id="tvorba" class="px-4 pt-20 md:flex gap-18">
   <div class="kresba flex-1 md:pr-40 pb-8">
     <h2 class="text-gray-500 text-xl font-medium mb-2">
@@ -34,18 +35,19 @@ const imagesMalba = import.meta.glob<{ default: ImageMetadata }>('/src/assets/tv
           class="w-full object-contain h-[500px] md:h-[600px] modal-src rounded-md"
         />
 
-        {kresba.map((item) => {
-          return (
-            <div class="hidden">
-              <Image
-                src={imagesKresba[item.image]()}
-                alt={item.title}
-                class="w-full object-contain h-[500px] md:h-[600px] modal-src rounded-md"
-              />
-            </div>
-          );
-        })
-        } 
+        {
+          kresba.map((item) => {
+            return (
+              <div class="hidden">
+                <Image
+                  src={imagesKresba[item.image]()}
+                  alt={item.title}
+                  class="w-full object-contain h-[500px] md:h-[600px] modal-src rounded-md"
+                />
+              </div>
+            );
+          })
+        }
         <h3 class="text-gray-500 font-medium mt-2">{kresba[0].title}</h3>
 
         <div class="flex justify-between items-center">
@@ -73,17 +75,18 @@ const imagesMalba = import.meta.glob<{ default: ImageMetadata }>('/src/assets/tv
           alt={malba[0].title}
           class="w-full object-contain modal-src rounded-md h-[500px] md:h-[600px]"
         />
-        {malba.map((item) => {
-          return (
-            <div class="hidden">
-              <Image
-                src={imagesMalba[item.image]()}
-                alt={item.title}
-                class="w-full object-contain h-[500px] md:h-[600px] modal-src rounded-md"
-              />
-            </div>
-          );
-        })
+        {
+          malba.map((item) => {
+            return (
+              <div class="hidden">
+                <Image
+                  src={imagesMalba[item.image]()}
+                  alt={item.title}
+                  class="w-full object-contain h-[500px] md:h-[600px] modal-src rounded-md"
+                />
+              </div>
+            );
+          })
         }
         <h3 class="text-gray-500 font-medium mt-2">{malba[0].title}</h3>
 
@@ -162,15 +165,15 @@ const imagesMalba = import.meta.glob<{ default: ImageMetadata }>('/src/assets/tv
     img.src = url;
   }
 
-  // function preloadAllImages() {
-  //   for (let i = 0; i < kresba.length; i++) {
-  //     preloadImage("/assets/" + kresba[i].image);
-  //   }
-  //   for (let i = 0; i < malba.length; i++) {
-  //     preloadImage("/assets/" + malba[i].image);
-  //   }
-  // }
-  // preloadAllImages;
+  function preloadAllImages() {
+    for (let i = 0; i < kresba.length; i++) {
+      preloadImage("/assets/" + kresba[i].image);
+    }
+    for (let i = 0; i < malba.length; i++) {
+      preloadImage("/assets/" + malba[i].image);
+    }
+  }
+  preloadAllImages();
 </script>
 
 <style>
