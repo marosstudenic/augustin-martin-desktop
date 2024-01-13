@@ -2,19 +2,22 @@
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import { NewsItem } from "../i18n/data/news";
 
-import type { ImageMetadata } from 'astro';
-import { Image } from 'astro:assets';
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/novinky/*')
-
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/novinky/*",
+);
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-(t('news.items') as NewsItem[]).map((karticka) => {
-    if (!images[karticka.image]) throw new Error(`"${karticka.image}" does not exist in glob: '/src/assets/novinky/*'`);
-})
-
+(t("news.items") as NewsItem[]).map((karticka) => {
+    if (!images[karticka.image])
+        throw new Error(
+            `"${karticka.image}" does not exist in glob: '/src/assets/novinky/*'`,
+        );
+});
 ---
 
 <style>
@@ -42,10 +45,11 @@ const t = useTranslations(lang);
 </style>
 
 <section id="novinky" class="pt-20">
-
     <!--DESKTOP -->
     <div class="py-10 h-full md:block px-4">
-        <h3 class="text-gray-500 mb-2 font-medium text-2xl">Novinky</h3>
+        <h3 class="text-gray-500 mb-2 font-medium text-2xl">
+            {t("news.title")}
+        </h3>
         <div class="grid md:grid-cols-3 gap-8 md:max-w-6xl">
             {
                 (t("news.items") as NewsItem[]).map((karticka) => (

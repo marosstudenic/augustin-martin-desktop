@@ -1,7 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import type { ImageMetadata } from 'astro';
-import { Image } from 'astro:assets';
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 import { TimePassesItem } from "../i18n/data/time-passes";
 
 const lang = getLangFromUrl(Astro.url);
@@ -9,8 +9,9 @@ const t = useTranslations(lang);
 
 const seasons = t("time-passes.seasons");
 
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/cas_plynie/*');
-
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/cas_plynie/*",
+);
 ---
 
 <style>
@@ -43,7 +44,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/cas_ply
 </style>
 
 <section id="cas-plynie" class="pt-20 min-h-[100vh] px-4">
-	<h2 class="text-gray-500 font-medium text-2xl">Čas plynie</h2>
+	<h2 class="text-gray-500 font-medium text-2xl">{t("time-passes.title")}</h2>
 	<div class="season" id="listing">
 		{
 			seasons.map((season) => (
@@ -79,7 +80,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/cas_ply
 						</h2>
 						<div id={"season-" + index}>
 							<Image
-								src={images[season.items[0].filename]()}	
+								src={images[season.items[0].filename]()}
 								alt={season.items[0].title}
 								class="h-[550px] mb-2 object-contain cas-plynie img"
 							/>
