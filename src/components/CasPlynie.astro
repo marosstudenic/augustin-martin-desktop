@@ -185,8 +185,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 			}
 
 			let el = document.getElementById("season-" + seasonIndex);
-			el.children[0].src =
-				seasons[seasonIndex].items[counters[seasonIndex]].filename;
+			el.children[0].src = seasons[seasonIndex].items[
+				counters[seasonIndex]
+			].filename.replace("/src", "");
 			el.children[1].textContent =
 				seasons[seasonIndex].items[counters[seasonIndex]].title;
 			el.children[2].children[0].textContent =
