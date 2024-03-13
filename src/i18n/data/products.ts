@@ -124,6 +124,72 @@ export const sk = {
                         "signovaný autormi Martinom Augustínom, Kamilom Peterajom\n",
                     ],
                 },
+                {
+                    "title": "SEN I",
+                    "slug": "sen-i",
+                    "image": "/src/assets/produkty/M.Augustin_24_025W.JPG",
+                    "descriptions": [
+                        "technika: litografia, autorská tlač",
+                        "značená A.T.",
+                        "rozmer: 32 x 25 cm",
+                        "50€ + poštovné",
+                    ]
+                },
+                {
+                    "title": "Bez názvu",
+                    "slug": "bez-nazvu-187-kusov",
+                    "image": "/src/assets/produkty/M.Augustin_24_024W.JPG",
+                    "descriptions": [
+                        "technika: litografia",
+                        "náklad 187 kusov",
+                        "rozmer: 29,7 x 21 cm",
+                        "50€ + poštovné",
+                    ]
+                },
+                {
+                    "title": "Bez názvu",
+                    "slug": "bez-nazvu-187-kusov-2",
+                    "image": "/src/assets/produkty/M.Augustin_24_023W.JPG",
+                    "descriptions": [
+                        "technika: litografia",
+                        "náklad 187 kusov",
+                        "rozmer: 29,7 x 21 cm",
+                        "50€ + poštovné",
+                    ]
+                },
+                {
+                    "title": "SEN",
+                    "slug": "sen-100-kusov",
+                    "image": "/src/assets/produkty/M.Augustin_24_022W.JPG",
+                    "descriptions": [
+                        "technika: litografia",
+                        "náklad 100 kusov",
+                        "rozmer: 50 x 37 cm",
+                        "100€ + poštovné",
+                    ]
+                },
+                {
+                    "title": "HOLOUBEK",
+                    "slug": "holoubek",
+                    "image": "/src/assets/produkty/m.augustin_22207.JPG",
+                    "descriptions": [
+                        "technika: litografia",
+                        "náklad 150 kusov",
+                        "rozmer: 24,5 x 24,5 cm",
+                        "40 € + poštovné",
+                    ]
+                },
+                {
+                    "title": "MÁJ",
+                    "slug": "maj",
+                    "image": "/src/assets/produkty/m.augustin_22209.JPG",
+                    "descriptions": [
+                        "technika: litografia",
+                        "náklad 150 kusov",
+                        "rozmer: 24,5 x 24,5 cm",
+                        "40 € + poštovné",
+                    ]
+                }
             ],
         },
         limitovaneEdicie: {
@@ -265,6 +331,73 @@ export const en = {
                         "signed by the authors Martin Augustín and Kamil Peteraj\n",
                     ],
                 },
+                {
+                    "title": "SEN I",
+                    "slug": "sen-i",
+                    "image": "/src/assets/produkty/M.Augustin_24_025W.JPG",
+                    "descriptions": [
+                        "technique: lithography, artist's print",
+                        "marked A.T.",
+                        "dimensions: 32 x 25 cm",
+                        "50€ + shipping",
+                    ]
+                },
+                {
+                    "title": "Untitled",
+                    "slug": "untitled-187-pieces",
+                    "image": "/src/assets/produkty/M.Augustin_24_024W.JPG",
+                    "descriptions": [
+                        "technique: lithography",
+                        "edition of 187 pieces",
+                        "dimensions: 29.7 x 21 cm",
+                        "50€ + shipping",
+                    ]
+                },
+                {
+                    "title": "Untitled",
+                    "slug": "untitled-187-pieces-2",
+                    "image": "/src/assets/produkty/M.Augustin_24_023W.JPG",
+                    "descriptions": [
+                        "technique: lithography",
+                        "edition of 187 pieces",
+                        "dimensions: 29.7 x 21 cm",
+                        "50€ + shipping",
+                    ]
+                },
+                {
+                    "title": "SEN",
+                    "slug": "sen",
+                    "image": "/src/assets/produkty/M.Augustin_24_022W.JPG",
+                    "descriptions": [
+                        "technique: lithography",
+                        "edition of 100 pieces",
+                        "dimensions: 50 x 37 cm",
+                        "100€ + shipping",
+                    ]
+                },
+                {
+                    "title": "HOLOUBEK",
+                    "slug": "holoubek",
+                    "image": "/src/assets/produkty/m.augustin_22207.JPG",
+                    "descriptions": [
+                        "technique: lithography",
+                        "edition of 150 pieces",
+                        "dimensions: 24.5 x 24.5 cm",
+                        "40 € + shipping",
+                    ]
+                },
+                {
+                    "title": "MÁJ",
+                    "slug": "maj",
+                    "image": "/src/assets/produkty/m.augustin_22209.JPG",
+                    "descriptions": [
+                        "technique: lithography",
+                        "edition of 150 pieces",
+                        "dimensions: 24.5 x 24.5 cm",
+                        "40 € + shipping",
+                    ]
+                }
+
             ],
         },
         limitovaneEdicie: {
