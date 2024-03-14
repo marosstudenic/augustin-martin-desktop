@@ -159,7 +159,7 @@ export const sk = {
                 },
                 {
                     "title": "SEN",
-                    "slug": "sen-100-kusov",
+                    "slug": "sen",
                     "image": "/src/assets/produkty/M.Augustin_24_022W.JPG",
                     "descriptions": [
                         "technika: litografia",
@@ -344,7 +344,7 @@ export const en = {
                 },
                 {
                     "title": "Untitled",
-                    "slug": "untitled-187-pieces",
+                    "slug": "bez-nazvu-187-kusov",
                     "image": "/src/assets/produkty/M.Augustin_24_024W.JPG",
                     "descriptions": [
                         "technique: lithography",
@@ -355,7 +355,7 @@ export const en = {
                 },
                 {
                     "title": "Untitled",
-                    "slug": "untitled-187-pieces-2",
+                    "slug": "bez-nazvu-187-kusov-2",
                     "image": "/src/assets/produkty/M.Augustin_24_023W.JPG",
                     "descriptions": [
                         "technique: lithography",
