@@ -64,11 +64,7 @@ export const sk = {
             title: "Martin Augustín, Zuzka Kocúriková, Peter Mikulík, Jozef Augustín",
             image: "zuzka_kocurikova.jpg",
         },
-        {
-            title:
-                "Kamil Peteraj, Vincent Polakovič, Martin Augustín na výstave v Danubiana Meulensteen Art Museum",
-            image: "DSCN3097.jpg",
-        },
+
         {
             title:
                 "Kamil Peteraj pri práci v ateliéri na Novohradskej ulici na spoločnom obraze",
@@ -176,6 +172,10 @@ export const sk = {
             title:
                 "Luboš Lackovič, Martin Augustín, Jozef Mitošinka na výstave Martina Augustína v Danubiana Meulensteen Art Museum",
             image: "DSCN3097.jpg",
+        },
+        {
+            "title": "Kamil Peteraj, Vincent Polakovič, Martin Augustín na výstave v Danubiana Meulensteen Art Museum",
+            "image": "DSCN3084.jpg"
         },
         {
             title: "Výstava Martina Augustína v Danubiana Meulensteen Art Museum",
@@ -318,10 +318,7 @@ export const en = {
             "title": "Martin Augustín, Zuzka Kocúriková, Peter Mikulík, Jozef Augustín",
             "image": "zuzka_kocurikova.jpg"
         },
-        {
-            "title": "Kamil Peteraj, Vincent Polakovič, Martin Augustín at the Exhibition in Danubiana Meulensteen Art Museum",
-            "image": "DSCN3097.jpg"
-        },
+
         {
             "title": "Kamil Peteraj at Work on a Joint Painting in the Studio on Novohradská St.",
             "image": "DSC06538.jpg"
@@ -410,6 +407,13 @@ export const en = {
             "title": "Luboš Lackovič, Martin Augustín, Jozef Mitošinka at Martin Augustín's Exhibition at the Danubiana Meulensteen Art Museum",
             "image": "DSCN3097.jpg"
         },
+
+        {
+            "title": "Kamil Peteraj, Vincent Polakovič, Martin Augustín at the Exhibition at the Danubiana Meulensteen Art Museum",
+            "image": "DSCN3084.jpg"
+        },
+
+
         {
             "title": "Martin Augustín's Exhibition at the Danubiana Meulensteen Art Museum",
             "image": "DSCN3166.jpg"
