@@ -14,6 +14,7 @@ import Kontakt from "../Kontakt.astro";
 import NavDesktop from "../NavDesktop.astro";
 import NavMobile from "../NavMobile.astro";
 import Products from "../Products.astro";
+import Books from "../Books.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
@@ -90,6 +91,7 @@ const lang = getLangFromUrl(Astro.url);
                 <CasPlynie />
                 <Zivotopis />
                 <Vystavy />
+                <Books />
                 <Tvorba />
                 <Spolupraca />
                 <Video />

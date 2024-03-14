@@ -1,0 +1,52 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/produkty/*",
+);
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const books = t("books.items") as {
+  image: string;
+  title: string;
+  author: string;
+  locations: string[];
+}[];
+
+books.map((item) => {
+  if (!images[item.image]) {
+    throw new Error(`Image ${item.image} not found`);
+  }
+});
+---
+
+<section id="ikar" class="px-4 pt-20">
+  <h2 class="text-gray-500 text-xl font-medium mb-4">
+    {t("books.title")}
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {
+      books.map((item) => (
+        <div class="w-full my-2 md:py-2 md:h-72">
+          <div class="flex">
+            <Image
+              src={images[item.image]()}
+              alt={item.title}
+              class="w-32 md:w-52 object-contain mr-4 h-full my-auto modal-src rounded-xl"
+            />
+            <div class="my-auto">
+              <h2 class="text-md font-medium">{item.title}</h2>
+              <h3 class="text-sm font-medium">{item.author}</h3>
+              {item.locations.map((location) => (
+                <p class="text-sm text-gray-500">- {location}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

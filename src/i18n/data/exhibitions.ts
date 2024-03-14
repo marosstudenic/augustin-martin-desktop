@@ -321,7 +321,11 @@ export const sk = {
                 "MARTIN AUGUSTÍN, LE SILENCE, Église Sainte Marie-Madeleine v Paríži, Francúzsko, kurátor výstavy Ľudovít Petránsky",
             ],
         },
-    ]
+        {
+            date: "2024",
+            locations: ["Dotknúť sa láskou, Výstavná sieň slovenského kultúrneho inštitútu vo Varšave, Poľsko, kurátorka výstavy Carmen Kováčová"]
+        }
+    ],
 }
 
 export const en = {
@@ -515,6 +519,11 @@ export const en = {
                 "<i>ANIOŁ STRÓŻ</i>, Gallery of the Slovak Association in Krakow, Poland, curator of the exhibition Carmen Kováčová",
                 "<i>MARTIN AUGUSTÍN, LE SILENCE</i>, Église Sainte Marie-Madeleine in Paris, France, curator of the exhibition Ľudovít Petránsky"
             ],
+
+        },
+        {
+            date: "2024",
+            locations: ["Dotknúť sa láskou, Exhibition Hall of the Slovak Cultural Institute in Warsaw, Poland, exhibition concept by Carmen Kováčová"]
         }
     ],
     'exhibitions.group': [
@@ -657,3 +666,6 @@ export const en = {
     ]
 
 }
+
+
+
