@@ -323,7 +323,7 @@ export const sk = {
         },
         {
             date: "2024",
-            locations: ["Dotknúť sa láskou, Výstavná sieň slovenského kultúrneho inštitútu vo Varšave, Poľsko, kurátorka výstavy Carmen Kováčová"]
+            locations: ["<i>Dotknúť sa láskou</i>, Výstavná sieň slovenského kultúrneho inštitútu vo Varšave, Poľsko, kurátorka výstavy Carmen Kováčová"]
         }
     ],
 }
@@ -523,7 +523,7 @@ export const en = {
         },
         {
             date: "2024",
-            locations: ["Dotknúť sa láskou, Exhibition Hall of the Slovak Cultural Institute in Warsaw, Poland, exhibition concept by Carmen Kováčová"]
+            locations: ["<i>Dotknúť sa láskou</i>, Exhibition Hall of the Slovak Cultural Institute in Warsaw, Poland, exhibition concept by Carmen Kováčová"]
         }
     ],
     'exhibitions.group': [
