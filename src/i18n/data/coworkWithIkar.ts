@@ -3,6 +3,20 @@ export const sk = {
     'coworkWithIkar.ikar': 'Vydavateľstvo IKAR',
     'coworkWithIkar.items': [
         {
+            title: "Marína",
+            authors: "Andrej Sládkovič",
+            vydavatelstvo: "Vydavateľstvo IKAR",
+            image: "/src/assets/spoluprace/marina.jpg",
+            link: "https://www.luxusnakniznica.sk/marina"
+        },
+        {
+            title: "Modlitebník",
+            authors: "Mons. ThLic. V. Pleva, M. Augustín, B. Baloghová",
+            vydavatelstvo: "Vydavateľstvo IKAR",
+            image: "/src/assets/spoluprace/modlitebnik.jpg",
+            link: "https://www.luxusnakniznica.sk/modlitebnik-2024"
+        },
+        {
             title: "Modlitebník",
             authors: "Mons. ThLic. V. Pleva, M. Augustín, B. Baloghová",
             vydavatelstvo: "Vydavateľstvo IKAR",
@@ -74,6 +88,21 @@ export const en = {
     'coworkWithIkar.title': 'Cooperation with IKAR publishing house',
     'coworkWithIkar.ikar': 'IKAR publishing house',
     'coworkWithIkar.items': [
+
+        {
+            title: "Marína",
+            authors: "Andrej Sládkovič",
+            vydavatelstvo: "IKAR publishing house",
+            image: "/src/assets/spoluprace/marina.jpg",
+            link: "https://www.luxusnakniznica.sk/marina"
+        },
+        {
+            title: "Modlitebník",
+            authors: "Mons. ThLic. V. Pleva, M. Augustín, B. Baloghová",
+            vydavatelstvo: "IKAR publishing house",
+            image: "/src/assets/spoluprace/modlitebnik.jpg",
+            link: "https://www.luxusnakniznica.sk/modlitebnik-2024"
+        },
         {
             title: "Modlitebník",
             authors: "Mons. ThLic. V. Pleva, M. Augustín, B. Baloghová",

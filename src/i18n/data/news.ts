@@ -9,6 +9,27 @@ export const sk = {
     'news.title': 'Novinky',
     'news.items': [
         {
+            image: '/src/assets/novinky/marina.jpg',
+            title: 'Modlitebník',
+            text: [
+                "Andrej Sládkovič",
+                "Limitovaná edícia",
+                "Bibliofília dostupná v Luxusnej knižnici cez link nižšie",
+                "Vydavateľstvo Ikar"
+            ],
+            link: "https://www.luxusnakniznica.sk/marina"
+        },
+        {
+            image: '/src/assets/novinky/modlitebnik.jpg',
+            title: 'Modlitebník',
+            text: [
+                "Mons. ThLic. V. Pleva, M. Augustín, B. Baloghová",
+                "Bibliofília dostupná v Luxusnej knižnici cez link nižšie",
+                "Vydavateľstvo Ikar"
+            ],
+            link: "https://www.luxusnakniznica.sk/modlitebnik-2024"
+        },
+        {
             image: "/src/assets/novinky/MOD PERSPEKT.jpg",
             title: "Modlitebník",
             text: [
@@ -79,6 +100,27 @@ export const en = {
     'news.title': 'News',
 
     'news.items': [
+        {
+            "image": "/src/assets/novinky/marina.jpg",
+            "title": "Marína",
+            "text": [
+                "Andrej Sládkovič",
+                "Limited Edition",
+                "Bibliophilia available in Luxusná knižnica via the link below",
+                "IKAR Publishing House"
+            ],
+            "link": "https://www.luxusnakniznica.sk/marina"
+        },
+        {
+            "image": "/src/assets/novinky/modlitebnik.jpg",
+            "title": "Modlitebník",
+            "text": [
+                "Mons. ThLic. V. Pleva, M. Augustín, B. Baloghová",
+                "Bibliophilia available in Luxusná knižnica via the link below",
+                "IKAR Publishing House"
+            ],
+            "link": "https://www.luxusnakniznica.sk/modlitebnik-2024"
+        },
         {
             image: "/src/assets/novinky/MOD PERSPEKT.jpg",
             title: "Modlitebník",
