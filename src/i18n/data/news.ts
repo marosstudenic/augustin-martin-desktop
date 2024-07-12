@@ -10,7 +10,7 @@ export const sk = {
     'news.items': [
         {
             image: '/src/assets/novinky/marina.jpg',
-            title: 'Modlitebník',
+            title: 'Marína',
             text: [
                 "Andrej Sládkovič",
                 "Limitovaná edícia",
