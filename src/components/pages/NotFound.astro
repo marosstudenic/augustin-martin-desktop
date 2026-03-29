@@ -1,10 +1,15 @@
 ---
+import { getLangFromUrl } from "../../i18n/utils";
+import "../../styles/global.scss";
 import MainHead from "../MainHead.astro";
 import NavDesktop from "../NavDesktop.astro";
 import NavMobile from "../NavMobile.astro";
+
+const lang = getLangFromUrl(Astro.url);
+
 ---
 
-<html lang="en">
+<html lang={lang}>
     <head>
         <MainHead title="Not Found" />
     </head>

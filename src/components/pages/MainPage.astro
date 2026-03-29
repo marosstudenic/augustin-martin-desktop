@@ -1,5 +1,6 @@
 ---
 // Component Imports
+import "../../styles/global.scss";
 import MainHead from "../MainHead.astro";
 import Uvod from "../Uvod.astro";
 import Novinky from "../Novinky.astro";
@@ -67,18 +68,20 @@ const lang = getLangFromUrl(Astro.url);
 </style>
 
 <html lang={lang}>
-    <MainHead
-        title="Martin Augustín"
-        description="Slovenský umelec Martin Augustín predstavuje v spolupráci s Galériou u Anjela svoju novú kolekciu obrazov."
-    />
+    <head>
+        <MainHead
+            title="Martin Augustín"
+            description="Slovenský umelec Martin Augustín predstavuje v spolupráci s Galériou u Anjela svoju novú kolekciu obrazov."
+        />
 
-    <style lang="scss">
-        $w-s: 750px;
+        <style lang="scss">
+            $w-s: 750px;
 
-        a {
-            text-decoration: none;
-        }
-    </style>
+            a {
+                text-decoration: none;
+            }
+        </style>
+    </head>
 
     <body>
         <NavMobile />
