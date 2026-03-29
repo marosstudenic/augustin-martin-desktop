@@ -9,6 +9,15 @@ export const sk = {
     'news.title': 'Novinky',
     'news.items': [
         {
+            image: '/src/assets/novinky/marina-trade.jpg',
+            title: 'Marína',
+            text: [
+                "Andrej Sládkovič",
+                "Vydavateľstvo IKAR"
+            ],
+            link: "https://www.bux.sk/knihy/760903-marina.html"
+        },
+        {
             image: '/src/assets/novinky/marina.jpg',
             title: 'Marína',
             text: [
@@ -100,6 +109,15 @@ export const en = {
     'news.title': 'News',
 
     'news.items': [
+        {
+            "image": "/src/assets/novinky/marina-trade.jpg",
+            "title": "Marína",
+            "text": [
+                "Andrej Sládkovič",
+                "IKAR Publishing House"
+            ],
+            "link": "https://www.bux.sk/knihy/760903-marina.html"
+        },
         {
             "image": "/src/assets/novinky/marina.jpg",
             "title": "Marína",

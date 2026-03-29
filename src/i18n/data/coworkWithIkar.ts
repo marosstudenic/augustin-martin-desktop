@@ -6,6 +6,13 @@ export const sk = {
             title: "Marína",
             authors: "Andrej Sládkovič",
             vydavatelstvo: "Vydavateľstvo IKAR",
+            image: "/src/assets/spoluprace/marina-trade.jpg",
+            link: "https://www.bux.sk/knihy/760903-marina.html"
+        },
+        {
+            title: "Marína",
+            authors: "Andrej Sládkovič",
+            vydavatelstvo: "Vydavateľstvo IKAR",
             image: "/src/assets/spoluprace/marina.jpg",
             link: "https://www.luxusnakniznica.sk/marina"
         },
@@ -88,7 +95,13 @@ export const en = {
     'coworkWithIkar.title': 'Cooperation with IKAR publishing house',
     'coworkWithIkar.ikar': 'IKAR publishing house',
     'coworkWithIkar.items': [
-
+        {
+            title: "Marína",
+            authors: "Andrej Sládkovič",
+            vydavatelstvo: "IKAR publishing house",
+            image: "/src/assets/spoluprace/marina-trade.jpg",
+            link: "https://www.bux.sk/knihy/760903-marina.html"
+        },
         {
             title: "Marína",
             authors: "Andrej Sládkovič",
