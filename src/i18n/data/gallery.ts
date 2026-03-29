@@ -256,6 +256,34 @@ export const sk = {
             title:
                 "Výstava Shadows and Colors, Božena, Andrej, Martin Augustínovci v Zoya Gallery v Bratislave",
             image: "411827446_1746038_n.jpg",
+        },
+        {
+            title: "Martin Augustín na podujatí",
+            image: "15c03a1c-f52d-41ec-baa5-c71b261af4e0.jpg",
+        },
+        {
+            title: "Otvorenie výstavy v galérii",
+            image: "23543565-041a-47f6-b390-4277d5a91853.jpg",
+        },
+        {
+            title: "Návštevníci pri prehliadke triptychu na výstave",
+            image: "582df671-1a8f-4b41-9d6d-7090fbddbc2a.jpg",
+        },
+        {
+            title: "Kamil Peteraj, Martin Augustín v televíznej relácii",
+            image: "663ed282-295f-4d4e-95ec-3147cdc04273.jpg",
+        },
+        {
+            title: "Prezentácia diela v televíznom štúdiu",
+            image: "6a7e7845-72e8-47d9-8b02-c40274c2b745.jpg",
+        },
+        {
+            title: "Martin Augustín pri prezentácii diela a knihy",
+            image: "72de9167-a0fc-4d0a-9232-755b15fb5cac.jpg",
+        },
+        {
+            title: "Vernisáž v galérii",
+            image: "7de446e8-ef83-47e1-81fb-6518b18e2a63.jpg",
         }]
 }
 
@@ -477,6 +505,34 @@ export const en = {
         {
             "title": "Exhibition 'Shadows and Colors', Božena, Andrej, Martin Augustínovci in Zoya Gallery in Bratislava",
             "image": "411827446_1746038_n.jpg"
+        },
+        {
+            "title": "Martin Augustín at an Event",
+            "image": "15c03a1c-f52d-41ec-baa5-c71b261af4e0.jpg"
+        },
+        {
+            "title": "Exhibition Opening in a Gallery",
+            "image": "23543565-041a-47f6-b390-4277d5a91853.jpg"
+        },
+        {
+            "title": "Visitors Viewing a Triptych at an Exhibition",
+            "image": "582df671-1a8f-4b41-9d6d-7090fbddbc2a.jpg"
+        },
+        {
+            "title": "Kamil Peteraj, Martin Augustín on a TV Show",
+            "image": "663ed282-295f-4d4e-95ec-3147cdc04273.jpg"
+        },
+        {
+            "title": "Artwork Presentation in a TV Studio",
+            "image": "6a7e7845-72e8-47d9-8b02-c40274c2b745.jpg"
+        },
+        {
+            "title": "Martin Augustín Presenting Artwork and a Book",
+            "image": "72de9167-a0fc-4d0a-9232-755b15fb5cac.jpg"
+        },
+        {
+            "title": "Vernissage in a Gallery",
+            "image": "7de446e8-ef83-47e1-81fb-6518b18e2a63.jpg"
         }
     ]
 
