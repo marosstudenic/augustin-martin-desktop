@@ -13,10 +13,13 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 (t("news.items") as NewsItem[]).map((karticka) => {
-    if (!images[karticka.image])
-        throw new Error(
-            `"${karticka.image}" does not exist in glob: '/src/assets/novinky/*'`,
-        );
+    const imgs = Array.isArray(karticka.image) ? karticka.image : [karticka.image];
+    imgs.forEach((img) => {
+        if (!images[img])
+            throw new Error(
+                `"${img}" does not exist in glob: '/src/assets/novinky/*'`,
+            );
+    });
 });
 ---
 
@@ -52,14 +55,23 @@ const t = useTranslations(lang);
         </h3>
         <div class="grid md:grid-cols-3 gap-8 md:max-w-6xl">
             {
-                (t("news.items") as NewsItem[]).map((karticka) => (
-                    <div class="rounded overflow-hidden shadow-lg flex justify-between flex-col">
+                (t("news.items") as NewsItem[]).map((karticka) => {
+                    const imgs = Array.isArray(karticka.image) ? karticka.image : [karticka.image];
+                    return (
+                    <div class:list={["rounded overflow-hidden shadow-lg flex justify-between flex-col", imgs.length > 1 && "md:col-span-2"]}>
                         <div class="">
-                            <Image
-                                class="w-full object-cover"
-                                src={images[karticka.image]()}
-                                alt={karticka.title}
-                            />
+                            <div class:list={[imgs.length > 1 && "md:flex md:flex-row"]}>
+                                {imgs.map((img, i) => (
+                                    <>
+                                        {i > 0 && <div class="h-[2px] w-full md:hidden" style="background: linear-gradient(90deg, #996515, #d4a843, #f5d67b, #d4a843, #996515);" />}
+                                        <Image
+                                            class:list={["w-full object-cover", imgs.length > 1 && "md:flex-1 md:min-w-0"]}
+                                            src={images[img]()}
+                                            alt={karticka.title}
+                                        />
+                                    </>
+                                ))}
+                            </div>
                             <div class="px-6 py-4">
                                 <div class="text-gray-500 text-lg font-semibold mb-2">
                                     {karticka.title}
@@ -91,7 +103,7 @@ const t = useTranslations(lang);
                             </div>
                         )}
                     </div>
-                ))
+                )})
             }
         </div>
     </div>

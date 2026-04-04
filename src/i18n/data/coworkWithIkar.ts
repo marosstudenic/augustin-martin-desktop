@@ -3,6 +3,13 @@ export const sk = {
     'coworkWithIkar.ikar': 'Vydavateľstvo IKAR',
     'coworkWithIkar.items': [
         {
+            title: "KAMIL PETERAJ, zlatá kniha",
+            authors: "Kamil Peteraj",
+            vydavatelstvo: "Vydavateľstvo IKAR",
+            image: "/src/assets/spoluprace/kamil-peteraj-zlata-kniha.jpg",
+            link: "https://www.luxusnakniznica.sk/kamil-peteraj",
+        },
+        {
             title: "Marína",
             authors: "Andrej Sládkovič",
             vydavatelstvo: "Vydavateľstvo IKAR",
@@ -95,6 +102,13 @@ export const en = {
     'coworkWithIkar.title': 'Cooperation with IKAR publishing house',
     'coworkWithIkar.ikar': 'IKAR publishing house',
     'coworkWithIkar.items': [
+        {
+            title: "KAMIL PETERAJ, golden book",
+            authors: "Kamil Peteraj",
+            vydavatelstvo: "IKAR publishing house",
+            image: "/src/assets/spoluprace/kamil-peteraj-zlata-kniha.jpg",
+            link: "https://www.luxusnakniznica.sk/kamil-peteraj",
+        },
         {
             title: "Marína",
             authors: "Andrej Sládkovič",

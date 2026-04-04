@@ -1,5 +1,5 @@
 export interface NewsItem {
-    image: string;
+    image: string | string[];
     title: string;
     text: string[];
     link?: string;
@@ -8,6 +8,23 @@ export interface NewsItem {
 export const sk = {
     'news.title': 'Novinky',
     'news.items': [
+        {
+            image: ['/src/assets/novinky/dotyk-pozvanka.jpg', '/src/assets/novinky/dotyk-galeria.jpg'],
+            title: 'DOTYK',
+            text: [
+                "Martin Augustín",
+                "Galéria Dessewffy, Dessewffyho palác, Nám. Ľ. Štúra 2, Bratislava",
+                "Výstava potrvá do 29.6.2026",
+            ],
+        },
+        {
+            image: '/src/assets/novinky/kamil-peteraj-zlata-kniha.jpg',
+            title: 'KAMIL PETERAJ, zlatá kniha',
+            text: [
+                "Vydavateľstvo IKAR",
+            ],
+            link: "https://www.luxusnakniznica.sk/kamil-peteraj",
+        },
         {
             image: '/src/assets/novinky/marina-trade.jpg',
             title: 'Marína',
@@ -109,6 +126,23 @@ export const en = {
     'news.title': 'News',
 
     'news.items': [
+        {
+            "image": ["/src/assets/novinky/dotyk-pozvanka.jpg", "/src/assets/novinky/dotyk-galeria.jpg"],
+            "title": "DOTYK",
+            "text": [
+                "Martin Augustín",
+                "Galéria Dessewffy, Dessewffy Palace, Nám. Ľ. Štúra 2, Bratislava",
+                "Exhibition open until 29.6.2026"
+            ]
+        },
+        {
+            "image": "/src/assets/novinky/kamil-peteraj-zlata-kniha.jpg",
+            "title": "KAMIL PETERAJ, golden book",
+            "text": [
+                "IKAR Publishing House"
+            ],
+            "link": "https://www.luxusnakniznica.sk/kamil-peteraj"
+        },
         {
             "image": "/src/assets/novinky/marina-trade.jpg",
             "title": "Marína",

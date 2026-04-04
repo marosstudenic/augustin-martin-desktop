@@ -25,7 +25,7 @@ export const sk = {
     {
         name: "Grafické listy",
         image: "/src/assets/news/grafList_slnkoNadHlavou.jpg",
-        link: "/listy/slnko-nad-hlavou",
+        link: "/listy/pohlad-svet-dlanami",
     },
     {
         name: "Limitované edície",
@@ -60,6 +60,7 @@ export const sk = {
                         "brožovaná publikácia",
                         "40 strán, 38 x 30 cm",
                         "40€ + poštovné",
+                        "Nedostupné",
                     ],
                 },
                 {
@@ -103,6 +104,39 @@ export const sk = {
             slug: "listy",
             items: [
                 {
+                    title: "POHLAĎ SVET DLAŇAMI",
+                    slug: "pohlad-svet-dlanami",
+                    image: "/src/assets/produkty/pohlad-svet-dlanami.jpg",
+                    descriptions: [
+                        "technika: limitovaná ofsetová tlač s patinovaným scodixom",
+                        "signovaný autorom",
+                        "formát 32 x 21 cm",
+                        "30 € + poštovné",
+                    ],
+                },
+                {
+                    title: "POZRI SA DO OČÍ",
+                    slug: "pozri-sa-do-oci",
+                    image: "/src/assets/produkty/pozri-sa-do-oci.jpg",
+                    descriptions: [
+                        "technika: limitovaná ofsetová tlač s patinovaným scodixom",
+                        "signovaný autorom",
+                        "formát 32 x 21 cm",
+                        "30 € + poštovné",
+                    ],
+                },
+                {
+                    title: "OTVOR SI NÁRUČIE",
+                    slug: "otvor-si-narucie",
+                    image: "/src/assets/produkty/otvor-si-narucie.jpg",
+                    descriptions: [
+                        "technika: limitovaná ofsetová tlač s patinovaným scodixom",
+                        "signovaný autorom",
+                        "formát 32 x 21 cm",
+                        "30 € + poštovné",
+                    ],
+                },
+                {
                     title: "Slnko nad hlavou",
                     slug: "slnko-nad-hlavou",
                     image: "/src/assets/produkty/grafList_slnkoNadHlavou.jpg",
@@ -133,6 +167,7 @@ export const sk = {
                         "značená A.T.",
                         "rozmer: 32 x 25 cm",
                         "50€ + poštovné",
+                        "Nedostupné",
                     ]
                 },
                 {
@@ -144,6 +179,7 @@ export const sk = {
                         "náklad 187 kusov",
                         "rozmer: 29,7 x 21 cm",
                         "50€ + poštovné",
+                        "Nedostupné",
                     ]
                 },
                 {
@@ -155,6 +191,7 @@ export const sk = {
                         "náklad 187 kusov",
                         "rozmer: 29,7 x 21 cm",
                         "50€ + poštovné",
+                        "Nedostupné",
                     ]
                 },
                 {
@@ -177,6 +214,7 @@ export const sk = {
                         "náklad 150 kusov",
                         "rozmer: 24,5 x 24,5 cm",
                         "40 € + poštovné",
+                        "Nedostupné",
                     ]
                 },
                 {
@@ -188,6 +226,7 @@ export const sk = {
                         "náklad 150 kusov",
                         "rozmer: 24,5 x 24,5 cm",
                         "40 € + poštovné",
+                        "Nedostupné",
                     ]
                 }
             ],
@@ -233,7 +272,7 @@ export const en = {
     {
         name: "Art prints",
         image: "/src/assets/news/grafList_slnkoNadHlavou.jpg",
-        link: "/listy/slnko-nad-hlavou",
+        link: "/listy/pohlad-svet-dlanami",
     },
     {
         name: "Limited editions",
@@ -267,6 +306,7 @@ export const en = {
                         "paperback",
                         "40 pages, 38 x 30 cm",
                         "40€ + shipping",
+                        "Unavailable",
                     ],
                 },
                 {
@@ -310,6 +350,39 @@ export const en = {
             slug: "listy",
             items: [
                 {
+                    title: "POHLAĎ SVET DLAŇAMI",
+                    slug: "pohlad-svet-dlanami",
+                    image: "/src/assets/produkty/pohlad-svet-dlanami.jpg",
+                    descriptions: [
+                        "technique: limited offset print with patinated scodix",
+                        "signed by the author",
+                        "format 32 x 21 cm",
+                        "30 € + shipping",
+                    ],
+                },
+                {
+                    title: "POZRI SA DO OČÍ",
+                    slug: "pozri-sa-do-oci",
+                    image: "/src/assets/produkty/pozri-sa-do-oci.jpg",
+                    descriptions: [
+                        "technique: limited offset print with patinated scodix",
+                        "signed by the author",
+                        "format 32 x 21 cm",
+                        "30 € + shipping",
+                    ],
+                },
+                {
+                    title: "OTVOR SI NÁRUČIE",
+                    slug: "otvor-si-narucie",
+                    image: "/src/assets/produkty/otvor-si-narucie.jpg",
+                    descriptions: [
+                        "technique: limited offset print with patinated scodix",
+                        "signed by the author",
+                        "format 32 x 21 cm",
+                        "30 € + shipping",
+                    ],
+                },
+                {
                     title: "Slnko nad hlavou",
                     slug: "slnko-nad-hlavou",
                     image: "/src/assets/produkty/grafList_slnkoNadHlavou.jpg",
@@ -340,6 +413,7 @@ export const en = {
                         "marked A.T.",
                         "dimensions: 32 x 25 cm",
                         "50€ + shipping",
+                        "Unavailable",
                     ]
                 },
                 {
@@ -351,6 +425,7 @@ export const en = {
                         "edition of 187 pieces",
                         "dimensions: 29.7 x 21 cm",
                         "50€ + shipping",
+                        "Unavailable",
                     ]
                 },
                 {
@@ -362,6 +437,7 @@ export const en = {
                         "edition of 187 pieces",
                         "dimensions: 29.7 x 21 cm",
                         "50€ + shipping",
+                        "Unavailable",
                     ]
                 },
                 {
@@ -384,6 +460,7 @@ export const en = {
                         "edition of 150 pieces",
                         "dimensions: 24.5 x 24.5 cm",
                         "40 € + shipping",
+                        "Unavailable",
                     ]
                 },
                 {
@@ -395,9 +472,9 @@ export const en = {
                         "edition of 150 pieces",
                         "dimensions: 24.5 x 24.5 cm",
                         "40 € + shipping",
+                        "Unavailable",
                     ]
                 }
-
             ],
         },
         limitovaneEdicie: {
