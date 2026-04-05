@@ -10,6 +10,7 @@ import { sk as skVideo, en as enVideo } from './data/video';
 import { sk as skGallery, en as enGallery } from './data/gallery';
 import { sk as skContact, en as enContact } from './data/contact';
 import { sk as skBooks, en as enBooks } from './data/books';
+import { sk as skInterviews, en as enInterviews } from './data/interviews';
 
 export const languages = {
     en: 'English',
@@ -29,6 +30,7 @@ export const ui = {
         'nav.work': 'Work',
         'nav.ikar': 'IKAR',
         'nav.video': 'Video',
+        'nav.interviews': 'Interviews',
         'nav.gallery': 'Gallery',
         'nav.contact': 'Contact',
         'utils.more': 'More',
@@ -50,7 +52,8 @@ export const ui = {
         ...enVideo,
         ...enGallery,
         ...enContact,
-        ...enBooks
+        ...enBooks,
+        ...enInterviews
 
     },
     sk: {
@@ -62,6 +65,7 @@ export const ui = {
         'nav.work': 'Tvorba',
         'nav.ikar': 'IKAR',
         'nav.video': 'Video',
+        'nav.interviews': 'Rozhovory',
         'nav.gallery': 'Fotogaléria',
         'nav.contact': 'Kontakt',
 
@@ -85,7 +89,8 @@ export const ui = {
         ...skVideo,
         ...skGallery,
         ...skContact,
-        ...skBooks
+        ...skBooks,
+        ...skInterviews
     },
 
 } as const;

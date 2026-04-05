@@ -18,6 +18,15 @@ export const sk = {
             ],
         },
         {
+            image: '/src/assets/novinky/PBK.jpg',
+            title: 'Príbeh bez konca',
+            text: [
+                "Kamil Peteraj",
+                "Vydavateľstvo IKAR",
+            ],
+            link: "https://www.pantarhei.sk/609375-pribeh-bez-konca-kamil-peteraj",
+        },
+        {
             image: '/src/assets/novinky/kamil-peteraj-zlata-kniha.jpg',
             title: 'KAMIL PETERAJ, zlatá kniha',
             text: [
@@ -134,6 +143,15 @@ export const en = {
                 "Galéria Dessewffy, Dessewffy Palace, Nám. Ľ. Štúra 2, Bratislava",
                 "Exhibition open until 29.6.2026"
             ]
+        },
+        {
+            "image": "/src/assets/novinky/PBK.jpg",
+            "title": "Príbeh bez konca",
+            "text": [
+                "Kamil Peteraj",
+                "IKAR Publishing House"
+            ],
+            "link": "https://www.pantarhei.sk/609375-pribeh-bez-konca-kamil-peteraj"
         },
         {
             "image": "/src/assets/novinky/kamil-peteraj-zlata-kniha.jpg",

@@ -262,27 +262,27 @@ export const sk = {
             image: "15c03a1c-f52d-41ec-baa5-c71b261af4e0.jpg",
         },
         {
-            title: "Otvorenie výstavy v galérii",
+            title: "Erik Ondreička s Martinom Augustínom na otvorení výstavy OČI NEKONEČNÉ, na Hlohoveckom zámku v Hlohovci",
             image: "23543565-041a-47f6-b390-4277d5a91853.jpg",
         },
         {
-            title: "Návštevníci pri prehliadke triptychu na výstave",
+            title: "MARTIN AUGUSTÍN, Mirror of Soul, PRETORIA ART MUSEUM, Južná Afrika",
             image: "582df671-1a8f-4b41-9d6d-7090fbddbc2a.jpg",
         },
         {
-            title: "Kamil Peteraj, Martin Augustín v televíznej relácii",
+            title: "Prezentácia zlatej knihy Kamila Peteraja v TV štúdiu Markíza",
             image: "663ed282-295f-4d4e-95ec-3147cdc04273.jpg",
         },
         {
-            title: "Prezentácia diela v televíznom štúdiu",
+            title: "Prezentácia zlatej knihy Kamila Peteraja v TV štúdiu JOJ, z ľava: Erika Kresťanková JOJ, Kamil Peteraj, Gabriela Belopotocká IKAR, Martin Augustín",
             image: "6a7e7845-72e8-47d9-8b02-c40274c2b745.jpg",
         },
         {
-            title: "Martin Augustín pri prezentácii diela a knihy",
+            title: "V ateliéri s Darou Rolins",
             image: "72de9167-a0fc-4d0a-9232-755b15fb5cac.jpg",
         },
         {
-            title: "Vernisáž v galérii",
+            title: "Otvorenie výstavy MARTIN AUGUSTÍN, Mirror of Soul, PRETORIA ART MUSEUM, Južná Afrika",
             image: "7de446e8-ef83-47e1-81fb-6518b18e2a63.jpg",
         }]
 }
@@ -511,27 +511,27 @@ export const en = {
             "image": "15c03a1c-f52d-41ec-baa5-c71b261af4e0.jpg"
         },
         {
-            "title": "Exhibition Opening in a Gallery",
+            "title": "Erik Ondreička with Martin Augustín at the Opening of the Exhibition OČI NEKONEČNÉ, at the Hlohovec Castle in Hlohovec",
             "image": "23543565-041a-47f6-b390-4277d5a91853.jpg"
         },
         {
-            "title": "Visitors Viewing a Triptych at an Exhibition",
+            "title": "MARTIN AUGUSTÍN, Mirror of Soul, PRETORIA ART MUSEUM, South Africa",
             "image": "582df671-1a8f-4b41-9d6d-7090fbddbc2a.jpg"
         },
         {
-            "title": "Kamil Peteraj, Martin Augustín on a TV Show",
+            "title": "Presentation of Kamil Peteraj's Golden Book at the Markíza TV Studio",
             "image": "663ed282-295f-4d4e-95ec-3147cdc04273.jpg"
         },
         {
-            "title": "Artwork Presentation in a TV Studio",
+            "title": "Presentation of Kamil Peteraj's Golden Book at the JOJ TV Studio, from left: Erika Kresťanková JOJ, Kamil Peteraj, Gabriela Belopotocká IKAR, Martin Augustín",
             "image": "6a7e7845-72e8-47d9-8b02-c40274c2b745.jpg"
         },
         {
-            "title": "Martin Augustín Presenting Artwork and a Book",
+            "title": "In the Studio with Dara Rolins",
             "image": "72de9167-a0fc-4d0a-9232-755b15fb5cac.jpg"
         },
         {
-            "title": "Vernissage in a Gallery",
+            "title": "Opening of the Exhibition MARTIN AUGUSTÍN, Mirror of Soul, PRETORIA ART MUSEUM, South Africa",
             "image": "7de446e8-ef83-47e1-81fb-6518b18e2a63.jpg"
         }
     ]

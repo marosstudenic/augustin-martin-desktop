@@ -109,6 +109,11 @@ const translatePath = useTranslatedPath(lang);
                         >{t("nav.video")}
                     </a>
                 </li>
+                <li class="my-2 cursor-pointer" id="nav-rozhovory">
+                    <a class="text-gray-500" href={translatePath("/#rozhovory")}
+                        >{t("nav.interviews")}
+                    </a>
+                </li>
                 <li class="my-2 cursor-pointer" id="nav-galeria">
                     <a class="text-gray-500" href={translatePath("/#galeria")}
                         >{t("nav.gallery")}
@@ -182,6 +187,20 @@ const translatePath = useTranslatedPath(lang);
                     );
                 }
                 document.getElementById("nav-galeria").className =
+                    "my-2 cursor-pointer font-bold";
+                // Do something
+            } else if (
+                window.pageYOffset >
+                document.getElementById("rozhovory").offsetTop -
+                    window.innerHeight / 2
+            ) {
+                for (let i = 0; i < navs.length; i++) {
+                    navs[i].className = navs[i].className.replace(
+                        "font-bold",
+                        ""
+                    );
+                }
+                document.getElementById("nav-rozhovory").className =
                     "my-2 cursor-pointer font-bold";
                 // Do something
             } else if (

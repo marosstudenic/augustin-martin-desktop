@@ -3,6 +3,13 @@ export const sk = {
     'coworkWithIkar.ikar': 'Vydavateľstvo IKAR',
     'coworkWithIkar.items': [
         {
+            title: "Príbeh bez konca",
+            authors: "Kamil Peteraj",
+            vydavatelstvo: "Vydavateľstvo IKAR",
+            image: "/src/assets/spoluprace/PBK.jpg",
+            link: "https://www.pantarhei.sk/609375-pribeh-bez-konca-kamil-peteraj",
+        },
+        {
             title: "KAMIL PETERAJ, zlatá kniha",
             authors: "Kamil Peteraj",
             vydavatelstvo: "Vydavateľstvo IKAR",
@@ -102,6 +109,13 @@ export const en = {
     'coworkWithIkar.title': 'Cooperation with IKAR publishing house',
     'coworkWithIkar.ikar': 'IKAR publishing house',
     'coworkWithIkar.items': [
+        {
+            title: "Príbeh bez konca",
+            authors: "Kamil Peteraj",
+            vydavatelstvo: "IKAR publishing house",
+            image: "/src/assets/spoluprace/PBK.jpg",
+            link: "https://www.pantarhei.sk/609375-pribeh-bez-konca-kamil-peteraj",
+        },
         {
             title: "KAMIL PETERAJ, golden book",
             authors: "Kamil Peteraj",
